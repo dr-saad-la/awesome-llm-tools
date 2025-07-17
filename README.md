@@ -1,10 +1,5 @@
 # Awesome LLM Tools 🤖
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![GitHub stars](https://img.shields.io/github/stars/dr-saad-la/awesome-llm-tools.svg?style=social&label=Star)](https://github.com/your-username/awesome-llm-tools)
-[![GitHub forks](https://img.shields.io/github/forks/dr-saad-la/awesome-llm-tools.svg?style=social&label=Fork)](https://github.com/your-username/awesome-llm-tools/fork)
-[![Last Updated](https://img.shields.io/github/last-commit/dr-saad-la/awesome-llm-tools?label=Last%20Updated)](https://github.com/your-username/awesome-llm-tools)
-
 A curated list of Large Language Model (LLM) tools, frameworks, and platforms for developers, researchers, and AI enthusiasts.
 
 From commercial APIs to local deployment, from RAG systems to fine-tuning platforms - everything you need to build with LLMs.
@@ -44,60 +39,60 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 ### **Tier 1: Leading Providers**
 
 **[OpenAI](https://openai.com/api/)** ⭐⭐⭐⭐⭐ 💵
-    - **Models**: GPT-4o, GPT-4o-mini, o1-preview, o1-mini
-    - **Best for**: Production apps, complex reasoning, code generation
-    - **Pricing**: $0.15-$60/1M tokens
-    - **Unique**: Function calling, vision, DALL-E integration, fine-tuning
+- **Models**: GPT-4o, GPT-4o-mini, o1-preview, o1-mini
+- **Best for**: Production apps, complex reasoning, code generation
+- **Pricing**: $0.15-$60/1M tokens
+- **Unique**: Function calling, vision, DALL-E integration, fine-tuning
 
 **[Anthropic Claude](https://www.anthropic.com/)** ⭐⭐⭐⭐⭐ 💵
-    - **Models**: Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
-    - **Best for**: Analysis, reasoning, safety-critical applications
-    - **Pricing**: $0.25-$75/1M tokens
-    - **Unique**: 200K context, Constitutional AI, excellent for research
+- **Models**: Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
+- **Best for**: Analysis, reasoning, safety-critical applications
+- **Pricing**: $0.25-$75/1M tokens
+- **Unique**: 200K context, Constitutional AI, excellent for research
 
 **[Google Gemini](https://ai.google.dev/)** ⭐⭐⭐⭐ 💵
-    - **Models**: Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Ultra
-    - **Best for**: Multimodal apps, Google ecosystem integration
-    - **Pricing**: $0.075-$35/1M tokens
-    - **Unique**: Video understanding, 2M token context, Google Workspace
+- **Models**: Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Ultra
+- **Best for**: Multimodal apps, Google ecosystem integration
+- **Pricing**: $0.075-$35/1M tokens
+- **Unique**: Video understanding, 2M token context, Google Workspace
 
 **[Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service)** ⭐⭐⭐⭐ 💵 🏢
-    - **Models**: GPT-4, GPT-3.5, DALL-E, Whisper
-    - **Best for**: Enterprise applications, regulated industries
-    - **Pricing**: Similar to OpenAI + Azure costs
-    - **Unique**: Enterprise SLA, data residency, compliance features
+- **Models**: GPT-4, GPT-3.5, DALL-E, Whisper
+- **Best for**: Enterprise applications, regulated industries
+- **Pricing**: Similar to OpenAI + Azure costs
+- **Unique**: Enterprise SLA, data residency, compliance features
 
 ### **Tier 2: Specialized & Emerging**
 
 **[Cohere](https://cohere.ai/)** ⭐⭐⭐⭐ 💵 🏢
-    - **Models**: Command R+, Embed v3, Rerank 3
-    - **Best for**: Enterprise NLP, multilingual, RAG applications
-    - **Pricing**: $0.15-$15/1M tokens
-    - **Unique**: Excellent embeddings, enterprise focus, citation support
+- **Models**: Command R+, Embed v3, Rerank 3
+- **Best for**: Enterprise NLP, multilingual, RAG applications
+- **Pricing**: $0.15-$15/1M tokens
+- **Unique**: Excellent embeddings, enterprise focus, citation support
 
 **[Together AI](https://www.together.ai/)** ⭐⭐⭐⭐ 💵
-    - **Models**: Llama 3.1, Mixtral, Qwen, Code Llama (hosted)
-    - **Best for**: Open source models as API, cost-effective scaling
-    - **Pricing**: $0.2-$8/1M tokens
-    - **Unique**: Multiple open source models, competitive pricing
+- **Models**: Llama 3.1, Mixtral, Qwen, Code Llama (hosted)
+- **Best for**: Open source models as API, cost-effective scaling
+- **Pricing**: $0.2-$8/1M tokens
+- **Unique**: Multiple open source models, competitive pricing
 
 **[Groq](https://groq.com/)** ⭐⭐⭐⭐ 💵 🚀
-    - **Models**: Llama 3.1, Mixtral, Gemma
-    - **Best for**: Real-time applications, speed-critical use cases
-    - **Pricing**: $0.27-$2.8/1M tokens
-    - **Unique**: 500+ tokens/sec inference speed, hardware optimization
+- **Models**: Llama 3.1, Mixtral, Gemma
+- **Best for**: Real-time applications, speed-critical use cases
+- **Pricing**: $0.27-$2.8/1M tokens
+- **Unique**: 500+ tokens/sec inference speed, hardware optimization
 
 **[Perplexity AI](https://www.perplexity.ai/)** ⭐⭐⭐ 💵
-    - **Models**: Custom models with web search
-    - **Best for**: Research applications, current information
-    - **Pricing**: $20/month Pro subscription + API
-    - **Unique**: Real-time web search, source citations
+- **Models**: Custom models with web search
+- **Best for**: Research applications, current information
+- **Pricing**: $20/month Pro subscription + API
+- **Unique**: Real-time web search, source citations
 
 **[Replicate](https://replicate.com/)** ⭐⭐⭐ 💵
-    - **Models**: Wide variety of open source and specialized models
-    - **Best for**: Experimentation, specialized models, prototyping
-    - **Pricing**: Pay-per-second usage
-    - **Unique**: Model marketplace, easy deployment, diverse catalog
+- **Models**: Wide variety of open source and specialized models
+- **Best for**: Experimentation, specialized models, prototyping
+- **Pricing**: Pay-per-second usage
+- **Unique**: Model marketplace, easy deployment, diverse catalog
 
 ---
 
@@ -266,17 +261,6 @@ ollama run codellama:13b-code
 - **Features**: PagedAttention, continuous batching, streaming
 - **Performance**: 24x higher throughput than HuggingFace Transformers
 
-```python
-# vLLM Example
-from vllm import LLM, SamplingParams
-
-llm = LLM(model="meta-llama/Meta-Llama-3.1-8B-Instruct")
-sampling_params = SamplingParams(temperature=0.7, top_p=0.9)
-
-prompts = ["Hello, my name is", "The capital of France is"]
-outputs = llm.generate(prompts, sampling_params)
-```
-
 **[Text Generation Inference (TGI)](https://github.com/huggingface/text-generation-inference)** ⭐⭐⭐⭐ 💰
 - **What it does**: Hugging Face's production inference server
 - **Best for**: Hugging Face model deployment, production serving
@@ -319,24 +303,6 @@ outputs = llm.generate(prompts, sampling_params)
 - **Features**: Simple Python API, local and cloud deployment
 - **Integration**: Excellent LangChain and LlamaIndex support
 
-```python
-# Chroma Example
-import chromadb
-
-client = chromadb.Client()
-collection = client.create_collection("my_docs")
-
-collection.add(
-    documents=["This is document 1", "This is document 2"],
-    metadatas=[{"source": "web"}, {"source": "book"}],
-    ids=["doc1", "doc2"]
-)
-
-results = collection.query(
-    query_texts=["document about AI"],
-    n_results=2
-)
-```
 
 **[Weaviate](https://weaviate.io/)** ⭐⭐⭐⭐ 💰
 - **What it does**: Open source vector database with built-in ML
