@@ -20,16 +20,28 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - [Commercial LLM APIs](#-commercial-llm-apis)
 - [Open Source Models](#-open-source-models)
 - [Development Frameworks](#-development-frameworks)
+- [Agent Frameworks & Multi-Agent Systems](#-agent-frameworks--multi-agent-systems)
+- [Structured Generation & Control](#-structured-generation--control)
 - [Local Deployment Tools](#-local-deployment-tools)
+- [Self-hosted Platforms](#-self-hosted-platforms)
+- [Visual Workflow Builders](#-visual-workflow-builders)
 - [Vector Databases & RAG](#-vector-databases--rag)
+- [Memory & Persistence](#-memory--persistence)
+- [Voice & Audio Tools](#-voice--audio-tools)
+- [Multimodal & Vision Tools](#-multimodal--vision-tools)
+- [Code-Focused Tools](#-code-focused-tools)
+- [Mobile & Edge Deployment](#-mobile--edge-deployment)
 - [Fine-tuning Platforms](#-fine-tuning-platforms)
+- [LLM Gateway & Operations](#-llm-gateway--operations)
 - [Evaluation & Monitoring](#-evaluation--monitoring)
+- [Research & Benchmarking](#-research--benchmarking)
 - [Prompt Engineering](#-prompt-engineering)
 - [Supporting Tools](#-supporting-tools)
 - [Cost Comparison](#-cost-comparison)
 - [Recommended Stacks](#-recommended-stacks)
 - [Learning Resources](#-learning-resources)
 - [Contributing](#-contributing)
+
 
 ## 🗂️ Legend
 
@@ -330,3 +342,491 @@ ollama run codellama:13b-code
 - **What it does**: Data connectors and tools for LlamaIndex
 - **Features**: 100+ data connectors (Notion, Slack, Google Drive, etc.)
 - **Best for**: Connecting diver
+
+
+## 🤖 Agent Frameworks & Multi-Agent Systems
+
+### **Advanced Agent Orchestration**
+
+**[LangGraph](https://github.com/langchain-ai/langgraph)** ⭐⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Build stateful, multi-actor applications with LLMs using graph-based workflows
+- **Best for**: Complex agent workflows, multi-step reasoning, human-in-the-loop systems
+- **Features**: State management, branching logic, human approval nodes, persistence
+- **Integration**: LangChain native, part of LangChain ecosystem
+
+**[CrewAI](https://github.com/joaomdmoura/crewAI)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Framework for orchestrating role-playing, autonomous AI agents
+- **Best for**: Multi-agent collaboration, complex task delegation, team-based AI workflows
+- **Features**: Role-based agents, task delegation, collaborative problem solving
+- **Use cases**: Content creation teams, research groups, business process automation
+
+**[AutoGen](https://github.com/microsoft/autogen)** ⭐⭐⭐⭐ 💰
+- **What it does**: Microsoft's framework for multi-agent conversation and collaboration
+- **Best for**: Multi-agent conversations, code generation, complex problem solving
+- **Features**: Conversable agents, human-in-the-loop, code execution, group chat
+- **Developer**: Microsoft Research
+
+**[TaskWeaver](https://github.com/microsoft/TaskWeaver)** ⭐⭐⭐ 💰 🚀
+- **What it does**: Code-first agent framework for data analytics and processing
+- **Best for**: Data analysis, code generation, analytical workflows
+- **Features**: Code interpreter, plugin system, stateful conversations
+- **Unique**: Code-first approach, data analysis focused
+
+**[AgentGPT](https://github.com/reworkd/AgentGPT)** ⭐⭐⭐ 💰
+- **What it does**: Autonomous AI agent platform that runs in browser
+- **Best for**: Goal-oriented tasks, autonomous execution, research
+- **Features**: Web-based interface, autonomous goal pursuit, task breakdown
+- **Deployment**: Web app, self-hostable
+
+**[SuperAGI](https://github.com/TransformerOptimus/SuperAGI)** ⭐⭐⭐ 💰
+- **What it does**: Open source autonomous AI agent framework
+- **Best for**: Building and deploying autonomous agents, agent management
+- **Features**: Agent management, tool integration, performance monitoring
+- **UI**: Graphical interface for agent management
+
+---
+
+## 🧠 Structured Generation & Control
+
+### **Output Structure & Validation**
+
+**[DSPy](https://github.com/stanfordnlp/dspy)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Programming language model pipelines declaratively
+- **Best for**: Complex reasoning chains, prompt optimization, systematic LM programming
+- **Features**: Automatic prompt optimization, modular components, few-shot learning
+- **Developer**: Stanford NLP Group
+
+**[Outlines](https://github.com/outlines-dev/outlines)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Structured text generation for LLMs (JSON, regex, grammars)
+- **Best for**: Guaranteed valid outputs, structured data extraction, API responses
+- **Features**: JSON schema validation, regex constraints, custom grammars
+- **Performance**: Fast, reliable structured generation
+
+**[Guardrails AI](https://github.com/guardrails-ai/guardrails)** ⭐⭐⭐⭐ 💰
+- **What it does**: Framework for validating and correcting LLM outputs
+- **Best for**: Output validation, safety checks, quality assurance
+- **Features**: Custom validators, automatic correction, quality metrics
+- **Use cases**: Production safety, content moderation, data validation
+
+**[LMQL](https://lmql.ai/)** ⭐⭐⭐ 💰
+- **What it does**: Query language for programming large language models
+- **Best for**: Complex prompting, structured queries, research
+- **Features**: SQL-like syntax, constraints, multi-step reasoning
+- **Unique**: Declarative approach to LLM programming
+
+**[jsonformer](https://github.com/1rgs/jsonformer)** ⭐⭐⭐ 💰
+- **What it does**: Generate valid JSON from language models
+- **Best for**: Structured data extraction, API integrations, data validation
+- **Features**: Guaranteed valid JSON, fast generation, simple API
+- **Performance**: Efficient, reliable JSON generation
+
+---
+
+## 🧐 Memory & Persistence
+
+### **Long-term Memory Systems**
+
+**[Mem0](https://github.com/mem0ai/mem0)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Memory layer for AI applications with personalization
+- **Best for**: Personalized AI, long-term context, user memory
+- **Features**: User preferences, adaptive learning, memory graphs
+- **Use cases**: Personal assistants, customer support, educational apps
+
+**[Zep](https://github.com/getzep/zep)** ⭐⭐⭐⭐ 💰
+- **What it does**: Long-term memory store for conversational AI applications
+- **Best for**: Chat applications, conversation history, context persistence
+- **Features**: Conversation summarization, semantic search, memory extraction
+- **Integration**: LangChain, custom applications
+
+---
+
+## 🎙️ Voice & Audio Tools
+
+### **Speech-to-Text & Text-to-Speech**
+
+**[OpenAI Whisper](https://github.com/openai/whisper)** ⭐⭐⭐⭐⭐ 💰
+- **What it does**: Automatic speech recognition system
+- **Best for**: Transcription, multilingual speech recognition, audio processing
+- **Features**: 99 languages, robust performance, multiple model sizes
+- **Performance**: State-of-the-art accuracy
+
+**[Coqui TTS](https://github.com/coqui-ai/TTS)** ⭐⭐⭐⭐ 💰
+- **What it does**: Deep learning toolkit for text-to-speech synthesis
+- **Best for**: Voice synthesis, voice cloning, multilingual TTS
+- **Features**: 1000+ languages, voice cloning, real-time synthesis
+- **Community**: Large open source community
+
+**[ElevenLabs](https://elevenlabs.io/)** ⭐⭐⭐⭐ 💵
+- **What it does**: AI voice generation and cloning platform
+- **Best for**: High-quality voice synthesis, voice cloning, content creation
+- **Features**: Realistic voices, voice cloning, API access
+- **Quality**: Premium voice quality
+
+**[Tortoise TTS](https://github.com/neonbjb/tortoise-tts)** ⭐⭐⭐ 💰
+- **What it does**: Multi-voice text-to-speech system
+- **Best for**: Voice cloning, custom voices, research
+- **Features**: Voice cloning from samples, emotional control
+- **Note**: Slower but high quality
+
+---
+
+## 💻 Code-Focused LLM Tools
+
+### **IDE Extensions & Code Assistants**
+
+**[Continue](https://github.com/continuedev/continue)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Open source autopilot for VS Code and JetBrains
+- **Best for**: Code completion, refactoring, explanation
+- **Features**: Multiple LLM support, customizable, self-hosted
+- **Integration**: VS Code, JetBrains IDEs
+
+**[Cursor](https://cursor.sh/)** ⭐⭐⭐⭐ 💵 🚀
+- **What it does**: AI-first code editor built on VS Code
+- **Best for**: AI-assisted coding, pair programming, code generation
+- **Features**: GPT-4 integration, codebase chat, AI commands
+- **Performance**: Fast, smooth AI integration
+
+**[Codeium](https://codeium.com/)** ⭐⭐⭐⭐ 🔄
+- **What it does**: Free AI code completion and chat
+- **Best for**: Code completion, chat assistance, multiple IDEs
+- **Features**: 70+ programming languages, IDE extensions, free tier
+- **Pricing**: Generous free tier, enterprise options
+
+**[Tabnine](https://www.tabnine.com/)** ⭐⭐⭐ 💵
+- **What it does**: AI code completion assistant
+- **Best for**: Code completion, team collaboration, enterprise
+- **Features**: Local models, team training, compliance features
+- **Focus**: Privacy-first, on-premises options
+
+---
+
+## 🌐 Self-hosted & Local Platforms
+
+### **Complete LLM Platforms**
+
+**[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Full-stack application for turning documents into chatbots
+- **Best for**: Document Q&A, knowledge bases, private deployments
+- **Features**: Multi-user, document processing, vector databases, local LLMs
+- **Deployment**: Docker, desktop app, cloud
+
+**[LibreChat](https://github.com/danny-avila/LibreChat)** ⭐⭐⭐⭐ 💰
+- **What it does**: Enhanced ChatGPT clone with multiple AI providers
+- **Best for**: Self-hosted ChatGPT alternative, multiple providers
+- **Features**: Multiple AI providers, plugins, conversation branching
+- **Providers**: OpenAI, Anthropic, Google, local models
+
+**[Chatbot UI](https://github.com/mckaywrigley/chatbot-ui)** ⭐⭐⭐ 💰
+- **What it does**: Open source ChatGPT UI clone
+- **Best for**: Custom ChatGPT interface, self-hosting
+- **Features**: Clean UI, multiple providers, conversation management
+- **Deployment**: Vercel, self-hosted
+
+**[Big-AGI](https://github.com/enricoros/big-AGI)** ⭐⭐⭐ 💰 🚀
+- **What it does**: Advanced web UI for AI models with productivity features
+- **Best for**: Power users, productivity, advanced AI interactions
+- **Features**: Multiple models, personas, diagrams, voice input
+- **UI**: Modern, feature-rich interface
+
+---
+
+## 🔄 Visual Workflow Builders
+
+### **No-Code/Low-Code LLM Apps**
+
+**[Flowise](https://github.com/FlowiseAI/Flowise)** ⭐⭐⭐⭐ 💰
+- **What it does**: Drag & drop UI to build LLM flows using LangChain
+- **Best for**: Visual workflow building, no-code LLM apps, prototyping
+- **Features**: Visual flow builder, LangChain integration, API endpoints
+- **Deployment**: Self-hosted, cloud options
+
+**[Langflow](https://github.com/logspace-ai/langflow)** ⭐⭐⭐⭐ 💰
+- **What it does**: Visual framework for building LangChain applications
+- **Best for**: Visual LLM app development, rapid prototyping
+- **Features**: Drag-and-drop interface, component library, export to Python
+- **Integration**: LangChain ecosystem
+
+**[Dify](https://github.com/langgenius/dify)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: LLM application development platform
+- **Best for**: Building and operating generative AI applications
+- **Features**: Workflow orchestration, model management, API development
+- **Enterprise**: Production-ready, enterprise features
+
+**[FastGPT](https://github.com/labring/FastGPT)** ⭐⭐⭐ 💰
+- **What it does**: Knowledge-based platform built on LLMs
+- **Best for**: Knowledge base applications, Q&A systems
+- **Features**: Visual workflow, knowledge base management, API
+- **Language**: Chinese-focused but supports English
+
+---
+
+## 📊 LLM Gateway & Operations
+
+### **LLM Infrastructure & Management**
+
+**[Portkey](https://github.com/Portkey-AI/gateway)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: AI gateway for observability, reliability, and security
+- **Best for**: Production LLM deployments, cost optimization, observability
+- **Features**: Load balancing, caching, rate limiting, cost tracking
+- **Enterprise**: Production-grade reliability features
+
+**[HeliconeAI](https://github.com/Helicone/helicone)** ⭐⭐⭐ 💰
+- **What it does**: Open source observability platform for generative AI
+- **Best for**: Request monitoring, cost tracking, performance analysis
+- **Features**: Request logging, cost analysis, custom properties
+- **Integration**: Simple proxy setup, multiple providers
+
+**[Braintrust](https://www.braintrust.dev/)** ⭐⭐⭐ 🔄
+- **What it does**: Enterprise-grade evaluation and observability for AI
+- **Best for**: Enterprise AI evaluation, performance monitoring
+- **Features**: Evaluation frameworks, dataset management, A/B testing
+- **Focus**: Enterprise and research use cases
+
+---
+
+## 🔬 Research & Evaluation Tools
+
+### **Academic & Research Platforms**
+
+**[EleutherAI Eval Harness](https://github.com/EleutherAI/lm-evaluation-harness)** ⭐⭐⭐⭐ 💰
+- **What it does**: Framework for evaluating language models on various tasks
+- **Best for**: Research evaluation, model comparison, academic benchmarks
+- **Features**: 200+ tasks, standardized evaluation, research-grade metrics
+- **Community**: EleutherAI research community
+
+**[Alpaca Eval](https://github.com/tatsu-lab/alpaca_eval)** ⭐⭐⭐ 💰
+- **What it does**: Automatic evaluator for instruction-following models
+- **Best for**: Instruction tuning evaluation, model comparison
+- **Features**: Automated evaluation, leaderboards, research benchmarks
+- **Developer**: Stanford Alpaca team
+
+**[BIG-bench](https://github.com/google/BIG-bench)** ⭐⭐⭐⭐ 💰
+- **What it does**: Beyond the Imitation Game collaborative benchmark
+- **Best for**: Comprehensive model evaluation, research
+- **Features**: 200+ tasks, diverse evaluation, research collaboration
+- **Developer**: Google Research
+
+**[MMLU](https://github.com/hendrycks/test)** ⭐⭐⭐⭐ 💰
+- **What it does**: Massive Multitask Language Understanding benchmark
+- **Best for**: Academic evaluation, knowledge assessment
+- **Features**: 57 academic subjects, standardized testing
+- **Usage**: Standard benchmark in research papers
+
+---
+
+## 🎨 Multimodal & Specialized Models
+
+### **Vision-Language Models**
+
+**[LLaVA](https://github.com/haotian-liu/LLaVA)** ⭐⭐⭐⭐ 💰
+- **What it does**: Large Language and Vision Assistant
+- **Best for**: Vision-language tasks, image understanding, research
+- **Features**: Visual instruction tuning, conversation about images
+- **Performance**: Strong vision-language capabilities
+
+**[InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip)** ⭐⭐⭐ 💰
+- **What it does**: Vision-language instruction tuning
+- **Best for**: Visual question answering, image captioning
+- **Features**: Instruction following for vision tasks
+- **Developer**: Salesforce Research
+
+**[OpenAI CLIP](https://github.com/openai/CLIP)** ⭐⭐⭐⭐⭐ 💰
+- **What it does**: Connecting text and images
+- **Best for**: Image-text understanding, zero-shot classification
+- **Features**: Multi-modal embeddings, zero-shot capabilities
+- **Impact**: Foundation for many vision-language applications
+
+---
+
+## 🔗 Integration & Utility Tools
+
+### **Connectors & Utilities**
+
+**[Pinecone Datasets](https://github.com/pinecone-io/datasets)** ⭐⭐⭐ 💰
+- **What it does**: Ready-to-use datasets for vector databases
+- **Best for**: Quick RAG setup, testing, benchmarking
+- **Features**: Pre-processed datasets, embeddings included
+- **Integration**: Pinecone ecosystem
+
+**[Weaviate Recipes](https://github.com/weaviate/recipes)** ⭐⭐⭐ 💰
+- **What it does**: Code examples and tutorials for Weaviate
+- **Best for**: Learning Weaviate, implementation examples
+- **Features**: Production-ready examples, best practices
+- **Community**: Community-contributed recipes
+
+**[ChromaDB Recipes](https://github.com/chroma-core/chroma/tree/main/examples)** ⭐⭐⭐ 💰
+- **What it does**: Example applications using ChromaDB
+- **Best for**: Learning ChromaDB, quick starts
+- **Features**: Various use case examples, integration patterns
+- **Documentation**: Well-documented examples
+
+---
+
+## 📱 Mobile & Edge Deployment
+
+### **Mobile LLM Solutions**
+
+**[MLX](https://github.com/ml-explore/mlx)** ⭐⭐⭐ 💰 🚀
+- **What it does**: Apple's ML framework optimized for Apple silicon
+- **Best for**: Apple silicon deployment, iOS/macOS apps
+- **Features**: Apple silicon optimization, Swift/Python APIs
+- **Performance**: Optimized for M-series chips
+
+**[MLC LLM](https://github.com/mlc-ai/mlc-llm)** ⭐⭐⭐ 💰
+- **What it does**: Enable LLMs natively on mobile devices and edge
+- **Best for**: Mobile deployment, edge computing, resource constraints
+- **Features**: Mobile optimization, multiple platforms
+- **Platforms**: iOS, Android, WebGPU, native
+
+## 🤝 Contributing
+
+We welcome contributions from the LLM community! Help us make this the most comprehensive and up-to-date resource for LLM tools.
+
+### **Quick Contribution Guide**
+
+1. **Fork** this repository
+2. **Add your tool** following the format below
+3. **Submit** a pull request with a clear description
+4. **Wait for review** - we'll get back to you quickly!
+
+### **How to Add a Tool**
+
+Use this exact format for consistency:
+
+```markdown
+**[Tool Name](https://tool-website.com/)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Brief description of primary function
+- **Best for**: Main use cases and target audience
+- **Features**: Key features that set it apart
+- **Pricing**: Cost model (if applicable)
+- **Unique**: What makes it special
+```
+
+### **Rating System**
+
+- ⭐⭐⭐⭐⭐ **Must-have** - Industry standard, essential tool
+- ⭐⭐⭐⭐ **Excellent** - High quality, highly recommended
+- ⭐⭐⭐ **Good** - Solid choice, worth considering
+- ⭐⭐ **Decent** - Has specific use cases
+- ⭐ **Basic** - Limited functionality
+
+### **Category Icons**
+
+- 💰 **Free/Open Source**
+- 💵 **Paid/Commercial**
+- 🔄 **Freemium** (free tier + paid options)
+- 🚀 **Trending/New** (launched or updated recently)
+- 🏢 **Enterprise-focused**
+
+### **Contribution Guidelines**
+
+**✅ What We Accept:**
+- Tools that are actively maintained
+- Clear, accurate descriptions
+- Proper categorization
+- Working links and correct information
+- Tools that add unique value to the ecosystem
+
+**❌ What We Don't Accept:**
+- Abandoned or unmaintained projects
+- Duplicate tools without clear differentiation
+- Self-promotional content without genuine value
+- Tools that don't work as described
+- Incomplete or poorly documented tools
+
+### **Quality Standards**
+
+- **Accuracy**: All information must be current and correct
+- **Neutrality**: Unbiased descriptions focusing on functionality
+- **Clarity**: Write for developers of all experience levels
+- **Completeness**: Include all required fields in the format
+- **Verification**: Test tools before recommending them
+
+### **Special Sections**
+
+**Adding to Recommended Stacks:**
+- Must have experience using the complete stack
+- Include reasoning for tool choices
+- Specify target audience and use cases
+- Provide realistic budget estimates
+
+**Cost Information:**
+- Use current pricing (check within last 30 days)
+- Include key pricing tiers
+- Note free tier limitations
+- Mention enterprise pricing where relevant
+
+### **Review Process**
+
+1. **Automated checks** - Format and link validation
+2. **Manual review** - Quality and accuracy verification
+3. **Community feedback** - 48-hour review period
+4. **Merge** - Added to the list with attribution
+
+### **Recognition**
+
+Contributors will be:
+- ✅ Listed in commit history
+- ✅ Mentioned in release notes for major additions
+- ✅ Featured in annual contributor recognition
+
+**Top contributors may be invited to become maintainers!**
+
+---
+
+## 📄 License
+
+[![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
+
+This work is licensed under a [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
+
+### **What This Means:**
+
+**✅ You Can:**
+- **Use** this list for any purpose, including commercial
+- **Modify** and redistribute without attribution
+- **Copy** any part of this content freely
+- **Build upon** this work without restrictions
+- **Share** with anyone, anywhere
+
+**📋 No Requirements:**
+- ❌ No attribution required (though appreciated!)
+- ❌ No permission needed
+- ❌ No license compatibility issues
+- ❌ No restrictions on use
+
+### **Why CC0?**
+
+We believe that curated knowledge should be freely available to everyone. By placing this work in the public domain:
+
+- **🌍 Global Access** - Anyone can use this resource regardless of location or legal system
+- **🚀 Innovation** - Developers can build tools and services using this data without legal concerns
+- **📚 Education** - Students and researchers have unrestricted access to learning materials
+- **🤝 Community** - Open collaboration without legal barriers encourages more contributions
+
+### **Attribution (Optional)**
+
+While not required, if you find this resource valuable, we'd appreciate:
+
+```markdown
+LLM tools sourced from [Awesome LLM Tools](https://github.com/your-username/awesome-llm-tools)
+```
+
+### **Disclaimer**
+
+This list is provided "as is" without warranty of any kind. While we strive for accuracy:
+- ✅ Information may become outdated
+- ✅ Pricing and features may change
+- ✅ Tools may be discontinued
+- ✅ Individual experiences may vary
+
+Always verify current information before making decisions based on this list.
+
+---
+
+**🙏 Thank You**
+
+To everyone who contributes to making this resource better - from individual developers sharing discoveries to maintainers reviewing submissions - thank you for building the future of LLM development together!
+
+**⭐ Star this repository if it helps you build amazing LLM applications!**
+
