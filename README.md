@@ -1,4 +1,15 @@
-# Awesome LLM Tools 🤖
+<!-- # Awesome LLM Tools 🤖 -->
+
+![Awesome LLM Tools](https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Awesome%20LLM%20Tools%20🤖&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlign=50&fontAlignY=35&desc=A%20curated%20list%20of%20LLM%20tools%20and%20platforms&descAlign=50&descAlignY=60&descSize=18)
+
+
+<!-- ![Awesome LLM Tools](https://img.shields.io/badge/🤖%20Awesome%20LLM%20Tools-A%20curated%20list%20of%20LLM%20platforms%20and%20frameworks-blue?style=for-the-badge&logo=openai&logoColor=white&color=gradient) -->
+
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![GitHub stars](https://img.shields.io/github/stars/dr-saad-la/awesome-llm-tools.svg?style=social&label=Star)](https://github.com/your-username/awesome-llm-tools)
+[![GitHub forks](https://img.shields.io/github/forks/dr-saad-la/awesome-llm-tools.svg?style=social&label=Fork)](https://github.com/your-username/awesome-llm-tools/fork)
+[![Last Updated](https://img.shields.io/github/last-commit/dr-saad-la/awesome-llm-tools?label=Last%20Updated)](https://github.com/your-username/awesome-llm-tools)
+
 
 A curated list of Large Language Model (LLM) tools, frameworks, and platforms for developers, researchers, and AI enthusiasts.
 
