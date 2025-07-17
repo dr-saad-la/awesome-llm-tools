@@ -2,13 +2,22 @@
 
 ![Awesome LLM Tools](https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Awesome%20LLM%20Tools%20🤖&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlign=50&fontAlignY=35&desc=A%20curated%20list%20of%20LLM%20tools%20and%20platforms&descAlign=50&descAlignY=60&descSize=18)
 
+---
+
+## Project Evolution
+
+<div align="center">
+
+[![Awesome](https://img.shields.io/badge/Awesome-List-ff69b4?style=for-the-badge&logo=awesomelists&logoColor=white)](https://awesome.re)
+[![GitHub stars](https://img.shields.io/github/stars/dr-saad-la/awesome-llm-tools?style=for-the-badge&logo=github&color=yellow)](https://github.com/dr-saad-la/awesome-llm-tools)
+[![GitHub forks](https://img.shields.io/github/forks/dr-saad-la/awesome-llm-tools?style=for-the-badge&logo=github&color=blue)](https://github.com/dr-saad-la/awesome-llm-tools/fork)
+![GitHub contributors](https://img.shields.io/github/contributors/dr-saad-la/awesome-llm-tools?style=for-the-badge&logo=github&color=green)
+[![Last Updated](https://img.shields.io/github/last-commit/dr-saad-la/awesome-llm-tools?style=for-the-badge&logo=github&label=Last%20Updated&color=green)](https://github.com/dr-saad-la/awesome-llm-tools)
+
+</div>
 
 <!-- ![Awesome LLM Tools](https://img.shields.io/badge/🤖%20Awesome%20LLM%20Tools-A%20curated%20list%20of%20LLM%20platforms%20and%20frameworks-blue?style=for-the-badge&logo=openai&logoColor=white&color=gradient) -->
 
-[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
-[![GitHub stars](https://img.shields.io/github/stars/dr-saad-la/awesome-llm-tools.svg?style=social&label=Star)](https://github.com/your-username/awesome-llm-tools)
-[![GitHub forks](https://img.shields.io/github/forks/dr-saad-la/awesome-llm-tools.svg?style=social&label=Fork)](https://github.com/your-username/awesome-llm-tools/fork)
-[![Last Updated](https://img.shields.io/github/last-commit/dr-saad-la/awesome-llm-tools?label=Last%20Updated)](https://github.com/your-username/awesome-llm-tools)
 
 
 A curated list of Large Language Model (LLM) tools, frameworks, and platforms for developers, researchers, and AI enthusiasts.
@@ -830,7 +839,7 @@ To everyone who contributes to making this resource better - from individual dev
 
 **⭐ Star this repository if it helps you build amazing LLM applications!**
 
-## 📈 Stargazers Over Time
+### ⭐ Star Growth
+[![Star History Chart](https://api.star-history.com/svg?repos=dr-saad-la/awesome-llm-tools&type=Date)](https://star-history.com/#dr-saad-la/awesome-llm-tools&Date)
 
-[![Stargazers over time](https://starchart.cc/dr-saad-la/awesome-llm-tools.svg)](https://starchart.cc/dr-saad-la/awesome-llm-tools)
 
