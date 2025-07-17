@@ -1,0 +1,182 @@
+name: Validate Format
+
+on:
+  # Run on pull requests
+  pull_request:
+    branches: [ main ]
+    paths: [ 'README.md' ]
+
+  # Run on pushes to main
+  push:
+    branches: [ main ]
+    paths: [ 'README.md' ]
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  validate:
+    name: Validate README format
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: 📦 Install Python dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install requests beautifulsoup4 pyyaml
+
+    - name: 📝 Setup Node.js for markdown linting
+      uses: actions/setup-node@v4
+      with:
+        node-version: '18'
+
+    - name: 📦 Install Node.js dependencies
+      run: |
+        npm install -g markdownlint-cli2
+
+    - name: 🔍 Lint markdown formatting
+      run: |
+        # Create markdownlint config
+        cat > .markdownlint.json << 'EOF'
+        {
+          "MD013": {
+            "line_length": 120,
+            "tables": false,
+            "code_blocks": false,
+            "headings": false
+          },
+          "MD033": false,
+          "MD041": false,
+          "MD034": false,
+          "MD036": false
+        }
+        EOF
+
+        # Run markdown linting
+        markdownlint-cli2 README.md
+
+    - name: 🔍 Check for duplicate tools
+      run: python scripts/check_duplicates.py
+
+    - name: 🔍 Validate tool format
+      run: python scripts/validate_format.py
+
+    - name: 📊 Create validation report
+      if: always()
+      run: |
+        echo "## ✅ Format Validation Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        # Count tools
+        TOOL_COUNT=$(grep -c "^\*\*\[.*\](" README.md || echo "0")
+        echo "📊 **Total tools found**: $TOOL_COUNT" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        # Count categories
+        CATEGORY_COUNT=$(grep -c "^## " README.md || echo "0")
+        echo "📂 **Total categories**: $CATEGORY_COUNT" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+
+        if [ "${{ job.status }}" = "success" ]; then
+          echo "✅ **All validation checks passed!**" >> $GITHUB_STEP_SUMMARY
+        else
+          echo "❌ **Some validation checks failed**" >> $GITHUB_STEP_SUMMARY
+          echo "Please check the logs above for details." >> $GITHUB_STEP_SUMMARY
+        fi
+
+  format-check:
+    name: Check tool format consistency
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 🐍 Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: 🔍 Validate star ratings
+      run: |
+        python3 << 'EOF'
+        import re
+        import sys
+
+        def check_star_ratings():
+            with open('README.md', 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Find tool entries
+            tool_pattern = r'\*\*\[([^\]]+)\]\([^)]+\)\*\* (⭐+)'
+            tools = re.findall(tool_pattern, content)
+
+            issues = []
+            for tool_name, stars in tools:
+                star_count = len(stars)
+                if star_count < 2 or star_count > 5:
+                    issues.append(f"❌ {tool_name}: Invalid star count ({star_count})")
+
+            if issues:
+                print("🔍 Star Rating Issues Found:")
+                for issue in issues:
+                    print(f"  {issue}")
+                sys.exit(1)
+            else:
+                print(f"✅ All {len(tools)} tools have valid star ratings (2-5 stars)")
+
+        check_star_ratings()
+        EOF
+
+    - name: 🔍 Check required tool fields
+      run: |
+        python3 << 'EOF'
+        import re
+        import sys
+
+        def check_tool_format():
+            with open('README.md', 'r', encoding='utf-8') as f:
+                content = f.read()
+
+            # Split into sections to analyze tool entries
+            sections = re.split(r'\n## ', content)
+            issues = []
+
+            for section in sections:
+                if not section.strip():
+                    continue
+
+                # Find tool entries in this section
+                tool_blocks = re.findall(
+                    r'\*\*\[([^\]]+)\]\([^)]+\)\*\* [⭐💰💵🔄🚀🏢\s]+\n((?:- \*\*[^*]+\*\*:.*\n?)*)',
+                    section
+                )
+
+                for tool_name, tool_content in tool_blocks:
+                    # Check for required fields
+                    required_fields = ['What it does', 'Best for', 'Features']
+
+                    for field in required_fields:
+                        if f"**{field}**:" not in tool_content:
+                            issues.append(f"❌ {tool_name}: Missing required field '{field}'")
+
+            if issues:
+                print("🔍 Tool Format Issues Found:")
+                for issue in issues[:10]:  # Limit to first 10 to avoid spam
+                    print(f"  {issue}")
+                if len(issues) > 10:
+                    print(f"  ... and {len(issues) - 10} more issues")
+                sys.exit(1)
+            else:
+                print("✅ All tools have required format fields")
+
+        check_tool_format()
+        EOF

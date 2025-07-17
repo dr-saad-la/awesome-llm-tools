@@ -1,0 +1,103 @@
+name: Check Links
+
+on:
+  # Run weekly on Mondays at 2 AM UTC
+  schedule:
+    - cron: '0 2 * * 1'
+
+  # Run on pushes to main branch
+  push:
+    branches: [ main ]
+    paths: [ 'README.md' ]
+
+  # Run on pull requests that modify README
+  pull_request:
+    branches: [ main ]
+    paths: [ 'README.md' ]
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  link-check:
+    name: Check all links
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: 📥 Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 🔗 Check links in README
+      uses: lycheeverse/lychee-action@v1.8.0
+      with:
+        # Check only README.md file
+        args: --verbose --no-progress --exclude-mail README.md
+
+        # Fail on broken links
+        fail: true
+
+        # Custom config file for advanced settings
+        config: |
+          # Accept these HTTP status codes as valid
+          accept = [200, 204, 301, 302, 403, 429]
+
+          # Timeout for each request (in seconds)
+          timeout = 20
+
+          # Number of retries
+          max_retries = 3
+
+          # Exclude certain URLs (patterns)
+          exclude = [
+            # Skip localhost and example URLs
+            "^https?://localhost",
+            "^https?://127\\.0\\.0\\.1",
+            "^https?://example\\.",
+
+            # Skip URLs that require authentication
+            "^https?://.*\\.atlassian\\.net",
+
+            # Skip URLs known to block bots
+            "^https?://.*linkedin\\.com",
+            "^https?://.*facebook\\.com",
+
+            # Skip URLs that are often rate-limited
+            "^https?://.*reddit\\.com",
+
+            # Skip relative links
+            "^\\./",
+            "^#"
+          ]
+
+          # Headers to send with requests
+          headers = [
+            "accept = text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+            "user-agent = Mozilla/5.0 (X11; Linux x86_64; rv:109.0) Gecko/20100101 Firefox/111.0"
+          ]
+
+      env:
+        # GitHub token for API rate limiting
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Create link check report
+      if: failure()
+      run: |
+        echo "## 🔗 Link Check Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "❌ **Some links are broken or inaccessible**" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Please check the logs above for details on which links failed." >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "### Common Fixes:" >> $GITHUB_STEP_SUMMARY
+        echo "- Update the URL if the resource moved" >> $GITHUB_STEP_SUMMARY
+        echo "- Remove the link if the resource is permanently unavailable" >> $GITHUB_STEP_SUMMARY
+        echo "- Check if the website is temporarily down" >> $GITHUB_STEP_SUMMARY
+
+    - name: ✅ Link check success
+      if: success()
+      run: |
+        echo "## 🔗 Link Check Results" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "✅ **All links are working correctly!**" >> $GITHUB_STEP_SUMMARY
+        echo "" >> $GITHUB_STEP_SUMMARY
+        echo "Total links checked: $(grep -o 'https\?://[^)]*' README.md | wc -l)" >> $GITHUB_STEP_SUMMARY
