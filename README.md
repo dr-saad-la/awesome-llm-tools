@@ -44,28 +44,24 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 ### **Tier 1: Leading Providers**
 
 **[OpenAI](https://openai.com/api/)** ⭐⭐⭐⭐⭐ 💵
-
     - **Models**: GPT-4o, GPT-4o-mini, o1-preview, o1-mini
     - **Best for**: Production apps, complex reasoning, code generation
     - **Pricing**: $0.15-$60/1M tokens
     - **Unique**: Function calling, vision, DALL-E integration, fine-tuning
 
 **[Anthropic Claude](https://www.anthropic.com/)** ⭐⭐⭐⭐⭐ 💵
-
     - **Models**: Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
     - **Best for**: Analysis, reasoning, safety-critical applications
     - **Pricing**: $0.25-$75/1M tokens
     - **Unique**: 200K context, Constitutional AI, excellent for research
 
 **[Google Gemini](https://ai.google.dev/)** ⭐⭐⭐⭐ 💵
-
     - **Models**: Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Ultra
     - **Best for**: Multimodal apps, Google ecosystem integration
     - **Pricing**: $0.075-$35/1M tokens
     - **Unique**: Video understanding, 2M token context, Google Workspace
 
 **[Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service)** ⭐⭐⭐⭐ 💵 🏢
-
     - **Models**: GPT-4, GPT-3.5, DALL-E, Whisper
     - **Best for**: Enterprise applications, regulated industries
     - **Pricing**: Similar to OpenAI + Azure costs
@@ -74,7 +70,6 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 ### **Tier 2: Specialized & Emerging**
 
 **[Cohere](https://cohere.ai/)** ⭐⭐⭐⭐ 💵 🏢
-
     - **Models**: Command R+, Embed v3, Rerank 3
     - **Best for**: Enterprise NLP, multilingual, RAG applications
     - **Pricing**: $0.15-$15/1M tokens
@@ -99,7 +94,6 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
     - **Unique**: Real-time web search, source citations
 
 **[Replicate](https://replicate.com/)** ⭐⭐⭐ 💵
-
     - **Models**: Wide variety of open source and specialized models
     - **Best for**: Experimentation, specialized models, prototyping
     - **Pricing**: Pay-per-second usage
