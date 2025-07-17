@@ -104,7 +104,7 @@ def find_duplicates(tools: List[Dict[str, str]]) -> Dict[str, List[Dict[str, str
             domain = urllib.parse.urlparse(tool["url"]).netloc.lower()
             if domain.startswith("www."):
                 domain = domain[4:]
-        except:
+        except ValueError:
             domain = tool["url"]
 
         # Check for exact name duplicates
@@ -211,10 +211,10 @@ def main():
 
     # Extract tools from README
     tools = extract_tools_from_readme()
-    print(f"📊 Found {len(tools)} tools in README.md")
+    print(f"Found {len(tools)} tools in README.md")
 
     if len(tools) == 0:
-        print("⚠️  No tools found in README.md - check the format")
+        print("No tools found in README.md - check the format")
         sys.exit(1)
 
     # Find duplicates
@@ -224,9 +224,9 @@ def main():
     exit_code = print_duplicate_report(duplicates)
 
     if exit_code == 0:
-        print(f"\n🎉 SUCCESS: All {len(tools)} tools are unique!")
+        print(f"\nSUCCESS: All {len(tools)} tools are unique!")
     else:
-        print(f"\n💡 TIP: Use the contributing guidelines to avoid duplicates")
+        print("\nTIP: Use the contributing guidelines to avoid duplicates")
         print("   See: CONTRIBUTING.md#quality-standards")
 
     sys.exit(exit_code)
