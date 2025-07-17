@@ -175,21 +175,6 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Features**: 500+ integrations, memory management, agents
 - **Languages**: Python, JavaScript, Go, Java
 
-```python
-# LangChain Quick Example
-from langchain.llms import OpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-
-llm = OpenAI(temperature=0.7)
-prompt = PromptTemplate(
-    input_variables=["topic"],
-    template="Write a brief explanation of {topic}"
-)
-chain = LLMChain(llm=llm, prompt=prompt)
-result = chain.run("quantum computing")
-```
-
 **[LlamaIndex](https://www.llamaindex.ai/)** ⭐⭐⭐⭐ 💰
 - **What it does**: Data framework for LLM applications
 - **Best for**: RAG systems, knowledge bases, document Q&A
