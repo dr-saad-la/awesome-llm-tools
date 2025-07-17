@@ -1,0 +1,12 @@
+# Configuration for issue templates
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 General Discussion
+    url: https://github.com/dr-saad-la/awesome-llm-tools/discussions
+    about: For general questions and community discussions about LLM tools
+  - name: 📧 Private Contact
+    url: mailto:dr.saad.laouadi@gmail.com
+    about: For sensitive reports or private communication with maintainers
+  - name: 📚 Contributing Guide
+    url: https://github.com/dr-saad-la/awesome-llm-tools/blob/main/CONTRIBUTING.md
+    about: Read our contributing guidelines before submitting tools
