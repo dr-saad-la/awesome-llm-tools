@@ -4,8 +4,6 @@
 
 ---
 
-## Project Evolution
-
 <div align="center">
 
 [![Awesome](https://img.shields.io/badge/Awesome-List-ff69b4?style=for-the-badge&logo=awesomelists&logoColor=white)](https://awesome.re)
