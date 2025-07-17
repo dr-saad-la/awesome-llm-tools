@@ -830,3 +830,7 @@ To everyone who contributes to making this resource better - from individual dev
 
 **⭐ Star this repository if it helps you build amazing LLM applications!**
 
+## 📈 Stargazers Over Time
+
+[![Stargazers over time](https://starchart.cc/dr-saad-la/awesome-llm-tools.svg)](https://starchart.cc/dr-saad-la/awesome-llm-tools)
+
