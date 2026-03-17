@@ -2,6 +2,13 @@
 
 ![Awesome LLM Tools](https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Awesome%20LLM%20Tools%20🤖&fontSize=60&fontColor=ffffff&animation=fadeIn&fontAlign=50&fontAlignY=35&desc=A%20curated%20list%20of%20LLM%20tools%20and%20platforms&descAlign=50&descAlignY=60&descSize=18)
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 <div align="center">
@@ -62,6 +69,13 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - 🚀 Trending/Recently Updated
 - 🏢 Enterprise-focused
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🏢 Commercial LLM APIs
@@ -124,6 +138,13 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Pricing**: Pay-per-second usage
 - **Unique**: Model marketplace, easy deployment, diverse catalog
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🔓 Open Source Models
@@ -182,6 +203,13 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Best for**: Chinese language, multimodal applications
 - **Unique**: Excellent Chinese support, vision capabilities
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🛠️ Development Frameworks
@@ -231,6 +259,13 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Languages**: Python, JavaScript
 - **Unique**: Automatic retries, validation, type safety
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 💻 Local Deployment Tools
@@ -300,6 +335,13 @@ ollama run codellama:13b-code
 - **Features**: FP16/INT8/INT4 quantization, in-flight batching
 - **Performance**: Up to 8x speedup on NVIDIA GPUs
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🗂️ Vector Databases & RAG
@@ -391,6 +433,13 @@ ollama run codellama:13b-code
 - **Features**: Agent management, tool integration, performance monitoring
 - **UI**: Graphical interface for agent management
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🧠 Structured Generation & Control
@@ -427,6 +476,13 @@ ollama run codellama:13b-code
 - **Features**: Guaranteed valid JSON, fast generation, simple API
 - **Performance**: Efficient, reliable JSON generation
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🧐 Memory & Persistence
@@ -445,6 +501,13 @@ ollama run codellama:13b-code
 - **Features**: Conversation summarization, semantic search, memory extraction
 - **Integration**: LangChain, custom applications
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🎙️ Voice & Audio Tools
@@ -475,6 +538,13 @@ ollama run codellama:13b-code
 - **Features**: Voice cloning from samples, emotional control
 - **Note**: Slower but high quality
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 💻 Code-Focused LLM Tools
@@ -505,6 +575,13 @@ ollama run codellama:13b-code
 - **Features**: Local models, team training, compliance features
 - **Focus**: Privacy-first, on-premises options
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🌐 Self-hosted & Local Platforms
@@ -535,6 +612,13 @@ ollama run codellama:13b-code
 - **Features**: Multiple models, personas, diagrams, voice input
 - **UI**: Modern, feature-rich interface
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🔄 Visual Workflow Builders
@@ -565,6 +649,13 @@ ollama run codellama:13b-code
 - **Features**: Visual workflow, knowledge base management, API
 - **Language**: Chinese-focused but supports English
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 📊 LLM Gateway & Operations
@@ -589,6 +680,13 @@ ollama run codellama:13b-code
 - **Features**: Evaluation frameworks, dataset management, A/B testing
 - **Focus**: Enterprise and research use cases
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🔬 Research & Evaluation Tools
@@ -619,6 +717,13 @@ ollama run codellama:13b-code
 - **Features**: 57 academic subjects, standardized testing
 - **Usage**: Standard benchmark in research papers
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🎨 Multimodal & Specialized Models
@@ -643,6 +748,13 @@ ollama run codellama:13b-code
 - **Features**: Multi-modal embeddings, zero-shot capabilities
 - **Impact**: Foundation for many vision-language applications
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 🔗 Integration & Utility Tools
@@ -667,6 +779,13 @@ ollama run codellama:13b-code
 - **Features**: Various use case examples, integration patterns
 - **Documentation**: Well-documented examples
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 📱 Mobile & Edge Deployment
@@ -779,6 +898,13 @@ Contributors will be:
 
 **Top contributors may be invited to become maintainers!**
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 ## 📄 License
@@ -829,6 +955,13 @@ This list is provided "as is" without warranty of any kind. While we strive for 
 
 Always verify current information before making decisions based on this list.
 
+
+**[Arch Tools](https://archtools.dev)** ⭐⭐⭐⭐ 💰
+- **What it does**: 61 production-ready AI tools API (code analysis, web scraping, image generation, NLP, crypto, search)
+- **Best for**: AI agents needing tool access via REST API or MCP protocol
+- **Features**: x402 USDC micropayments, multi-chain (Base, Polygon, Avalanche, Solana), OpenAPI 3.1 spec
+- **Free tier**: 100 credits/month
+- **Integration**: MCP protocol, REST API, x402 payment standard
 ---
 
 **🙏 Thank You**
