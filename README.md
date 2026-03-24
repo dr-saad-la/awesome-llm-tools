@@ -667,6 +667,12 @@ ollama run codellama:13b-code
 - **Features**: Various use case examples, integration patterns
 - **Documentation**: Well-documented examples
 
+**[Agent Model Switch Guard](https://github.com/wd041216-bit/agent-model-switch-guard)** ⭐⭐⭐ 💰 🚀
+- **What it does**: Runtime-state helpers that separate saved model selection from the active runtime model
+- **Best for**: Agent chat runtimes, slash-command model switching, session status surfaces
+- **Features**: Conservative acknowledgements, activation-phase snapshots, provider/model normalization
+- **Developer**: wd041216-bit
+
 ---
 
 ## 📱 Mobile & Edge Deployment
@@ -839,5 +845,4 @@ To everyone who contributes to making this resource better - from individual dev
 
 ### ⭐ Star Growth
 [![Star History Chart](https://api.star-history.com/svg?repos=dr-saad-la/awesome-llm-tools&type=Date)](https://star-history.com/#dr-saad-la/awesome-llm-tools&Date)
-
 
