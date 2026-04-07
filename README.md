@@ -63,7 +63,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 
 ## 🏢 Commercial LLM APIs
 
-### **Tier 1: Leading Providers**
+### Tier 1: Leading Providers
 
 **[OpenAI](https://openai.com/api/)** ⭐⭐⭐⭐⭐ 💵
 
@@ -93,7 +93,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Pricing**: Similar to OpenAI + Azure costs
 - **Unique**: Enterprise SLA, data residency, compliance features
 
-### **Tier 2: Specialized & Emerging**
+### Tier 2: Specialized & Emerging
 
 **[Cohere](https://cohere.ai/)** ⭐⭐⭐⭐ 💵 🏢
 
@@ -134,7 +134,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 
 ## 🔓 Open Source Models
 
-### **Meta's Llama Family** ⭐⭐⭐⭐⭐ 💰
+### Meta's Llama Family ⭐⭐⭐⭐⭐ 💰
 
 **[Llama 3.1 Series](https://llama.meta.com/)**
 
@@ -149,7 +149,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Best for**: Code generation, completion, explanation
 - **Languages**: Python, JavaScript, Java, C++, TypeScript, Bash
 
-### **European Excellence**
+### European Excellence
 
 **[Mistral AI Models](https://mistral.ai/)** ⭐⭐⭐⭐ 💰
 
@@ -158,7 +158,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Best for**: Production deployments, efficient inference
 - **Unique**: Excellent performance per parameter, sliding window attention
 
-### **Google's Offerings**
+### Google's Offerings
 
 **[Gemma](https://ai.google.dev/gemma)** ⭐⭐⭐⭐ 💰
 
@@ -167,7 +167,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **License**: Custom Gemma Terms of Use
 - **Unique**: High quality training, good performance per parameter
 
-### **Microsoft's Small Giants**
+### Microsoft's Small Giants
 
 **[Phi-3](https://azure.microsoft.com/en-us/products/phi-3)** ⭐⭐⭐⭐ 💰 🚀
 
@@ -175,7 +175,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Best for**: Edge deployment, mobile applications, resource constraints
 - **Unique**: Exceptional performance for size, high-quality training data
 
-### **Specialized Models**
+### Specialized Models
 
 **[DeepSeek Coder](https://github.com/deepseek-ai/DeepSeek-Coder)** ⭐⭐⭐⭐ 💰
 
@@ -200,7 +200,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 
 ## 🛠️ Development Frameworks
 
-### **High-Level Application Frameworks**
+### High-Level Application Frameworks
 
 **[LangChain](https://python.langchain.com/)** ⭐⭐⭐⭐⭐ 💰
 
@@ -230,7 +230,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 - **Languages**: C#, Python, Java
 - **Unique**: Enterprise integration, plugin architecture
 
-### **Low-Level Libraries**
+### Low-Level Libraries
 
 **[Transformers (Hugging Face)](https://huggingface.co/transformers/)** ⭐⭐⭐⭐⭐ 💰
 
@@ -256,7 +256,7 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 
 ## 💻 Local Deployment Tools
 
-### **Desktop Applications**
+### Desktop Applications
 
 **[Ollama](https://ollama.ai/)** ⭐⭐⭐⭐⭐ 💰
 
@@ -293,7 +293,7 @@ ollama run codellama:13b-code
 - **Features**: Plugin system, extensible architecture
 - **Platforms**: Cross-platform desktop application
 
-### **Server Deployment & High-Performance Inference**
+### Server Deployment & High-Performance Inference
 
 **[vLLM](https://github.com/vllm-project/vllm)** ⭐⭐⭐⭐⭐ 💰
 
@@ -334,7 +334,7 @@ ollama run codellama:13b-code
 
 ## 🗂️ Vector Databases & RAG
 
-### **Vector Databases**
+### Vector Databases
 
 **[Pinecone](https://www.pinecone.io/)** ⭐⭐⭐⭐ 💵
 
@@ -378,7 +378,7 @@ ollama run codellama:13b-code
 - **Features**: GPU acceleration, billion-scale search, multiple algorithms
 - **Note**: Lower-level, requires more setup than databases above
 
-### **RAG Enhancement Tools**
+### RAG Enhancement Tools
 
 **[LlamaHub](https://llamahub.ai/)** ⭐⭐⭐⭐ 💰
 
@@ -388,7 +388,7 @@ ollama run codellama:13b-code
 
 ## 🤖 Agent Frameworks & Multi-Agent Systems
 
-### **Advanced Agent Orchestration**
+### Advanced Agent Orchestration
 
 **[LangGraph](https://github.com/langchain-ai/langgraph)** ⭐⭐⭐⭐⭐ 💰 🚀
 
@@ -436,7 +436,7 @@ ollama run codellama:13b-code
 
 ## 🧠 Structured Generation & Control
 
-### **Output Structure & Validation**
+### Output Structure & Validation
 
 **[DSPy](https://github.com/stanfordnlp/dspy)** ⭐⭐⭐⭐ 💰 🚀
 
@@ -477,7 +477,7 @@ ollama run codellama:13b-code
 
 ## 🧐 Memory & Persistence
 
-### **Long-term Memory Systems**
+### Long-term Memory Systems
 
 **[Mem0](https://github.com/mem0ai/mem0)** ⭐⭐⭐⭐ 💰 🚀
 
@@ -497,7 +497,7 @@ ollama run codellama:13b-code
 
 ## 🎙️ Voice & Audio Tools
 
-### **Speech-to-Text & Text-to-Speech**
+### Speech-to-Text & Text-to-Speech
 
 **[OpenAI Whisper](https://github.com/openai/whisper)** ⭐⭐⭐⭐⭐ 💰
 
@@ -531,7 +531,7 @@ ollama run codellama:13b-code
 
 ## 💻 Code-Focused LLM Tools
 
-### **IDE Extensions & Code Assistants**
+### IDE Extensions & Code Assistants
 
 **[Continue](https://github.com/continuedev/continue)** ⭐⭐⭐⭐ 💰 🚀
 
@@ -565,7 +565,7 @@ ollama run codellama:13b-code
 
 ## 🌐 Self-hosted & Local Platforms
 
-### **Complete LLM Platforms**
+### Complete LLM Platforms
 
 **[AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)** ⭐⭐⭐⭐ 💰 🚀
 
@@ -599,7 +599,7 @@ ollama run codellama:13b-code
 
 ## 🔄 Visual Workflow Builders
 
-### **No-Code/Low-Code LLM Apps**
+### No-Code/Low-Code LLM Apps
 
 **[Flowise](https://github.com/FlowiseAI/Flowise)** ⭐⭐⭐⭐ 💰
 
@@ -633,7 +633,7 @@ ollama run codellama:13b-code
 
 ## 📊 LLM Gateway & Operations
 
-### **LLM Infrastructure & Management**
+### LLM Infrastructure & Management
 
 **[Portkey](https://github.com/Portkey-AI/gateway)** ⭐⭐⭐⭐ 💰 🚀
 
@@ -660,7 +660,7 @@ ollama run codellama:13b-code
 
 ## 🔬 Research & Evaluation Tools
 
-### **Academic & Research Platforms**
+### Academic & Research Platforms
 
 **[EleutherAI Eval Harness](https://github.com/EleutherAI/lm-evaluation-harness)** ⭐⭐⭐⭐ 💰
 
@@ -694,7 +694,7 @@ ollama run codellama:13b-code
 
 ## 🎨 Multimodal & Specialized Models
 
-### **Vision-Language Models**
+### Vision-Language Models
 
 **[LLaVA](https://github.com/haotian-liu/LLaVA)** ⭐⭐⭐⭐ 💰
 
@@ -721,7 +721,7 @@ ollama run codellama:13b-code
 
 ## 🔗 Integration & Utility Tools
 
-### **Connectors & Utilities**
+### Connectors & Utilities
 
 **[Pinecone Datasets](https://github.com/pinecone-io/datasets)** ⭐⭐⭐ 💰
 
@@ -748,7 +748,7 @@ ollama run codellama:13b-code
 
 ## 📱 Mobile & Edge Deployment
 
-### **Mobile LLM Solutions**
+### Mobile LLM Solutions
 
 **[MLX](https://github.com/ml-explore/mlx)** ⭐⭐⭐ 💰 🚀
 
@@ -768,14 +768,14 @@ ollama run codellama:13b-code
 
 We welcome contributions from the LLM community! Help us make this the most comprehensive and up-to-date resource for LLM tools.
 
-### **Quick Contribution Guide**
+### Quick Contribution Guide
 
 1. **Fork** this repository
 2. **Add your tool** following the format below
 3. **Submit** a pull request with a clear description
 4. **Wait for review** - we'll get back to you quickly!
 
-### **How to Add a Tool**
+### How to Add a Tool
 
 Use this exact format for consistency:
 
@@ -788,7 +788,7 @@ Use this exact format for consistency:
 - **Unique**: What makes it special
 ```
 
-### **Rating System**
+### Rating System
 
 - ⭐⭐⭐⭐⭐ **Must-have** - Industry standard, essential tool
 - ⭐⭐⭐⭐ **Excellent** - High quality, highly recommended
@@ -796,7 +796,7 @@ Use this exact format for consistency:
 - ⭐⭐ **Decent** - Has specific use cases
 - ⭐ **Basic** - Limited functionality
 
-### **Category Icons**
+### Category Icons
 
 - 💰 **Free/Open Source**
 - 💵 **Paid/Commercial**
@@ -804,7 +804,7 @@ Use this exact format for consistency:
 - 🚀 **Trending/New** (launched or updated recently)
 - 🏢 **Enterprise-focused**
 
-### **Contribution Guidelines**
+### Contribution Guidelines
 
 **✅ What We Accept:**
 
@@ -822,7 +822,7 @@ Use this exact format for consistency:
 - Tools that don't work as described
 - Incomplete or poorly documented tools
 
-### **Quality Standards**
+### Quality Standards
 
 - **Accuracy**: All information must be current and correct
 - **Neutrality**: Unbiased descriptions focusing on functionality
@@ -830,7 +830,7 @@ Use this exact format for consistency:
 - **Completeness**: Include all required fields in the format
 - **Verification**: Test tools before recommending them
 
-### **Special Sections**
+### Special Sections
 
 **Adding to Recommended Stacks:**
 
@@ -846,14 +846,14 @@ Use this exact format for consistency:
 - Note free tier limitations
 - Mention enterprise pricing where relevant
 
-### **Review Process**
+### Review Process
 
 1. **Automated checks** - Format and link validation
 2. **Manual review** - Quality and accuracy verification
 3. **Community feedback** - 48-hour review period
 4. **Merge** - Added to the list with attribution
 
-### **Recognition**
+### Recognition
 
 Contributors will be:
 
@@ -871,7 +871,7 @@ Contributors will be:
 
 This work is licensed under a [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
 
-### **What This Means:**
+### What This Means
 
 **✅ You Can:**
 
@@ -888,7 +888,7 @@ This work is licensed under a [Creative Commons Zero v1.0 Universal](https://cre
 - ❌ No license compatibility issues
 - ❌ No restrictions on use
 
-### **Why CC0?**
+### Why CC0?
 
 We believe that curated knowledge should be freely available to everyone. By placing this work in the public domain:
 
@@ -897,7 +897,7 @@ We believe that curated knowledge should be freely available to everyone. By pla
 - **📚 Education** - Students and researchers have unrestricted access to learning materials
 - **🤝 Community** - Open collaboration without legal barriers encourages more contributions
 
-### **Attribution (Optional)**
+### Attribution (Optional)
 
 While not required, if you find this resource valuable, we'd appreciate:
 
@@ -905,7 +905,7 @@ While not required, if you find this resource valuable, we'd appreciate:
 LLM tools sourced from [Awesome LLM Tools](https://github.com/your-username/awesome-llm-tools)
 ```
 
-### **Disclaimer**
+### Disclaimer
 
 This list is provided "as is" without warranty of any kind. While we strive for accuracy:
 
