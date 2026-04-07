@@ -67,31 +67,45 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 
 **[OpenAI](https://openai.com/api/)** ⭐⭐⭐⭐⭐ 💵
 
-- **Models**: GPT-4o, GPT-4o-mini, o1-preview, o1-mini
-- **Best for**: Production apps, complex reasoning, code generation
-- **Pricing**: $0.15-$60/1M tokens
-- **Unique**: Function calling, vision, DALL-E integration, fine-tuning
+- **Models**: GPT-5.4, GPT-5.4 Mini, GPT-5.4 Nano, o3, o4-mini
+- **Best for**: Production apps, complex reasoning, code generation, computer-use agents
+- **Pricing**: $0.05-$180/1M tokens
+- **Unique**: Unified reasoning and coding in GPT-5.4, 1M context, Responses API, open-weight GPT-OSS
 
 **[Anthropic Claude](https://www.anthropic.com/)** ⭐⭐⭐⭐⭐ 💵
 
-- **Models**: Claude 3.5 Sonnet, Claude 3.5 Haiku, Claude 3 Opus
-- **Best for**: Analysis, reasoning, safety-critical applications
-- **Pricing**: $0.25-$75/1M tokens
-- **Unique**: 200K context, Constitutional AI, excellent for research
+- **Models**: Claude Opus 4.6, Claude Sonnet 4.6, Claude Haiku 4.5
+- **Best for**: Agentic workflows, long-context analysis, safety-critical applications
+- **Pricing**: $1.00-$25/1M tokens
+- **Unique**: 91.3% on GPQA Diamond, Adaptive Thinking, 1M context, 67% price drop from previous generation
 
 **[Google Gemini](https://ai.google.dev/)** ⭐⭐⭐⭐ 💵
 
-- **Models**: Gemini 1.5 Pro, Gemini 1.5 Flash, Gemini Ultra
-- **Best for**: Multimodal apps, Google ecosystem integration
-- **Pricing**: $0.075-$35/1M tokens
-- **Unique**: Video understanding, 2M token context, Google Workspace
+- **Models**: Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.5 Flash-Lite
+- **Best for**: Multimodal apps, cost-sensitive workloads, Google ecosystem integration
+- **Pricing**: $0.10-$18/1M tokens
+- **Unique**: Ranked #1 on Intelligence Index, aggressive Flash-Lite pricing, 1M context, free tier available
 
 **[Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service)** ⭐⭐⭐⭐ 💵 🏢
 
-- **Models**: GPT-4, GPT-3.5, DALL-E, Whisper
-- **Best for**: Enterprise applications, regulated industries
-- **Pricing**: Similar to OpenAI + Azure costs
-- **Unique**: Enterprise SLA, data residency, compliance features
+- **Models**: GPT-5.4, GPT-4.1, o3, o4-mini, DeepSeek, Llama 4, Mistral, Claude (11,000+ total)
+- **Best for**: Enterprise applications, regulated industries, high-volume production workloads
+- **Pricing**: Same as OpenAI direct, typically 15-40% higher at scale with infrastructure overhead
+- **Unique**: Provisioned throughput units (PTUs), Microsoft Foundry Agent Service, MCP support, enterprise compliance
+
+**[xAI Grok](https://x.ai/api)** ⭐⭐⭐⭐⭐ 💵 🚀
+
+- **Models**: Grok 4, Grok 4.1 Fast, Grok 3
+- **Best for**: Long-context reasoning, real-time information, cost-sensitive production workloads
+- **Pricing**: $0.20-$3/1M tokens
+- **Unique**: Industry-leading 2M token context window, built-in real-time web search, top intelligence benchmark scores
+
+**[Amazon Bedrock](https://aws.amazon.com/bedrock/)** ⭐⭐⭐⭐ 💵 🏢
+
+- **Models**: Claude, Llama 4, Mistral, Cohere Command, Amazon Nova (unified catalog)
+- **Best for**: Enterprise AWS workloads, multi-model strategies, regulated industries
+- **Pricing**: Per-token rates vary by model, batch mode at 50% discount
+- **Unique**: Single API across all major model families, AWS security and compliance, Bedrock Agents for RAG and multi-agent workflows
 
 ### Tier 2: Specialized & Emerging
 
@@ -781,6 +795,7 @@ Use this exact format for consistency:
 
 ```markdown
 **[Tool Name](https://tool-website.com/)** ⭐⭐⭐⭐ 💰 🚀
+
 - **What it does**: Brief description of primary function
 - **Best for**: Main use cases and target audience
 - **Features**: Key features that set it apart
