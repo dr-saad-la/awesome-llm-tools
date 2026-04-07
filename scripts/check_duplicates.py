@@ -38,7 +38,7 @@ def extract_tools_from_readme() -> List[Dict[str, str]]:
         with open("README.md", "r", encoding="utf-8") as f:
             content = f.read()
     except FileNotFoundError:
-        print("❌ ERROR: README.md file not found")
+        print("ERROR: README.md file not found")
         sys.exit(1)
 
     tools = []
@@ -158,7 +158,7 @@ def print_duplicate_report(duplicates: Dict[str, List[Dict[str, str]]]) -> int:
     """Print a detailed report of found duplicates."""
     total_issues = 0
 
-    print("🔍 DUPLICATE TOOL CHECKER REPORT")
+    print("DUPLICATE TOOL CHECKER REPORT")
     print("=" * 50)
 
     for category, issues in duplicates.items():
@@ -172,7 +172,7 @@ def print_duplicate_report(duplicates: Dict[str, List[Dict[str, str]]]) -> int:
             "same_domain": "SAME DOMAIN TOOLS",
         }.get(category, category.upper())
 
-        print(f"\n❌ {category_name} ({len(issues)} found)")
+        print(f"\n{category_name} ({len(issues)} found)")
         print("-" * 40)
 
         for i, issue in enumerate(issues, 1):
@@ -193,11 +193,11 @@ def print_duplicate_report(duplicates: Dict[str, List[Dict[str, str]]]) -> int:
     # Summary
     print(f"\n{'='*50}")
     if total_issues == 0:
-        print("✅ NO DUPLICATES FOUND - All tools are unique!")
+        print("NO DUPLICATES FOUND - All tools are unique!")
         return 0
     else:
-        print(f"❌ TOTAL ISSUES FOUND: {total_issues}")
-        print("\n🔧 RECOMMENDED ACTIONS:")
+        print(f"TOTAL ISSUES FOUND: {total_issues}")
+        print("\n RECOMMENDED ACTIONS:")
         print("   • Review exact duplicates and remove redundant entries")
         print("   • Check similar names - they might be the same tool")
         print("   • Verify same-domain tools aren't duplicates")
@@ -207,7 +207,7 @@ def print_duplicate_report(duplicates: Dict[str, List[Dict[str, str]]]) -> int:
 
 def main():
     """Main function to run duplicate detection."""
-    print("🚀 Starting duplicate tool detection...\n")
+    print("Starting duplicate tool detection...\n")
 
     # Extract tools from README
     tools = extract_tools_from_readme()
