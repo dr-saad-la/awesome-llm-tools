@@ -1,292 +1,365 @@
 #!/usr/bin/env python3
 """
-Validate the format and structure of tools in README.md
+validate_format.py - Validate tool entries in the Awesome LLM Tools README.
 
-Checks for:
-- Proper tool entry format
-- Required fields
-- Valid star ratings
-- Appropriate badges
-- Correct markdown structure
+Validation rules:
+  - Every tool must have a star rating (2-5 stars)
+  - Every tool must have a valid URL (http/https)
+  - Every tool must have a "Best for" field
+  - Every tool must have at least one description field:
+    "What it does", "Models", or "Sizes"
+  - All other fields are optional but validated if present
+  - Badge characters must be from the approved set
 """
 
 import re
 import sys
-from typing import List, Dict
+from dataclasses import dataclass, field
+from pathlib import Path
+
+# ------------------------------------------------------------------------------
+# Constants
+# ------------------------------------------------------------------------------
+
+README_PATH = Path("README.md")
+
+STAR_CHAR = "\u2b50"
+VALID_BADGES = {"\U0001f4b0", "\U0001f4b5", "\U0001f504", "\U0001f680", "\U0001f3e2"}
+
+# The one universally required field
+REQUIRED_FIELD = "Best for"
+
+# At least one of these must be present per tool entry
+DESCRIPTION_FIELDS = {"What it does", "Models", "Sizes"}
+
+# All known optional fields - validated if present, not required
+OPTIONAL_FIELDS = {
+    "Features",
+    "Pricing",
+    "Unique",
+    "Languages",
+    "License",
+    "Hardware",
+    "Platforms",
+    "Performance",
+    "Integration",
+    "Note",
+    "Developer",
+    "Community",
+    "Focus",
+    "Deployment",
+    "UI",
+    "Use cases",
+    "Impact",
+    "Free tier",
+    "Essential",
+    "Quality",
+    "Providers",
+    "Enterprise",
+    "Language",
+    "Usage",
+    "Documentation",
+}
+
+# Sections that contain no tool entries - skipped during parsing
+NON_TOOL_SECTIONS = {
+    "Table of Contents",
+    "Legend",
+    "Cost Comparison",
+    "Recommended Stacks",
+    "Learning Resources",
+    "Contributing",
+    "Repository Growth",
+    "License",
+}
+
+# Field value length constraints
+MIN_FIELD_LENGTH = 5
+MAX_FIELD_LENGTH = 300
+
+# Separator for report output
+SEPARATOR = "-" * 78
 
 
-def extract_tool_sections() -> List[Dict]:
-    """Extract all tool sections and their tools."""
-    try:
-        with open("README.md", "r", encoding="utf-8") as f:
-            content = f.read()
-    except FileNotFoundError:
-        print("❌ ERROR: README.md file not found")
-        sys.exit(1)
+# ------------------------------------------------------------------------------
+# Data classes
+# ------------------------------------------------------------------------------
 
-    sections = []
+@dataclass
+class ToolEntry:
+    """Represents a single parsed tool entry from the README."""
 
-    # Split content by main headers (##)
-    section_pattern = r"\n## ([^#\n]+).*?(?=\n## |\Z)"
-    section_matches = re.finditer(section_pattern, content, re.DOTALL)
-
-    for match in section_matches:
-        section_title = match.group(1).strip()
-        section_content = match.group(0)
-
-        # Skip non-tool sections
-        skip_sections = [
-            "Table of Contents",
-            "Legend",
-            "Cost Comparison",
-            "Recommended Stacks",
-            "Learning Resources",
-            "Contributing",
-            "Repository Growth",
-            "License",
-        ]
-
-        if any(skip in section_title for skip in skip_sections):
-            continue
-
-        # Extract tools from this section
-        tools = extract_tools_from_section(section_content, section_title)
-
-        if tools:  # Only add sections that have tools
-            sections.append(
-                {
-                    "title": section_title,
-                    "content": section_content,
-                    "tools": tools,
-                    "tool_count": len(tools),
-                }
-            )
-
-    return sections
+    name: str
+    url: str
+    badges: str
+    fields: dict[str, str]
+    section: str
 
 
-def extract_tools_from_section(content: str, section_title: str) -> List[Dict]:
-    """Extract tools from a specific section."""
-    tools = []
+@dataclass
+class ValidationIssue:
+    """Represents a single validation issue found on a tool entry."""
 
-    # Pattern for tool entries
-    tool_pattern = r"\*\*\[([^\]]+)\]\(([^)]+)\)\*\* ([⭐💰💵🔄🚀🏢\s]+)\n((?:- \*\*[^*]+\*\*:.*\n?)*)"
+    tool_name: str
+    section: str
+    severity: str          # "ERROR" or "WARNING"
+    message: str
 
-    matches = re.finditer(tool_pattern, content)
 
-    for match in matches:
-        name = match.group(1).strip()
-        url = match.group(2).strip()
-        badges = match.group(3).strip()
-        fields_content = match.group(4).strip()
+@dataclass
+class ValidationResult:
+    """Holds all issues found during a validation run."""
 
-        # Parse fields
-        fields = {}
-        field_pattern = r"- \*\*([^*]+)\*\*:\s*(.+)"
-        field_matches = re.findall(field_pattern, fields_content)
+    issues: list[ValidationIssue] = field(default_factory=list)
 
-        for field_name, field_value in field_matches:
-            fields[field_name.strip()] = field_value.strip()
-
-        tools.append(
-            {
-                "name": name,
-                "url": url,
-                "badges": badges,
-                "fields": fields,
-                "section": section_title,
-                "raw_content": match.group(0),
-            }
+    def add_error(self, tool: ToolEntry, message: str) -> None:
+        self.issues.append(
+            ValidationIssue(tool.name, tool.section, "ERROR", message)
         )
 
-    return tools
+    def add_warning(self, tool: ToolEntry, message: str) -> None:
+        self.issues.append(
+            ValidationIssue(tool.name, tool.section, "WARNING", message)
+        )
+
+    @property
+    def errors(self) -> list[ValidationIssue]:
+        return [i for i in self.issues if i.severity == "ERROR"]
+
+    @property
+    def warnings(self) -> list[ValidationIssue]:
+        return [i for i in self.issues if i.severity == "WARNING"]
+
+    def has_errors(self) -> bool:
+        return len(self.errors) > 0
 
 
-def validate_tool_format(tool: Dict) -> List[str]:
-    """Validate a single tool's format and return list of issues."""
-    issues = []
+# ------------------------------------------------------------------------------
+# ReadmeParser
+# ------------------------------------------------------------------------------
 
-    # Check required fields
-    required_fields = ["What it does", "Best for", "Features"]
-    for field in required_fields:
-        if field not in tool["fields"]:
-            issues.append(f"Missing required field: '{field}'")
-        elif not tool["fields"][field].strip():
-            issues.append(f"Empty required field: '{field}'")
+class ReadmeParser:
+    """
+    Reads and parses the README into structured ToolEntry objects.
 
-    # Validate star rating
-    star_pattern = r"⭐+"
-    star_matches = re.findall(star_pattern, tool["badges"])
+    Responsibilities:
+      - Reading the README file from disk
+      - Splitting content into sections
+      - Extracting tool entries from each section
+    """
 
-    if not star_matches:
-        issues.append("Missing star rating")
-    elif len(star_matches) > 1:
-        issues.append("Multiple star ratings found")
-    else:
-        star_count = len(star_matches[0])
-        if star_count < 2 or star_count > 5:
-            issues.append(f"Invalid star count: {star_count} (should be 2-5)")
+    SECTION_PATTERN = re.compile(r"\n## ([^#\n]+).*?(?=\n## |\Z)", re.DOTALL)
+    TOOL_PATTERN = re.compile(
+        r"\*\*\[([^\]]+)\]\(([^)]+)\)\*\*([^\n]*)\n\n((?:- \*\*[^*]+\*\*:.*\n?)*)"
+    )
+    FIELD_PATTERN = re.compile(r"- \*\*([^*]+)\*\*:\s*(.+)")
 
-    # Check for valid badges
-    valid_badges = ["💰", "💵", "🔄", "🚀", "🏢"]
-    badges_text = tool["badges"]
+    def __init__(self, path: Path = README_PATH):
+        self.path = path
 
-    # Remove stars for badge validation
-    badges_no_stars = re.sub(r"⭐+", "", badges_text).strip()
+    def read(self) -> str:
+        """Read the README file and return its contents."""
+        if not self.path.exists():
+            print(f"ERROR: {self.path} not found.")
+            sys.exit(1)
+        return self.path.read_text(encoding="utf-8")
 
-    if badges_no_stars:
-        for char in badges_no_stars:
-            if char not in valid_badges + [" "]:
-                issues.append(f"Invalid badge: '{char}'")
+    def parse(self) -> list[ToolEntry]:
+        """Parse the README and return all tool entries."""
+        content = self.read()
+        tools = []
+        for match in self.SECTION_PATTERN.finditer(content):
+            section_title = match.group(1).strip()
+            if any(skip in section_title for skip in NON_TOOL_SECTIONS):
+                continue
+            section_content = match.group(0)
+            tools.extend(self._parse_tools(section_content, section_title))
+        return tools
 
-    # Validate URL format
-    url = tool["url"]
-    if not url.startswith(("http://", "https://")):
-        issues.append(f"Invalid URL format: {url}")
+    def _parse_tools(self, content: str, section: str) -> list[ToolEntry]:
+        """Extract tool entries from a single section."""
+        tools = []
+        for match in self.TOOL_PATTERN.finditer(content):
+            name = match.group(1).strip()
+            url = match.group(2).strip()
+            badges = match.group(3).strip()
+            fields_raw = match.group(4).strip()
+            fields = {
+                k.strip(): v.strip()
+                for k, v in self.FIELD_PATTERN.findall(fields_raw)
+            }
+            tools.append(ToolEntry(name, url, badges, fields, section))
+        return tools
 
-    # Check field content quality
-    for field_name, field_value in tool["fields"].items():
-        if len(field_value) < 10:
-            issues.append(f"Field '{field_name}' too short (minimum 10 characters)")
-        elif len(field_value) > 200:
-            issues.append(f"Field '{field_name}' too long (maximum 200 characters)")
 
-    return issues
+# ------------------------------------------------------------------------------
+# ToolValidator
+# ------------------------------------------------------------------------------
 
+class ToolValidator:
+    """
+    Validates a single ToolEntry against the project rules.
 
-def validate_section_structure(section: Dict) -> List[str]:
-    """Validate section structure and organization."""
-    issues = []
+    Responsibilities:
+      - Checking required fields
+      - Checking description field presence
+      - Validating star ratings
+      - Validating badge characters
+      - Validating URL format
+      - Validating field value lengths
+    """
 
-    tools = section["tools"]
+    STAR_PATTERN = re.compile(r"\u2b50+")
 
-    if len(tools) == 0:
-        issues.append(f"Section '{section['title']}' has no tools")
-        return issues
+    def validate(self, tool: ToolEntry, result: ValidationResult) -> None:
+        """Run all validation checks on a tool entry."""
+        self._check_url(tool, result)
+        self._check_required_field(tool, result)
+        self._check_description_field(tool, result)
+        self._check_star_rating(tool, result)
+        self._check_badges(tool, result)
+        self._check_field_lengths(tool, result)
+        self._check_unknown_fields(tool, result)
 
-    # Check if tools are roughly ordered by star rating
-    star_counts = []
-    for tool in tools:
-        star_matches = re.findall(r"⭐+", tool["badges"])
-        if star_matches:
-            star_counts.append(len(star_matches[0]))
-        else:
-            star_counts.append(0)
+    def _check_url(self, tool: ToolEntry, result: ValidationResult) -> None:
+        if not tool.url.startswith(("http://", "https://")):
+            result.add_error(tool, f"Invalid URL: {tool.url}")
 
-    # Check if generally decreasing (allowing some variation)
-    if len(star_counts) > 3:
-        # Compare first quarter with last quarter
-        first_quarter = star_counts[: len(star_counts) // 4] or star_counts[:1]
-        last_quarter = star_counts[-len(star_counts) // 4 :] or star_counts[-1:]
+    def _check_required_field(self, tool: ToolEntry, result: ValidationResult) -> None:
+        if REQUIRED_FIELD not in tool.fields:
+            result.add_error(tool, f"Missing required field: '{REQUIRED_FIELD}'")
+        elif not tool.fields[REQUIRED_FIELD]:
+            result.add_error(tool, f"Empty required field: '{REQUIRED_FIELD}'")
 
-        avg_first = sum(first_quarter) / len(first_quarter)
-        avg_last = sum(last_quarter) / len(last_quarter)
-
-        if avg_last > avg_first + 0.5:
-            issues.append(
-                f"Tools appear to be in wrong order (higher-rated tools should come first)"
+    def _check_description_field(
+        self, tool: ToolEntry, result: ValidationResult
+    ) -> None:
+        if not DESCRIPTION_FIELDS.intersection(tool.fields.keys()):
+            result.add_error(
+                tool,
+                f"Missing description field - must have one of: "
+                f"{', '.join(sorted(DESCRIPTION_FIELDS))}",
             )
 
-    return issues
-
-
-def print_validation_report(sections: List[Dict], all_issues: Dict) -> int:
-    """Print detailed validation report."""
-    total_tools = sum(section["tool_count"] for section in sections)
-    total_issues = sum(len(issues) for issues in all_issues.values())
-
-    print("🔍 TOOL FORMAT VALIDATION REPORT")
-    print("=" * 50)
-    print(f"📊 Total sections analyzed: {len(sections)}")
-    print(f"📊 Total tools validated: {total_tools}")
-
-    if total_issues == 0:
-        print("\n✅ ALL VALIDATIONS PASSED!")
-        print("🎉 No format issues found - excellent work!")
-        return 0
-
-    print(f"\n❌ TOTAL ISSUES FOUND: {total_issues}")
-    print("-" * 50)
-
-    # Group issues by severity
-    critical_issues = 0
-    warning_issues = 0
-
-    for tool_name, issues in all_issues.items():
-        if not issues:
-            continue
-
-        print(f"\n🔧 {tool_name}")
-        for issue in issues:
-            if any(
-                keyword in issue.lower() for keyword in ["missing", "invalid", "empty"]
-            ):
-                print(f"   ❌ {issue}")
-                critical_issues += 1
+    def _check_star_rating(self, tool: ToolEntry, result: ValidationResult) -> None:
+        star_matches = self.STAR_PATTERN.findall(tool.badges)
+        if not star_matches:
+            if tool.badges.strip():
+                result.add_error(tool, "Missing star rating")
             else:
-                print(f"   ⚠️  {issue}")
-                warning_issues += 1
+                result.add_warning(tool, "No star rating - may inherit rating from group header")
+        elif len(star_matches) > 1:
+            result.add_error(tool, "Multiple star ratings found")
+        else:
+            count = len(star_matches[0])
+            if count < 2 or count > 5:
+                result.add_error(tool, f"Invalid star count: {count} (must be 2-5)")
 
-    # Summary and recommendations
-    print(f"\n{'='*50}")
-    print("📋 SUMMARY:")
-    print(f"   ❌ Critical issues: {critical_issues}")
-    print(f"   ⚠️  Warnings: {warning_issues}")
+    def _check_badges(self, tool: ToolEntry, result: ValidationResult) -> None:
+        badges_no_stars = self.STAR_PATTERN.sub("", tool.badges).strip()
+        for char in badges_no_stars:
+            if char not in VALID_BADGES and char != " ":
+                result.add_warning(tool, f"Unrecognized badge character: '{char}'")
 
-    print(f"\n🔧 RECOMMENDED ACTIONS:")
-    print("   • Fix missing required fields immediately")
-    print("   • Correct invalid star ratings (2-5 stars only)")
-    print("   • Remove invalid badges")
-    print("   • Improve short field descriptions")
-    print("   • Verify all URLs are accessible")
+    def _check_field_lengths(self, tool: ToolEntry, result: ValidationResult) -> None:
+        for field_name, value in tool.fields.items():
+            if len(value) < MIN_FIELD_LENGTH:
+                result.add_warning(
+                    tool,
+                    f"Field '{field_name}' is too short (minimum {MIN_FIELD_LENGTH} chars)",
+                )
+            elif len(value) > MAX_FIELD_LENGTH:
+                result.add_warning(
+                    tool,
+                    f"Field '{field_name}' is too long (maximum {MAX_FIELD_LENGTH} chars)",
+                )
 
-    print(f"\n💡 HELP:")
-    print("   • See CONTRIBUTING.md for format guidelines")
-    print("   • Check existing tools for format examples")
-    print("   • Use the tool submission template")
+    def _check_unknown_fields(self, tool: ToolEntry, result: ValidationResult) -> None:
+        all_known = DESCRIPTION_FIELDS | OPTIONAL_FIELDS | {REQUIRED_FIELD}
+        for field_name in tool.fields:
+            if field_name not in all_known:
+                result.add_warning(tool, f"Unrecognized field: '{field_name}'")
 
-    return 1 if critical_issues > 0 else 0
+
+# ------------------------------------------------------------------------------
+# ValidationReport
+# ------------------------------------------------------------------------------
+
+class ValidationReport:
+    """
+    Formats and prints the validation results.
+
+    Responsibilities:
+      - Grouping issues by tool
+      - Printing a clean, readable report
+      - Returning an appropriate exit code
+    """
+
+    def print(self, tools: list[ToolEntry], result: ValidationResult) -> int:
+        """Print the full validation report and return exit code."""
+        print("TOOL FORMAT VALIDATION REPORT")
+        print(SEPARATOR)
+        print(f"Tools validated : {len(tools)}")
+        print(f"Errors found    : {len(result.errors)}")
+        print(f"Warnings found  : {len(result.warnings)}")
+        print(SEPARATOR)
+
+        if not result.issues:
+            print(f"\nPASSED: All {len(tools)} tools are correctly formatted.")
+            return 0
+
+        self._print_issues(result)
+        self._print_summary(result)
+
+        return 1 if result.has_errors() else 0
+
+    def _print_issues(self, result: ValidationResult) -> None:
+        # Group issues by (section, tool_name)
+        grouped: dict[str, list[ValidationIssue]] = {}
+        for issue in result.issues:
+            key = f"[{issue.section}] {issue.tool_name}"
+            grouped.setdefault(key, []).append(issue)
+
+        for key, issues in grouped.items():
+            print(f"\n{key}")
+            for issue in issues:
+                print(f"  {issue.severity}: {issue.message}")
+
+    def _print_summary(self, result: ValidationResult) -> None:
+        print(f"\n{SEPARATOR}")
+        print("SUMMARY")
+        print(SEPARATOR)
+        print(f"  Errors   : {len(result.errors)}")
+        print(f"  Warnings : {len(result.warnings)}")
+        print()
+        print("  Recommended actions:")
+        print("    - Fix all ERROR items before merging")
+        print("    - Review WARNING items for quality improvements")
+        print("    - See CONTRIBUTING.md for field format guidelines")
 
 
-def main():
-    """Main validation function."""
-    print("🚀 Starting tool format validation...\n")
+# ------------------------------------------------------------------------------
+# Entry point
+# ------------------------------------------------------------------------------
 
-    # Extract all sections and tools
-    sections = extract_tool_sections()
+def main() -> None:
+    print("Starting tool format validation...\n")
 
-    if not sections:
-        print("⚠️  No tool sections found in README.md")
+    parser = ReadmeParser()
+    tools = parser.parse()
+
+    if not tools:
+        print("ERROR: No tool entries found in README.md")
         sys.exit(1)
 
-    # Validate each tool and section
-    all_issues = {}
-    section_issues = []
+    validator = ToolValidator()
+    result = ValidationResult()
 
-    for section in sections:
-        # Validate section structure
-        sect_issues = validate_section_structure(section)
-        if sect_issues:
-            section_issues.extend(
-                [f"Section '{section['title']}': {issue}" for issue in sect_issues]
-            )
+    for tool in tools:
+        validator.validate(tool, result)
 
-        # Validate each tool in the section
-        for tool in section["tools"]:
-            tool_issues = validate_tool_format(tool)
-            if tool_issues:
-                all_issues[f"[{section['title']}] {tool['name']}"] = tool_issues
-
-    # Add section issues to the report
-    if section_issues:
-        all_issues["📂 Section Structure Issues"] = section_issues
-
-    # Print report and return exit code
-    exit_code = print_validation_report(sections, all_issues)
-
-    if exit_code == 0:
-        total_tools = sum(section["tool_count"] for section in sections)
-        print(f"\n🎉 SUCCESS: All {total_tools} tools are properly formatted!")
+    report = ValidationReport()
+    exit_code = report.print(tools, result)
 
     sys.exit(exit_code)
 
