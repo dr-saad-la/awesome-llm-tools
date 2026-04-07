@@ -1,233 +1,336 @@
 #!/usr/bin/env python3
 """
-Check for duplicate tools in the Awesome LLM Tools README.md
+check_duplicates.py - Detect duplicate tool entries in the Awesome LLM Tools README.
 
-This script identifies duplicate tool entries by:
-1. Tool names (case-insensitive)
-2. URLs (exact match)
-3. Similar names (fuzzy matching)
+Severity rules:
+  ERROR   - Exact name match (case-insensitive)
+  ERROR   - Exact URL match (after normalization)
+  WARNING - Similar names above similarity threshold
+  WARNING - Same domain (excluding common hosting platforms)
+
+Only ERROR level issues will cause CI to fail.
 """
 
 import re
 import sys
 import urllib.parse
-from typing import List, Dict
+from dataclasses import dataclass, field
 from difflib import SequenceMatcher
+from pathlib import Path
+
+# ------------------------------------------------------------------------------
+# Constants
+# ------------------------------------------------------------------------------
+
+README_PATH = Path("README.md")
+
+# Domains that host many unrelated tools - excluded from same-domain checks
+SHARED_HOSTING_DOMAINS = {
+    "github.com",
+    "github.io",
+    "huggingface.co",
+    "arxiv.org",
+    "ai.google.dev",
+    "azure.microsoft.com",
+}
+
+# Similarity threshold for fuzzy name matching (0.0 to 1.0)
+SIMILARITY_THRESHOLD = 0.90
+
+# Separator for report output
+SEPARATOR = "-" * 78
 
 
-def normalize_url(url: str) -> str:
-    """Normalize URL for comparison by removing common variations."""
-    # Parse the URL
-    parsed = urllib.parse.urlparse(url.lower())
+# ------------------------------------------------------------------------------
+# Data classes
+# ------------------------------------------------------------------------------
 
-    # Remove www. prefix
-    hostname = parsed.hostname or ""
-    if hostname.startswith("www."):
-        hostname = hostname[4:]
+@dataclass
+class ToolEntry:
+    """Represents a single parsed tool entry from the README."""
 
-    # Remove trailing slashes and common suffixes
-    path = parsed.path.rstrip("/")
-
-    # Reconstruct normalized URL
-    return f"{parsed.scheme}://{hostname}{path}"
+    name: str
+    url: str
+    normalized_url: str
+    domain: str
+    section: str
 
 
-def extract_tools_from_readme() -> List[Dict[str, str]]:
-    """Extract all tool entries from README.md with their details."""
-    try:
-        with open("README.md", "r", encoding="utf-8") as f:
-            content = f.read()
-    except FileNotFoundError:
-        print("ERROR: README.md file not found")
-        sys.exit(1)
+@dataclass
+class DuplicateIssue:
+    """Represents a duplicate relationship between two tool entries."""
 
-    tools = []
-
-    # Pattern to match tool entries: **[Tool Name](URL)** ⭐⭐⭐⭐ 💰 🚀
-    tool_pattern = r"\*\*\[([^\]]+)\]\(([^)]+)\)\*\* ([⭐💰💵🔄🚀🏢\s]+)"
-
-    # Find all tool matches
-    matches = re.finditer(tool_pattern, content)
-
-    for match in matches:
-        tool_name = match.group(1).strip()
-        tool_url = match.group(2).strip()
-        tool_badges = match.group(3).strip()
-
-        # Find the section this tool belongs to
-        section_start = content.rfind("\n## ", 0, match.start())
-        if section_start != -1:
-            section_end = content.find("\n", section_start + 1)
-            section = content[section_start + 4 : section_end].strip()
-        else:
-            section = "Unknown"
-
-        tools.append(
-            {
-                "name": tool_name,
-                "url": tool_url,
-                "normalized_url": normalize_url(tool_url),
-                "badges": tool_badges,
-                "section": section,
-                "position": match.start(),
-            }
-        )
-
-    return tools
+    tool_a: ToolEntry
+    tool_b: ToolEntry
+    severity: str          # "ERROR" or "WARNING"
+    reason: str
+    detail: str = ""
 
 
-def similarity(a: str, b: str) -> float:
-    """Calculate similarity between two strings (0.0 to 1.0)."""
-    return SequenceMatcher(None, a.lower(), b.lower()).ratio()
+@dataclass
+class DuplicateResult:
+    """Holds all duplicate issues found during a check run."""
+
+    issues: list[DuplicateIssue] = field(default_factory=list)
+
+    def add_error(
+        self, tool_a: ToolEntry, tool_b: ToolEntry, reason: str, detail: str = ""
+    ) -> None:
+        self.issues.append(DuplicateIssue(tool_a, tool_b, "ERROR", reason, detail))
+
+    def add_warning(
+        self, tool_a: ToolEntry, tool_b: ToolEntry, reason: str, detail: str = ""
+    ) -> None:
+        self.issues.append(DuplicateIssue(tool_a, tool_b, "WARNING", reason, detail))
+
+    @property
+    def errors(self) -> list[DuplicateIssue]:
+        return [i for i in self.issues if i.severity == "ERROR"]
+
+    @property
+    def warnings(self) -> list[DuplicateIssue]:
+        return [i for i in self.issues if i.severity == "WARNING"]
+
+    def has_errors(self) -> bool:
+        return len(self.errors) > 0
 
 
-def find_duplicates(tools: List[Dict[str, str]]) -> Dict[str, List[Dict[str, str]]]:
-    """Find all types of duplicates in the tools list."""
-    duplicates = {
-        "exact_names": [],
-        "exact_urls": [],
-        "similar_names": [],
-        "same_domain": [],
-    }
+# ------------------------------------------------------------------------------
+# ReadmeParser
+# ------------------------------------------------------------------------------
 
-    # Track seen items
-    seen_names = {}
-    seen_urls = {}
-    seen_domains = {}
+class ReadmeParser:
+    """
+    Reads and parses the README into structured ToolEntry objects.
 
-    for i, tool in enumerate(tools):
-        tool_name_lower = tool["name"].lower()
-        normalized_url = tool["normalized_url"]
+    Responsibilities:
+      - Reading the README file from disk
+      - Extracting tool entries with their section context
+      - Normalizing URLs for comparison
+    """
 
-        # Extract domain from normalized URL
+    TOOL_PATTERN = re.compile(
+        r"\*\*\[([^\]]+)\]\(([^)]+)\)\*\*([^\n]*)"
+    )
+
+    def __init__(self, path: Path = README_PATH):
+        self.path = path
+
+    def read(self) -> str:
+        """Read the README file and return its contents."""
+        if not self.path.exists():
+            print(f"ERROR: {self.path} not found.")
+            sys.exit(1)
+        return self.path.read_text(encoding="utf-8")
+
+    def parse(self) -> list[ToolEntry]:
+        """Parse the README and return all tool entries."""
+        content = self.read()
+        tools = []
+        for match in self.TOOL_PATTERN.finditer(content):
+            name = match.group(1).strip()
+            url = match.group(2).strip()
+            section = self._find_section(content, match.start())
+            normalized = self._normalize_url(url)
+            domain = self._extract_domain(url)
+            tools.append(ToolEntry(name, url, normalized, domain, section))
+        return tools
+
+    def _find_section(self, content: str, position: int) -> str:
+        """Find the section heading that contains the given position."""
+        section_start = content.rfind("\n## ", 0, position)
+        if section_start == -1:
+            return "Unknown"
+        section_end = content.find("\n", section_start + 1)
+        return content[section_start + 4:section_end].strip()
+
+    def _normalize_url(self, url: str) -> str:
+        """Normalize a URL for consistent comparison."""
+        parsed = urllib.parse.urlparse(url.lower())
+        hostname = parsed.hostname or ""
+        if hostname.startswith("www."):
+            hostname = hostname[4:]
+        path = parsed.path.rstrip("/")
+        return f"{parsed.scheme}://{hostname}{path}"
+
+    def _extract_domain(self, url: str) -> str:
+        """Extract the domain from a URL."""
         try:
-            domain = urllib.parse.urlparse(tool["url"]).netloc.lower()
+            domain = urllib.parse.urlparse(url).netloc.lower()
             if domain.startswith("www."):
                 domain = domain[4:]
+            return domain
         except ValueError:
-            domain = tool["url"]
+            return url
 
-        # Check for exact name duplicates
-        if tool_name_lower in seen_names:
-            duplicates["exact_names"].append(
-                {
-                    "tools": [seen_names[tool_name_lower], tool],
-                    "type": "Exact name match",
-                }
-            )
-        else:
-            seen_names[tool_name_lower] = tool
 
-        # Check for exact URL duplicates
-        if normalized_url in seen_urls:
-            duplicates["exact_urls"].append(
-                {"tools": [seen_urls[normalized_url], tool], "type": "Exact URL match"}
-            )
-        else:
-            seen_urls[normalized_url] = tool
+# ------------------------------------------------------------------------------
+# DuplicateChecker
+# ------------------------------------------------------------------------------
 
-        # Check for similar names (fuzzy matching)
-        for existing_name, existing_tool in seen_names.items():
-            if existing_name != tool_name_lower:
-                sim = similarity(tool_name_lower, existing_name)
-                if sim > 0.85:  # 85% similarity threshold
-                    duplicates["similar_names"].append(
-                        {
-                            "tools": [existing_tool, tool],
-                            "type": f"Similar names (similarity: {sim:.2f})",
-                            "similarity": sim,
-                        }
+class DuplicateChecker:
+    """
+    Checks a list of ToolEntry objects for duplicates.
+
+    Responsibilities:
+      - Exact name duplicate detection (ERROR)
+      - Exact URL duplicate detection (ERROR)
+      - Similar name detection via fuzzy matching (WARNING)
+      - Same domain detection (WARNING)
+    """
+
+    def check(self, tools: list[ToolEntry]) -> DuplicateResult:
+        """Run all duplicate checks and return the result."""
+        result = DuplicateResult()
+        self._check_exact_names(tools, result)
+        self._check_exact_urls(tools, result)
+        self._check_similar_names(tools, result)
+        self._check_same_domain(tools, result)
+        return result
+
+    def _check_exact_names(
+        self, tools: list[ToolEntry], result: DuplicateResult
+    ) -> None:
+        """Flag tools with identical names (case-insensitive) as errors."""
+        seen: dict[str, ToolEntry] = {}
+        for tool in tools:
+            key = tool.name.lower()
+            if key in seen:
+                result.add_error(
+                    seen[key], tool, "Exact name match (case-insensitive)"
+                )
+            else:
+                seen[key] = tool
+
+    def _check_exact_urls(
+        self, tools: list[ToolEntry], result: DuplicateResult
+    ) -> None:
+        """Flag tools with identical normalized URLs as errors."""
+        seen: dict[str, ToolEntry] = {}
+        for tool in tools:
+            key = tool.normalized_url
+            if key in seen:
+                result.add_error(seen[key], tool, "Exact URL match")
+            else:
+                seen[key] = tool
+
+    def _check_similar_names(
+        self, tools: list[ToolEntry], result: DuplicateResult
+    ) -> None:
+        """Flag tools with very similar names as warnings."""
+        for i, tool_a in enumerate(tools):
+            for tool_b in tools[i + 1:]:
+                sim = SequenceMatcher(
+                    None, tool_a.name.lower(), tool_b.name.lower()
+                ).ratio()
+                if sim >= SIMILARITY_THRESHOLD:
+                    result.add_warning(
+                        tool_a,
+                        tool_b,
+                        "Similar names",
+                        f"similarity: {sim:.0%}",
                     )
 
-        # Check for same domain (potential duplicates)
-        if domain in seen_domains and domain not in ["github.com", "github.io"]:
-            # Skip common hosting platforms
-            duplicates["same_domain"].append(
-                {
-                    "tools": [seen_domains[domain], tool],
-                    "type": f"Same domain ({domain})",
-                }
-            )
-        else:
-            seen_domains[domain] = tool
+    def _check_same_domain(
+        self, tools: list[ToolEntry], result: DuplicateResult
+    ) -> None:
+        """Flag tools sharing a domain as warnings, excluding shared hosts."""
+        seen: dict[str, ToolEntry] = {}
+        for tool in tools:
+            domain = tool.domain
+            if domain in SHARED_HOSTING_DOMAINS:
+                continue
+            if domain in seen:
+                result.add_warning(
+                    seen[domain],
+                    tool,
+                    "Same domain",
+                    domain,
+                )
+            else:
+                seen[domain] = tool
 
-    return duplicates
 
+# ------------------------------------------------------------------------------
+# DuplicateReport
+# ------------------------------------------------------------------------------
 
-def print_duplicate_report(duplicates: Dict[str, List[Dict[str, str]]]) -> int:
-    """Print a detailed report of found duplicates."""
-    total_issues = 0
+class DuplicateReport:
+    """
+    Formats and prints the duplicate check results.
 
-    print("DUPLICATE TOOL CHECKER REPORT")
-    print("=" * 50)
+    Responsibilities:
+      - Grouping and displaying issues by severity
+      - Printing a clean summary
+      - Returning the appropriate exit code
+    """
 
-    for category, issues in duplicates.items():
-        if not issues:
-            continue
+    def print(self, tools: list[ToolEntry], result: DuplicateResult) -> int:
+        """Print the full duplicate report and return exit code."""
+        print("DUPLICATE TOOL CHECKER REPORT")
+        print(SEPARATOR)
+        print(f"Tools checked   : {len(tools)}")
+        print(f"Errors found    : {len(result.errors)}")
+        print(f"Warnings found  : {len(result.warnings)}")
+        print(SEPARATOR)
 
-        category_name = {
-            "exact_names": "EXACT NAME DUPLICATES",
-            "exact_urls": "EXACT URL DUPLICATES",
-            "similar_names": "SIMILAR NAME DUPLICATES",
-            "same_domain": "SAME DOMAIN TOOLS",
-        }.get(category, category.upper())
+        if not result.issues:
+            print(f"\nPASSED: All {len(tools)} tools are unique.")
+            return 0
 
-        print(f"\n{category_name} ({len(issues)} found)")
-        print("-" * 40)
+        if result.errors:
+            print("\nERRORS - must be resolved before merging:")
+            self._print_issues(result.errors)
 
+        if result.warnings:
+            print("\nWARNINGS - review recommended but will not fail CI:")
+            self._print_issues(result.warnings)
+
+        self._print_summary(result)
+
+        return 1 if result.has_errors() else 0
+
+    def _print_issues(self, issues: list[DuplicateIssue]) -> None:
         for i, issue in enumerate(issues, 1):
-            tools = issue["tools"]
-            issue_type = issue["type"]
+            detail = f" ({issue.detail})" if issue.detail else ""
+            print(f"\n  {i}. {issue.reason}{detail}")
+            print(f"     a. [{issue.tool_a.name}]({issue.tool_a.url})")
+            print(f"        Section: {issue.tool_a.section}")
+            print(f"     b. [{issue.tool_b.name}]({issue.tool_b.url})")
+            print(f"        Section: {issue.tool_b.section}")
 
-            print(f"\n{i}. {issue_type}")
-            for j, tool in enumerate(tools):
-                print(f"   {chr(97+j)}. [{tool['name']}]({tool['url']})")
-                print(f"      Section: {tool['section']}")
-
-            # For similar names, show similarity score
-            if "similarity" in issue:
-                print(f"      Similarity: {issue['similarity']:.1%}")
-
-        total_issues += len(issues)
-
-    # Summary
-    print(f"\n{'='*50}")
-    if total_issues == 0:
-        print("NO DUPLICATES FOUND - All tools are unique!")
-        return 0
-    else:
-        print(f"TOTAL ISSUES FOUND: {total_issues}")
-        print("\n RECOMMENDED ACTIONS:")
-        print("   • Review exact duplicates and remove redundant entries")
-        print("   • Check similar names - they might be the same tool")
-        print("   • Verify same-domain tools aren't duplicates")
-        print("   • Update URLs if tools have moved or been renamed")
-        return 1
+    def _print_summary(self, result: DuplicateResult) -> None:
+        print(f"\n{SEPARATOR}")
+        print("SUMMARY")
+        print(SEPARATOR)
+        print(f"  Errors   : {len(result.errors)}")
+        print(f"  Warnings : {len(result.warnings)}")
+        print()
+        print("  Recommended actions:")
+        print("    - Remove exact duplicate entries immediately")
+        print("    - Review similar names and same-domain warnings")
+        print("    - See CONTRIBUTING.md for quality standards")
 
 
-def main():
-    """Main function to run duplicate detection."""
+# ------------------------------------------------------------------------------
+# Entry point
+# ------------------------------------------------------------------------------
+
+def main() -> None:
     print("Starting duplicate tool detection...\n")
 
-    # Extract tools from README
-    tools = extract_tools_from_readme()
-    print(f"Found {len(tools)} tools in README.md")
+    parser = ReadmeParser()
+    tools = parser.parse()
 
-    if len(tools) == 0:
-        print("No tools found in README.md - check the format")
+    if not tools:
+        print("ERROR: No tool entries found in README.md")
         sys.exit(1)
 
-    # Find duplicates
-    duplicates = find_duplicates(tools)
+    checker = DuplicateChecker()
+    result = checker.check(tools)
 
-    # Print report and exit with appropriate code
-    exit_code = print_duplicate_report(duplicates)
-
-    if exit_code == 0:
-        print(f"\nSUCCESS: All {len(tools)} tools are unique!")
-    else:
-        print("\nTIP: Use the contributing guidelines to avoid duplicates")
-        print("   See: CONTRIBUTING.md#quality-standards")
+    report = DuplicateReport()
+    exit_code = report.print(tools, result)
 
     sys.exit(exit_code)
 
