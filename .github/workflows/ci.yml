@@ -1,0 +1,41 @@
+# ------------------------------------------------------------------------------
+#  Awesome LLM Tools - CI Workflow
+#  Runs on every push and pull request to main
+# ------------------------------------------------------------------------------
+
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    name: Validate & Lint
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: uv sync
+
+      - name: Run pre-commit hooks
+        run: uv run pre-commit run --all-files
+
+      - name: Validate tool format
+        run: uv run python scripts/validate_format.py
+
+      - name: Check for duplicates
+        run: uv run python scripts/check_duplicates.py
