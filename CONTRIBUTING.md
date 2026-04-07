@@ -27,6 +27,7 @@ Thank you for your interest in contributing to **Awesome LLM Tools**! This resou
 6. **Wait for review** - we typically respond within 48 hours
 
 ### **For Simple Updates:**
+
 - Use GitHub's **Edit button** (pencil icon) directly on README.md
 - Perfect for fixing typos, updating links, or correcting information
 
@@ -106,6 +107,7 @@ Use this **exact format** for consistency:
 ### **Rating Guidelines:**
 
 **Consider these factors:**
+
 - ✅ **Quality** - Performance, reliability, accuracy
 - ✅ **Documentation** - Clear guides, examples, API docs
 - ✅ **Community** - Active development, user base, support
@@ -113,6 +115,7 @@ Use this **exact format** for consistency:
 - ✅ **Maintenance** - Regular updates, bug fixes, active repo
 
 **Be objective:**
+
 - ❌ Don't rate based on personal preference
 - ❌ Don't over-rate tools you've built
 - ❌ Don't under-rate competitors
@@ -135,11 +138,13 @@ Use this **exact format** for consistency:
 | **Fine-tuning Platforms** | Model customization | Unsloth, Together AI, Axolotl |
 
 ### **When Creating New Categories:**
+
 - Must have **5+ quality tools** to justify new section
 - Should fill a **clear gap** in existing categories
 - **Discuss first** in an issue before adding
 
 ### **Category Ordering:**
+
 - Tools within categories should be **roughly ordered by importance/popularity**
 - **5-star tools first**, then 4-star, etc.
 - **Most popular/essential tools** at the top of each rating tier
@@ -167,6 +172,7 @@ Use this **exact format** for consistency:
 - ❌ **Placeholder/beta** - Tools that aren't ready for public use
 
 ### **Link Requirements:**
+
 - ✅ **Working links** - All URLs must be accessible
 - ✅ **Official sources** - Link to official website/repo, not tutorials
 - ✅ **HTTPS preferred** - Use secure links when available
@@ -206,6 +212,7 @@ Use this **exact format** for consistency:
 - ✅ **Add to correct category** - Demonstrates understanding
 
 ### **Response Times:**
+
 - **Simple additions**: 1-2 days
 - **New categories**: 3-7 days
 - **Major updates**: 2-5 days
@@ -291,6 +298,7 @@ A: Yes! Open an issue with your proposal and rationale. We're always looking to 
 - 📧 **Direct contact**: Only for sensitive issues
 
 ### **Response Expectations:**
+
 - **Issues**: Response within 2-3 days
 - **PRs**: Initial review within 1-3 days
 - **Discussions**: Community-driven, may vary
@@ -333,6 +341,7 @@ This project follows the [Contributor Covenant](CODE_OF_CONDUCT.md). By particip
 ## 🚀 Ready to Contribute?
 
 **Start here:**
+
 1. **Browse existing tools** to understand our standards
 2. **Check open issues** for requested tools or improvements
 3. **Fork the repository** and make your changes

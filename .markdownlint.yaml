@@ -17,6 +17,10 @@ MD024: false
 # Disabled: README uses HTML for badges, alignment divs, and the header image
 MD033: false
 
+# MD036 - Emphasis used instead of a heading
+# Disabled: Some files use bold text for labels and dates, not as headings
+MD036: false
+
 # MD041 - First line should be a top-level heading
 # Disabled: README intentionally starts with an HTML comment + banner image
 MD041: false
@@ -24,3 +28,11 @@ MD041: false
 # MD046 - Code block style
 # Disabled: README uses both fenced and indented blocks in examples
 MD046: false
+
+# MD051 - Link fragments should be valid
+# Disabled: Emoji in headings cause anchor mismatches in table of contents
+MD051: false
+
+# MD003 - Heading style
+# Disabled: Some templates use bold text labels that trigger false positives
+MD003: false

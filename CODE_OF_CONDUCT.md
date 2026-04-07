@@ -11,6 +11,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 ### ✅ **Examples of behavior that contributes to a positive environment:**
 
 **In Contributions:**
+
 - Using welcoming and inclusive language when describing tools and technologies
 - Being respectful of differing viewpoints regarding tool preferences and technical approaches
 - Gracefully accepting constructive feedback on tool submissions and ratings
@@ -18,6 +19,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 - Showing empathy towards other community members and their experiences with different tools
 
 **In Discussions:**
+
 - Providing helpful, accurate information about LLM tools and their capabilities
 - Acknowledging when you haven't used a tool personally vs. providing secondhand information
 - Being open to learning about new tools and approaches
@@ -25,6 +27,7 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 - Celebrating community achievements and tool discoveries
 
 **In Reviews:**
+
 - Providing specific, actionable feedback on tool submissions
 - Explaining rating decisions with clear reasoning
 - Being patient with contributors who are new to the project
@@ -33,18 +36,21 @@ We pledge to act and interact in ways that contribute to an open, welcoming, div
 ### ❌ **Examples of unacceptable behavior:**
 
 **Technical Discussions:**
+
 - Dismissing tools or approaches without providing constructive reasoning
 - Making unfounded claims about tool performance or capabilities
 - Promoting tools through misleading or exaggerated descriptions
 - Attacking contributors personally rather than addressing content issues
 
 **Community Interactions:**
+
 - The use of sexualized language or imagery, and sexual attention or advances of any kind
 - Trolling, insulting or derogatory comments, and personal or political attacks
 - Public or private harassment of any kind
 - Publishing others' private information, such as a physical or email address, without their explicit permission
 
 **Project-Specific Issues:**
+
 - Spamming with tool submissions or self-promotional content
 - Deliberately providing false information about tools or pricing
 - Vote manipulation or artificial promotion of specific tools
@@ -77,6 +83,7 @@ Community leaders will follow these Community Impact Guidelines in determining t
 **Consequence**: A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
 
 **Examples in Our Context:**
+
 - Minor inaccuracies in tool descriptions that could mislead users
 - Mildly dismissive language about specific tools or approaches
 - Not following submission format guidelines after multiple reminders
@@ -88,6 +95,7 @@ Community leaders will follow these Community Impact Guidelines in determining t
 **Consequence**: A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time. This includes avoiding interactions in community spaces as well as external channels like social media. Violating these terms may lead to a temporary or permanent ban.
 
 **Examples in Our Context:**
+
 - Repeatedly submitting low-quality or off-topic tool suggestions after feedback
 - Engaging in heated arguments about tool preferences that become personal
 - Mild harassment of other contributors or maintainers
@@ -99,6 +107,7 @@ Community leaders will follow these Community Impact Guidelines in determining t
 **Consequence**: A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, is allowed during this period. Violating these terms may lead to a permanent ban.
 
 **Examples in Our Context:**
+
 - Deliberately spreading false information about tools or their capabilities
 - Persistent spamming with promotional content
 - Harassment of community members
@@ -111,6 +120,7 @@ Community leaders will follow these Community Impact Guidelines in determining t
 **Consequence**: A permanent ban from any sort of public interaction within the community.
 
 **Examples in Our Context:**
+
 - Serious harassment, doxxing, or threats against community members
 - Coordinated attacks on the project or its maintainers
 - Persistent violations after multiple warnings and temporary bans
@@ -122,11 +132,13 @@ If you are subject to or witness unacceptable behavior, or have any other concer
 ### **How to Report:**
 
 **For General Issues:**
+
 - 📧 **Email**: [Insert your email here]
 - 🐛 **GitHub Issue**: Use our [report template](https://github.com/dr-saad-la/awesome-llm-tools/issues/new?template=conduct_report.md) for non-sensitive issues
 - 💬 **GitHub Discussions**: For community-wide concerns that aren't sensitive
 
 **For Sensitive Issues:**
+
 - 📧 **Direct Email**: [Insert private email] for confidential reports
 - 📱 **Alternative Contact**: [Insert backup contact method if needed]
 
@@ -175,6 +187,7 @@ If you disagree with a moderation decision:
 4. **Accept final decision** after appeal review is complete
 
 Appeals should focus on:
+
 - **Process errors** in the original investigation
 - **New information** that wasn't available during the original review
 - **Proportionality concerns** if you believe the consequence was too severe

@@ -20,6 +20,7 @@ Our categories follow the **LLM development lifecycle** rather than technical sp
 ### **User-Centric Approach**
 
 Categories are designed from the **user's perspective**:
+
 - A developer building their first LLM app can follow categories in order
 - Experienced developers can jump to specific categories for their needs
 - Researchers can focus on evaluation and benchmarking tools
@@ -27,6 +28,7 @@ Categories are designed from the **user's perspective**:
 ### **Practical Over Theoretical**
 
 We prioritize **practical utility** over academic categories:
+
 - Tools are placed where developers would most likely look for them
 - Overlapping categories are okay if it improves discoverability
 - Real-world usage patterns inform organization decisions
@@ -36,12 +38,14 @@ We prioritize **practical utility** over academic categories:
 ## 📂 Category Definitions
 
 ### **🏢 Commercial LLM APIs**
+
 **Purpose**: Hosted AI services accessible via API
 **What belongs here**: Cloud-based LLM services you pay to use
 **Examples**: OpenAI, Anthropic, Google Gemini
 **Target user**: Developers wanting to integrate LLMs without managing infrastructure
 
 **Subcategories**:
+
 - **Tier 1**: Dominant market players with comprehensive ecosystems
 - **Tier 2**: Specialized or emerging providers with unique value propositions
 
@@ -50,12 +54,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🔓 Open Source Models**
+
 **Purpose**: Downloadable model weights for self-hosting
 **What belongs here**: Models you can download and run yourself
 **Examples**: Llama, Mistral, Gemma
 **Target user**: Developers wanting full control, privacy, or cost optimization
 
 **Organization by**:
+
 - **Model family** (Llama, Mistral, etc.)
 - **Specialization** (code, multilingual, etc.)
 - **Parameter size** (mentioned in descriptions)
@@ -65,12 +71,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🛠️ Development Frameworks**
+
 **Purpose**: Libraries and SDKs for building LLM applications
 **What belongs here**: Core frameworks that provide LLM application structure
 **Examples**: LangChain, LlamaIndex, Haystack
 **Target user**: Developers building LLM applications from scratch
 
 **Distinction from other categories**:
+
 - **vs Agent Frameworks**: General-purpose vs. agent-specific
 - **vs Supporting Tools**: Core framework vs. utility library
 - **vs Local Deployment**: Development vs. deployment focus
@@ -80,12 +88,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🤖 Agent Frameworks & Multi-Agent Systems**
+
 **Purpose**: Tools for building autonomous, goal-oriented AI systems
 **What belongs here**: Frameworks specifically designed for agent workflows
 **Examples**: LangGraph, CrewAI, AutoGen
 **Target user**: Developers building autonomous agents or multi-agent systems
 
 **What qualifies as "agent"**:
+
 - **Autonomous decision-making** capabilities
 - **Goal-oriented** behavior
 - **Tool usage** or action-taking abilities
@@ -96,12 +106,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🧠 Structured Generation & Control**
+
 **Purpose**: Tools for controlling and constraining LLM outputs
 **What belongs here**: Libraries that ensure specific output formats or behaviors
 **Examples**: DSPy, Outlines, Guardrails AI
 **Target user**: Developers needing reliable, structured outputs for production
 
 **Types of control**:
+
 - **Format control**: JSON, XML, specific schemas
 - **Content control**: Safety, factuality, bias mitigation
 - **Logical control**: Reasoning chains, systematic prompting
@@ -111,12 +123,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **💻 Local Deployment Tools**
+
 **Purpose**: Running LLMs on your own hardware
 **What belongs here**: Tools for local model inference and serving
 **Examples**: Ollama, vLLM, LocalAI
 **Target user**: Developers prioritizing privacy, cost control, or offline capability
 
 **Subcategories**:
+
 - **Desktop Applications**: User-friendly GUI tools
 - **Server Deployment**: Production-grade inference servers
 - **Performance Optimization**: Speed and efficiency tools
@@ -126,12 +140,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🌐 Self-hosted Platforms**
+
 **Purpose**: Complete platforms you can host and customize
 **What belongs here**: Full-stack applications for LLM deployment
 **Examples**: AnythingLLM, LibreChat, Chatbot UI
 **Target user**: Organizations wanting complete control over their LLM platform
 
 **vs Local Deployment Tools**:
+
 - **Platforms**: Complete applications with UI
 - **Deployment Tools**: Infrastructure and serving layers
 
@@ -140,12 +156,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🔄 Visual Workflow Builders**
+
 **Purpose**: No-code/low-code tools for building LLM applications
 **What belongs here**: Drag-and-drop interfaces for LLM workflows
 **Examples**: Flowise, Langflow, Dify
 **Target user**: Non-developers or developers wanting rapid prototyping
 
 **Key features**:
+
 - **Visual interface** for workflow design
 - **No-code/low-code** approach
 - **Workflow orchestration** capabilities
@@ -156,12 +174,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🗂️ Vector Databases & RAG**
+
 **Purpose**: Storage and retrieval systems for embedding-based applications
 **What belongs here**: Databases optimized for vector similarity search
 **Examples**: Pinecone, Chroma, Weaviate
 **Target user**: Developers building RAG (Retrieval-Augmented Generation) systems
 
 **Database types**:
+
 - **Managed services**: Pinecone, hosted solutions
 - **Self-hosted**: Chroma, Qdrant, Weaviate
 - **Libraries**: FAISS, basic embedding storage
@@ -171,12 +191,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **💾 Memory & Persistence**
+
 **Purpose**: Long-term memory and context management for LLM applications
 **What belongs here**: Systems for maintaining conversation history and user context
 **Examples**: Mem0, Zep
 **Target user**: Developers building applications that need to remember user interactions
 
 **vs Vector Databases**:
+
 - **Memory Systems**: User-centric, conversational context
 - **Vector Databases**: Document-centric, information retrieval
 
@@ -185,12 +207,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🎙️ Voice & Audio Tools**
+
 **Purpose**: Speech processing and voice interface tools
 **What belongs here**: Speech-to-text, text-to-speech, and audio processing
 **Examples**: Whisper, Coqui TTS, ElevenLabs
 **Target user**: Developers building voice-enabled LLM applications
 
 **Tool types**:
+
 - **Speech Recognition**: Whisper, speech-to-text APIs
 - **Speech Synthesis**: TTS engines and voice cloning
 - **Audio Processing**: Preprocessing and enhancement
@@ -200,12 +224,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **👁️ Multimodal & Vision Tools**
+
 **Purpose**: Tools for processing images, video, and other non-text modalities
 **What belongs here**: Vision-language models and multimodal processing
 **Examples**: LLaVA, CLIP, InstructBLIP
 **Target user**: Developers building applications that process visual content
 
 **Capabilities**:
+
 - **Image understanding**: Description, analysis, Q&A
 - **Vision-language**: Combined text and image processing
 - **Multimodal reasoning**: Cross-modal understanding
@@ -215,12 +241,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **💻 Code-Focused Tools**
+
 **Purpose**: Tools specifically designed for code generation and programming assistance
 **What belongs here**: IDE extensions, code assistants, and programming-specific LLMs
 **Examples**: Continue, Cursor, Codeium
 **Target user**: Developers wanting AI assistance with coding tasks
 
 **Tool types**:
+
 - **IDE Extensions**: VS Code, JetBrains plugins
 - **Code Editors**: AI-first development environments
 - **Specialized Models**: Code-trained LLMs
@@ -230,12 +258,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **📱 Mobile & Edge Deployment**
+
 **Purpose**: Running LLMs on mobile devices and edge hardware
 **What belongs here**: Tools for resource-constrained deployment
 **Examples**: MLX, MLC LLM
 **Target user**: Developers building mobile or edge AI applications
 
 **Deployment targets**:
+
 - **Mobile**: iOS, Android applications
 - **Edge**: IoT devices, embedded systems
 - **Resource-constrained**: Low-power, limited memory environments
@@ -245,12 +275,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🎛️ Fine-tuning Platforms**
+
 **Purpose**: Services and tools for customizing pre-trained models
 **What belongs here**: Platforms that help adapt models to specific use cases
 **Examples**: OpenAI fine-tuning, Together AI, Unsloth
 **Target user**: Developers and researchers wanting to customize model behavior
 
 **Platform types**:
+
 - **Commercial Services**: Hosted fine-tuning with APIs
 - **Self-hosted Tools**: Open source training frameworks
 - **Optimization Libraries**: Efficient training techniques
@@ -260,12 +292,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🚦 LLM Gateway & Operations**
+
 **Purpose**: Production infrastructure for LLM applications
 **What belongs here**: Tools for managing LLM deployments at scale
 **Examples**: Portkey, HeliconeAI
 **Target user**: DevOps engineers and platform teams running production LLM services
 
 **Operational concerns**:
+
 - **Load balancing**: Distributing requests across providers
 - **Cost optimization**: Managing API spending
 - **Observability**: Monitoring and alerting
@@ -276,12 +310,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **📊 Evaluation & Monitoring**
+
 **Purpose**: Tools for assessing and monitoring LLM application performance
 **What belongs here**: Production monitoring and evaluation platforms
 **Examples**: LangSmith, LangFuse, Weights & Biases
 **Target user**: ML engineers and product teams managing LLM applications
 
 **vs Research & Benchmarking**:
+
 - **Evaluation & Monitoring**: Production-focused, real-time
 - **Research & Benchmarking**: Academic-focused, standardized tests
 
@@ -290,12 +326,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🔬 Research & Benchmarking**
+
 **Purpose**: Academic evaluation frameworks and standardized benchmarks
 **What belongs here**: Research-grade evaluation tools and datasets
 **Examples**: HELM, BIG-bench, MMLU
 **Target user**: Researchers and academics studying LLM capabilities
 
 **Benchmark types**:
+
 - **Comprehensive**: Multi-task evaluation suites
 - **Specialized**: Domain-specific or capability-specific tests
 - **Academic**: Peer-reviewed, standardized methodologies
@@ -305,12 +343,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🎨 Prompt Engineering**
+
 **Purpose**: Tools for designing, testing, and managing prompts
 **What belongs here**: Platforms focused on prompt development and optimization
 **Examples**: PromptLayer, Promptfoo, Humanloop
 **Target user**: Developers and researchers working extensively with prompts
 
 **Tool categories**:
+
 - **Management**: Version control, organization
 - **Testing**: A/B testing, evaluation
 - **Optimization**: Automated prompt improvement
@@ -320,12 +360,14 @@ We prioritize **practical utility** over academic categories:
 ---
 
 ### **🔧 Supporting Tools**
+
 **Purpose**: Utilities and helpers that don't fit other categories
 **What belongs here**: Data processing, integrations, and miscellaneous utilities
 **Examples**: Unstructured, Pandas AI, various connectors
 **Target user**: Developers needing specific utilities for LLM workflows
 
 **Tool types**:
+
 - **Data Processing**: Document parsing, data transformation
 - **Integrations**: Connectors to external services
 - **Utilities**: Helper libraries and tools
@@ -348,11 +390,13 @@ When categorizing a new tool, we ask:
 ### **Resolving Category Conflicts**
 
 **Tool fits multiple categories**:
+
 - Choose the **primary use case** category
 - Mention other applications in the description
 - Consider adding to multiple sections if genuinely dual-purpose
 
 **New tool doesn't fit existing categories**:
+
 - Evaluate if it represents a new workflow stage
 - Consider if existing categories need refinement
 - Discuss with community before creating new categories
@@ -360,6 +404,7 @@ When categorizing a new tool, we ask:
 ### **Category Quality Control**
 
 **Each category should have**:
+
 - **Clear purpose** and scope definition
 - **5+ quality tools** to justify existence
 - **Distinct value** from other categories
@@ -372,6 +417,7 @@ When categorizing a new tool, we ask:
 ### **How Categories Change**
 
 Categories evolve based on:
+
 - **Technology trends**: New types of tools emerging
 - **User feedback**: Where people expect to find tools
 - **Ecosystem growth**: Categories becoming too large or too small
@@ -380,6 +426,7 @@ Categories evolve based on:
 ### **Recent Changes**
 
 **Version 2.0 reorganization**:
+
 - **Split Evaluation**: Production vs. Research tools
 - **Added Agent Frameworks**: Reflecting AI agent trend
 - **Created Structured Generation**: Growing need for output control
@@ -388,6 +435,7 @@ Categories evolve based on:
 ### **Future Considerations**
 
 **Potential new categories**:
+
 - **Multimodal Platforms**: As video/audio LLMs become common
 - **Enterprise Tools**: If enterprise-specific tools proliferate
 - **Educational Platforms**: If LLM education tools grow significantly

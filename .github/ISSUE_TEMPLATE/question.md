@@ -12,6 +12,7 @@ assignees: ''
 <!-- Clear, specific question -->
 
 **Question Type** (check one):
+
 - [ ] Tool recommendation/comparison
 - [ ] Tool usage or setup help
 - [ ] Repository navigation
@@ -25,6 +26,7 @@ assignees: ''
 <!-- Your goal or use case -->
 
 **Your experience level with LLMs**:
+
 - [ ] Beginner (new to LLMs)
 - [ ] Intermediate (some experience)
 - [ ] Advanced (experienced developer)

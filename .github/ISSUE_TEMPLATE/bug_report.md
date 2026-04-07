@@ -17,6 +17,7 @@ assignees: ''
 ## 🔍 Issue Details
 
 **Type of Issue** (check all that apply):
+
 - [ ] Broken link
 - [ ] Incorrect tool information
 - [ ] Wrong pricing information
@@ -40,6 +41,7 @@ assignees: ''
 ## 🌐 Environment
 
 **Where did you encounter this?**
+
 - [ ] GitHub (README.md)
 - [ ] Tool's official website
 - [ ] Documentation

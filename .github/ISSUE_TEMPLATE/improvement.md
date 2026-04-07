@@ -12,6 +12,7 @@ assignees: ''
 <!-- Clear description of your suggestion -->
 
 **Type of Improvement** (check one):
+
 - [ ] Repository organization/structure
 - [ ] New section or category
 - [ ] Documentation enhancement
@@ -38,16 +39,19 @@ assignees: ''
 
 ## 📊 Impact Assessment
 
-**Benefits of this change**:
+**Benefits of this change**
 -
+
 -
 -
 
-**Potential drawbacks or considerations**:
+**Potential drawbacks or considerations**
 -
+
 -
 
 **Effort required** (your estimate):
+
 - [ ] Low (minor changes)
 - [ ] Medium (moderate restructuring)
 - [ ] High (major changes)
@@ -66,6 +70,7 @@ assignees: ''
 <!-- Examples from other awesome lists or repositories -->
 
 **Would you be willing to help implement this?**
+
 - [ ] Yes, I can contribute to the implementation
 - [ ] Yes, but I'd need guidance
 - [ ] No, just suggesting the idea
