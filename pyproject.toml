@@ -1,0 +1,25 @@
+[project]
+name = "awesome-llm-tools"
+version = "0.1.0"
+description = """A curated list of LLM tools, frameworks and platforms for
+developers and researchers"""
+readme = "README.md"
+requires-python = ">=3.14"
+
+keywords = ["llm", "ai", "awesome-list", "machine-learning", "generative-ai"]
+authors = [
+    { name = "Dr. Saad Laouadi" }
+    ]
+
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/dr-saad-la/awesome-llm-tools"
+"Bug Tracker" = "https://github.com/dr-saad-la/awesome-llm-tools/issues"
+Discussions = "https://github.com/dr-saad-la/awesome-llm-tools/discussions"
+
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.1",
+]
