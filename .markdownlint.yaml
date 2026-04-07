@@ -1,0 +1,26 @@
+# .markdownlint.yaml
+# Linting rules for Awesome LLM Tools
+# Reference: https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+
+# Start with all rules enabled, then selectively disable below
+default: true
+
+# MD013 - Line length
+# Disabled: URLs, badge links, and table cells routinely exceed 80/120 chars
+MD013: false
+
+# MD024 - Multiple headings with the same content
+# Disabled: Awesome lists use repeated section headers (e.g. "What it does")
+MD024: false
+
+# MD033 - Inline HTML
+# Disabled: README uses HTML for badges, alignment divs, and the header image
+MD033: false
+
+# MD041 - First line should be a top-level heading
+# Disabled: README intentionally starts with an HTML comment + banner image
+MD041: false
+
+# MD046 - Code block style
+# Disabled: README uses both fenced and indented blocks in examples
+MD046: false

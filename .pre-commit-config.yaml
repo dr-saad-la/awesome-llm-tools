@@ -1,0 +1,25 @@
+repos:
+  # ---------------------------------------------------------------------------
+  # General file hygiene
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace       # Remove trailing spaces
+      - id: end-of-file-fixer         # Ensure files end with a newline
+      - id: mixed-line-ending         # Normalize line endings (LF)
+        args: ["--fix=lf"]
+      - id: check-merge-conflict      # Block accidental merge conflict markers
+      - id: check-yaml                # Validate YAML syntax
+      - id: check-toml                # Validate TOML syntax (pyproject.toml)
+      # - id: no-commit-to-branch       # Protect main branch from direct commits
+        # args: ["--branch", "main"]
+
+  # ---------------------------------------------------------------------------
+  # Markdown linting
+  # ---------------------------------------------------------------------------
+  - repo: https://github.com/igorshubovych/markdownlint-cli
+    rev: v0.41.0
+    hooks:
+      - id: markdownlint
+        args: ["--fix", "--config", ".markdownlint.yaml"]
