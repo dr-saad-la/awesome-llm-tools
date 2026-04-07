@@ -1,0 +1,68 @@
+# ------------------------------------------------------------------------------
+# stale.yml - Stale issue and PR management
+#
+# Runs daily at 06:00 UTC.
+# Marks issues and PRs as stale after 60 days of inactivity,
+# then closes them after a further 14 days if no response.
+# ------------------------------------------------------------------------------
+
+name: Stale
+
+on:
+  schedule:
+    - cron: "0 6 * * *"   # Every day at 06:00 UTC
+  workflow_dispatch:        # Allow manual trigger from GitHub Actions UI
+
+jobs:
+  stale:
+    name: Mark and Close Stale Items
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+
+    steps:
+      - name: Run stale action
+        uses: actions/stale@v9
+        with:
+          # --------------------------------------------------------------
+          # Timing
+          # --------------------------------------------------------------
+          days-before-stale: 60
+          days-before-close: 14
+
+          # --------------------------------------------------------------
+          # Issues
+          # --------------------------------------------------------------
+          stale-issue-label: stale
+          stale-issue-message: >
+            This issue has been inactive for 60 days. It will be closed
+            in 14 days if there is no further activity.
+
+            If this issue is still relevant, please leave a comment or
+            update the description to keep it open.
+          close-issue-message: >
+            This issue has been closed due to inactivity. If the problem
+            persists, please open a new issue with updated information.
+
+          # --------------------------------------------------------------
+          # Pull requests
+          # --------------------------------------------------------------
+          stale-pr-label: stale
+          stale-pr-message: >
+            This pull request has been inactive for 60 days. It will be
+            closed in 14 days if there is no further activity.
+
+            If this PR is still relevant, please rebase it on the latest
+            main branch and leave a comment to keep it open.
+          close-pr-message: >
+            This pull request has been closed due to inactivity. If the
+            changes are still needed, please open a new PR with the
+            updates rebased on the current main branch.
+
+          # --------------------------------------------------------------
+          # Exemptions — never mark these as stale
+          # --------------------------------------------------------------
+          exempt-issue-labels: "pinned,security,in-progress"
+          exempt-pr-labels: "pinned,security,in-progress"
+          exempt-all-milestones: true
