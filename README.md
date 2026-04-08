@@ -156,7 +156,7 @@ platforms - everything you need to build with LLMs.
 - **Unique**: Custom LPU hardware delivering 840-1000 tokens/sec, now under
   Nvidia following 2025 acquisition
 
-**[Mistral AI](https://mistral.ai/)** ⭐⭐⭐⭐ 💵 🚀
+**[Mistral API AI](https://console.mistral.ai/)** ⭐⭐⭐⭐ 💵 🚀
 
 - **Models**: Mistral Large 3, Mistral Small 4, Devstral 2, Magistral, Mistral
   Nemo
