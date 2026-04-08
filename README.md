@@ -30,18 +30,19 @@ platforms - everything you need to build with LLMs.
 - [Agent Frameworks & Multi-Agent Systems](#-agent-frameworks--multi-agent-systems)
 - [Structured Generation & Control](#-structured-generation--control)
 - [Local Deployment Tools](#-local-deployment-tools)
-- [Self-hosted Platforms](#-self-hosted-platforms)
+- [Self-hosted & Local Platforms](#-self-hosted--local-platforms)
 - [Visual Workflow Builders](#-visual-workflow-builders)
 - [Vector Databases & RAG](#-vector-databases--rag)
 - [Memory & Persistence](#-memory--persistence)
 - [Voice & Audio Tools](#-voice--audio-tools)
-- [Multimodal & Vision Tools](#-multimodal--vision-tools)
-- [Code-Focused Tools](#-code-focused-tools)
+- [Multimodal & Specialized Models](#-multimodal--specialized-models)
+- [Code-Focused LLM Tools](#-code-focused-llm-tools)
 - [Mobile & Edge Deployment](#-mobile--edge-deployment)
+- [Integration & Utility Tools](#-integration--utility-tools)
 - [Fine-tuning Platforms](#-fine-tuning-platforms)
 - [LLM Gateway & Operations](#-llm-gateway--operations)
 - [Evaluation & Monitoring](#-evaluation--monitoring)
-- [Research & Benchmarking](#-research--benchmarking)
+- [Research & Evaluation Tools](#-research--evaluation-tools)
 - [Prompt Engineering](#-prompt-engineering)
 - [Supporting Tools](#-supporting-tools)
 - [Cost Comparison](#-cost-comparison)
@@ -469,8 +470,10 @@ ollama run codellama:13b-code
 **[LlamaHub](https://llamahub.ai/)** ⭐⭐⭐⭐ 💰
 
 - **What it does**: Data connectors and tools for LlamaIndex
-- **Features**: 100+ data connectors (Notion, Slack, Google Drive, etc.)
-- **Best for**: Connecting diver
+- **Best for**: Connecting diverse data sources to LlamaIndex applications.
+- **Features**: 100+ data connectors (Notion, Slack, Google Drive, databases, and more)
+
+---
 
 ## 🤖 Agent Frameworks & Multi-Agent Systems
 
@@ -864,106 +867,61 @@ ollama run codellama:13b-code
 - **Features**: Mobile optimization, multiple platforms
 - **Platforms**: iOS, Android, WebGPU, native
 
+---
+
+## 🎛️ Fine-tuning Platforms
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 📈 Evaluation & Monitoring
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 🎨 Prompt Engineering
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 🔧 Supporting Tools
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 💲 Cost Comparison
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 🏗️ Recommended Stacks
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+---
+
+## 📚 Learning Resources
+
+> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ## 🤝 Contributing
 
-We welcome contributions from the LLM community! Help us make this the most
-comprehensive and up-to-date resource for LLM tools.
+We welcome contributions from the LLM community. Whether you want to add a
+new tool, update outdated information, or fix a broken link, every contribution
+helps make this resource better for everyone.
 
-### Quick Contribution Guide
+Please read [CONTRIBUTING.md](CONTRIBUTING.md) for the full contribution guide,
+including the required tool entry format, rating system, quality standards, and
+review process.
 
-1. **Fork** this repository
-2. **Add your tool** following the format below
-3. **Submit** a pull request with a clear description
-4. **Wait for review** - we'll get back to you quickly!
-
-### How to Add a Tool
-
-Use this exact format for consistency:
-
-```markdown
-**[Tool Name](https://tool-website.com/)** ⭐⭐⭐⭐ 💰 🚀
-
-- **What it does**: Brief description of primary function
-- **Best for**: Main use cases and target audience
-- **Features**: Key features that set it apart
-- **Pricing**: Cost model (if applicable)
-- **Unique**: What makes it special
-```
-
-### Rating System
-
-- ⭐⭐⭐⭐⭐ **Must-have** - Industry standard, essential tool
-- ⭐⭐⭐⭐ **Excellent** - High quality, highly recommended
-- ⭐⭐⭐ **Good** - Solid choice, worth considering
-- ⭐⭐ **Decent** - Has specific use cases
-- ⭐ **Basic** - Limited functionality
-
-### Category Icons
-
-- 💰 **Free/Open Source**
-- 💵 **Paid/Commercial**
-- 🔄 **Freemium** (free tier + paid options)
-- 🚀 **Trending/New** (launched or updated recently)
-- 🏢 **Enterprise-focused**
-
-### Contribution Guidelines
-
-**✅ What We Accept:**
-
-- Tools that are actively maintained
-- Clear, accurate descriptions
-- Proper categorization
-- Working links and correct information
-- Tools that add unique value to the ecosystem
-
-**❌ What We Don't Accept:**
-
-- Abandoned or unmaintained projects
-- Duplicate tools without clear differentiation
-- Self-promotional content without genuine value
-- Tools that don't work as described
-- Incomplete or poorly documented tools
-
-### Quality Standards
-
-- **Accuracy**: All information must be current and correct
-- **Neutrality**: Unbiased descriptions focusing on functionality
-- **Clarity**: Write for developers of all experience levels
-- **Completeness**: Include all required fields in the format
-- **Verification**: Test tools before recommending them
-
-### Special Sections
-
-**Adding to Recommended Stacks:**
-
-- Must have experience using the complete stack
-- Include reasoning for tool choices
-- Specify target audience and use cases
-- Provide realistic budget estimates
-
-**Cost Information:**
-
-- Use current pricing (check within last 30 days)
-- Include key pricing tiers
-- Note free tier limitations
-- Mention enterprise pricing where relevant
-
-### Review Process
-
-1. **Automated checks** - Format and link validation
-2. **Manual review** - Quality and accuracy verification
-3. **Community feedback** - 48-hour review period
-4. **Merge** - Added to the list with attribution
-
-### Recognition
-
-Contributors will be:
-
-- ✅ Listed in commit history
-- ✅ Mentioned in release notes for major additions
-- ✅ Featured in annual contributor recognition
-
-**Top contributors may be invited to become maintainers!**
+For questions, open a
+[Discussion](https://github.com/dr-saad-la/awesome-llm-tools/discussions). For
+security concerns, see [SECURITY.md](SECURITY.md).
 
 ---
 
