@@ -647,6 +647,11 @@ ollama run codellama:13b-code
 - **Features**: GPT-4 integration, codebase chat, AI commands
 - **Performance**: Fast, smooth AI integration
 
+**[Claude Code Mastery](https://github.com/ShipWithAI/claude-code-mastery)** ⭐⭐⭐⭐ 💰 🚀
+- **What it does**: Comprehensive free course for mastering Claude Code with structured workflows and production patterns
+- **Best for**: Developers and teams adopting Claude Code, from fundamentals to automation and multi-agent workflows
+- **Features**: 16-phase curriculum, security and sandboxing guidance, team workflows, headless automation, English + Vietnamese content
+
 **[Codeium](https://codeium.com/)** ⭐⭐⭐⭐ 🔄
 
 - **What it does**: Free AI code completion and chat
