@@ -16,9 +16,11 @@
 
 <!-- ![Awesome LLM Tools](https://img.shields.io/badge/🤖%20Awesome%20LLM%20Tools-A%20curated%20list%20of%20LLM%20platforms%20and%20frameworks-blue?style=for-the-badge&logo=openai&logoColor=white&color=gradient) -->
 
-A curated list of Large Language Model (LLM) tools, frameworks, and platforms for developers, researchers, and AI enthusiasts.
+A curated list of Large Language Model (LLM) tools, frameworks, and platforms
+for developers, researchers, and AI enthusiasts.
 
-From commercial APIs to local deployment, from RAG systems to fine-tuning platforms - everything you need to build with LLMs.
+From commercial APIs to local deployment, from RAG systems to fine-tuning
+platforms - everything you need to build with LLMs.
 
 ## 📋 Table of Contents
 
@@ -68,81 +70,149 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 **[OpenAI](https://openai.com/api/)** ⭐⭐⭐⭐⭐ 💵
 
 - **Models**: GPT-5.4, GPT-5.4 Mini, GPT-5.4 Nano, o3, o4-mini
-- **Best for**: Production apps, complex reasoning, code generation, computer-use agents
+- **Best for**: Production apps, complex reasoning, code generation,
+  computer-use agents
 - **Pricing**: $0.05-$180/1M tokens
-- **Unique**: Unified reasoning and coding in GPT-5.4, 1M context, Responses API, open-weight GPT-OSS
+- **Unique**: Unified reasoning and coding in GPT-5.4, 1M context, Responses
+  API, open-weight GPT-OSS
 
 **[Anthropic Claude](https://www.anthropic.com/)** ⭐⭐⭐⭐⭐ 💵
 
 - **Models**: Claude Opus 4.6, Claude Sonnet 4.6, Claude Haiku 4.5
-- **Best for**: Agentic workflows, long-context analysis, safety-critical applications
+- **Best for**: Agentic workflows, long-context analysis, safety-critical
+  applications
 - **Pricing**: $1.00-$25/1M tokens
-- **Unique**: 91.3% on GPQA Diamond, Adaptive Thinking, 1M context, 67% price drop from previous generation
+- **Unique**: 91.3% on GPQA Diamond, Adaptive Thinking, 1M context, 67% price
+  drop from previous generation
 
 **[Google Gemini](https://ai.google.dev/)** ⭐⭐⭐⭐ 💵
 
-- **Models**: Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.5 Flash-Lite
-- **Best for**: Multimodal apps, cost-sensitive workloads, Google ecosystem integration
+- **Models**: Gemini 3.1 Pro, Gemini 2.5 Pro, Gemini 2.5 Flash, Gemini 2.5
+  Flash-Lite
+- **Best for**: Multimodal apps, cost-sensitive workloads, Google ecosystem
+  integration
 - **Pricing**: $0.10-$18/1M tokens
-- **Unique**: Ranked #1 on Intelligence Index, aggressive Flash-Lite pricing, 1M context, free tier available
+- **Unique**: Ranked #1 on Intelligence Index, aggressive Flash-Lite pricing, 1M
+  context, free tier available
 
-**[Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service)** ⭐⭐⭐⭐ 💵 🏢
+**[Microsoft Azure OpenAI](https://azure.microsoft.com/en-us/products/ai-services/openai-service)**
+⭐⭐⭐⭐ 💵 🏢
 
-- **Models**: GPT-5.4, GPT-4.1, o3, o4-mini, DeepSeek, Llama 4, Mistral, Claude (11,000+ total)
-- **Best for**: Enterprise applications, regulated industries, high-volume production workloads
-- **Pricing**: Same as OpenAI direct, typically 15-40% higher at scale with infrastructure overhead
-- **Unique**: Provisioned throughput units (PTUs), Microsoft Foundry Agent Service, MCP support, enterprise compliance
+- **Models**: GPT-5.4, GPT-4.1, o3, o4-mini, DeepSeek, Llama 4, Mistral, Claude
+  (11,000+ total)
+- **Best for**: Enterprise applications, regulated industries, high-volume
+  production workloads
+- **Pricing**: Same as OpenAI direct, typically 15-40% higher at scale with
+  infrastructure overhead
+- **Unique**: Provisioned throughput units (PTUs), Microsoft Foundry Agent
+  Service, MCP support, enterprise compliance
 
 **[xAI Grok](https://x.ai/api)** ⭐⭐⭐⭐⭐ 💵 🚀
 
 - **Models**: Grok 4, Grok 4.1 Fast, Grok 3
-- **Best for**: Long-context reasoning, real-time information, cost-sensitive production workloads
+- **Best for**: Long-context reasoning, real-time information, cost-sensitive
+  production workloads
 - **Pricing**: $0.20-$3/1M tokens
-- **Unique**: Industry-leading 2M token context window, built-in real-time web search, top intelligence benchmark scores
+- **Unique**: Industry-leading 2M token context window, built-in real-time web
+  search, top intelligence benchmark scores
 
 **[Amazon Bedrock](https://aws.amazon.com/bedrock/)** ⭐⭐⭐⭐ 💵 🏢
 
-- **Models**: Claude, Llama 4, Mistral, Cohere Command, Amazon Nova (unified catalog)
-- **Best for**: Enterprise AWS workloads, multi-model strategies, regulated industries
+- **Models**: Claude, Llama 4, Mistral, Cohere Command, Amazon Nova (unified
+  catalog)
+- **Best for**: Enterprise AWS workloads, multi-model strategies, regulated
+  industries
 - **Pricing**: Per-token rates vary by model, batch mode at 50% discount
-- **Unique**: Single API across all major model families, AWS security and compliance, Bedrock Agents for RAG and multi-agent workflows
+- **Unique**: Single API across all major model families, AWS security and
+  compliance, Bedrock Agents for RAG and multi-agent workflows
 
 ### Tier 2: Specialized & Emerging
 
 **[Cohere](https://cohere.ai/)** ⭐⭐⭐⭐ 💵 🏢
 
-- **Models**: Command R+, Embed v3, Rerank 3
-- **Best for**: Enterprise NLP, multilingual, RAG applications
-- **Pricing**: $0.15-$15/1M tokens
-- **Unique**: Excellent embeddings, enterprise focus, citation support
+- **Models**: Command A, Command R+, Command R7B, Embed 4, Rerank 4
+- **Best for**: Enterprise RAG pipelines, data sovereignty deployments,
+  multilingual NLP
+- **Pricing**: $0.04-$10/1M tokens
+- **Unique**: Full RAG stack in one provider, private VPC and on-premises
+  deployment, EU and government compliance
 
-**[Together AI](https://www.together.ai/)** ⭐⭐⭐⭐ 💵
+**[Together AI](https://www.together.ai/)** ⭐⭐⭐⭐ 💵 🚀
 
-- **Models**: Llama 3.1, Mixtral, Qwen, Code Llama (hosted)
-- **Best for**: Open source models as API, cost-effective scaling
-- **Pricing**: $0.2-$8/1M tokens
-- **Unique**: Multiple open source models, competitive pricing
+- **Models**: Llama 4, DeepSeek R1, Qwen 3, Gemma 3, and 200+ open-source models
+- **Best for**: Open-source model hosting, cost-sensitive scaling, fine-tuning
+  and custom deployment
+- **Pricing**: $0.02-$7/1M tokens
+- **Unique**: Largest hosted open-source model catalog, dedicated GPU clusters,
+  fine-tuning included at no extra cost
 
 **[Groq](https://groq.com/)** ⭐⭐⭐⭐ 💵 🚀
 
-- **Models**: Llama 3.1, Mixtral, Gemma
-- **Best for**: Real-time applications, speed-critical use cases
-- **Pricing**: $0.27-$2.8/1M tokens
-- **Unique**: 500+ tokens/sec inference speed, hardware optimization
+- **Models**: Llama 3.3 70B, GPT-OSS 120B, Llama 3.1 8B, Gemma 3
+- **Best for**: Ultra-low latency applications, real-time agents, speed-critical
+  inference
+- **Pricing**: $0.05-$0.79/1M tokens
+- **Unique**: Custom LPU hardware delivering 840-1000 tokens/sec, now under
+  Nvidia following 2025 acquisition
 
-**[Perplexity AI](https://www.perplexity.ai/)** ⭐⭐⭐ 💵
+**[Mistral AI](https://mistral.ai/)** ⭐⭐⭐⭐ 💵 🚀
 
-- **Models**: Custom models with web search
-- **Best for**: Research applications, current information
-- **Pricing**: $20/month Pro subscription + API
-- **Unique**: Real-time web search, source citations
+- **Models**: Mistral Large 3, Mistral Small 4, Devstral 2, Magistral, Mistral
+  Nemo
+- **Best for**: European data sovereignty, multilingual applications,
+  cost-effective frontier-quality inference
+- **Pricing**: $0.02-$6/1M tokens
+- **Unique**: Apache 2.0 open-weight models for self-hosting, 40% cheaper output
+  than comparable tiers, GDPR-native EU infrastructure
+
+**[DeepSeek](https://api-docs.deepseek.com/)** ⭐⭐⭐⭐ 💵 🚀
+
+- **Models**: DeepSeek V3.2, DeepSeek R1
+- **Best for**: Cost-sensitive production workloads, high-volume batch
+  processing, reasoning tasks
+- **Pricing**: $0.03-$0.42/1M tokens (90% discount with automatic context
+  caching)
+- **Unique**: Lowest-cost frontier-class inference available, automatic caching
+  with no developer effort required
+
+**[Cerebras](https://cerebras.ai/)** ⭐⭐⭐⭐ 💵 🚀
+
+- **Models**: Llama 3.3 70B, Llama 3.1 8B, GPT-OSS 120B
+- **Best for**: Latency-critical agents, real-time voice applications, streaming
+  use cases
+- **Pricing**: $0.10-$0.60/1M tokens
+- **Unique**: Wafer Scale Engine delivers 2300+ tokens/sec, the fastest
+  inference hardware available, AWS Bedrock integration coming 2026
+
+**[Perplexity AI](https://www.perplexity.ai/)** ⭐⭐⭐ 💵 🚀
+
+- **Models**: Sonar, Sonar Pro, Sonar Deep Research
+- **Best for**: Research applications, fact-grounded responses, real-time
+  information retrieval
+- **Pricing**: $1-$15/1M tokens, Search API at $5/1K requests
+- **Unique**: Built-in 200B+ page web index with citations baked into every
+  response, Agentic Research API for multi-step investigation
+
+**[Fireworks AI](https://fireworks.ai/)** ⭐⭐⭐⭐ 💵
+
+- **Models**: DeepSeek V3, Llama 4, Qwen 3, and 200+ models via FireAttention
+  engine
+- **Best for**: Production inference with custom fine-tuned models,
+  latency-sensitive applications
+- **Pricing**: $0.10-$1.68/1M tokens
+- **Unique**: Fine-tuned models served at the same price as base models, 4x
+  throughput improvement via FireAttention, SOC 2 and HIPAA compliant
 
 **[Replicate](https://replicate.com/)** ⭐⭐⭐ 💵
 
-- **Models**: Wide variety of open source and specialized models
-- **Best for**: Experimentation, specialized models, prototyping
-- **Pricing**: Pay-per-second usage
-- **Unique**: Model marketplace, easy deployment, diverse catalog
+- **Models**: 9000+ community and official models spanning LLMs, image, video,
+  and audio
+- **Best for**: Rapid prototyping, multi-modal experimentation, one-line access
+  to any model type
+- **Pricing**: Per-second GPU billing from $0.000100/sec (CPU) to $0.001400/sec
+  (A100)
+- **Unique**: Broadest multi-modal model marketplace available, now integrated
+  into Cloudflare Workers for edge deployment
 
 ---
 
@@ -246,7 +316,8 @@ From commercial APIs to local deployment, from RAG systems to fine-tuning platfo
 
 ### Low-Level Libraries
 
-**[Transformers (Hugging Face)](https://huggingface.co/transformers/)** ⭐⭐⭐⭐⭐ 💰
+**[Transformers (Hugging Face)](https://huggingface.co/transformers/)**
+⭐⭐⭐⭐⭐ 💰
 
 - **What it does**: Core library for transformer models
 - **Best for**: Model loading, fine-tuning, research, custom implementations
@@ -316,7 +387,8 @@ ollama run codellama:13b-code
 - **Features**: PagedAttention, continuous batching, streaming
 - **Performance**: 24x higher throughput than HuggingFace Transformers
 
-**[Text Generation Inference (TGI)](https://github.com/huggingface/text-generation-inference)** ⭐⭐⭐⭐ 💰
+**[Text Generation Inference (TGI)](https://github.com/huggingface/text-generation-inference)**
+⭐⭐⭐⭐ 💰
 
 - **What it does**: Hugging Face's production inference server
 - **Best for**: Hugging Face model deployment, production serving
@@ -406,23 +478,33 @@ ollama run codellama:13b-code
 
 **[LangGraph](https://github.com/langchain-ai/langgraph)** ⭐⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Build stateful, multi-actor applications with LLMs using graph-based workflows
-- **Best for**: Complex agent workflows, multi-step reasoning, human-in-the-loop systems
-- **Features**: State management, branching logic, human approval nodes, persistence
+- **What it does**: Build stateful, multi-actor applications with LLMs using
+  graph-based workflows
+- **Best for**: Complex agent workflows, multi-step reasoning, human-in-the-loop
+  systems
+- **Features**: State management, branching logic, human approval nodes,
+  persistence
 - **Integration**: LangChain native, part of LangChain ecosystem
 
 **[CrewAI](https://github.com/joaomdmoura/crewAI)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Framework for orchestrating role-playing, autonomous AI agents
-- **Best for**: Multi-agent collaboration, complex task delegation, team-based AI workflows
-- **Features**: Role-based agents, task delegation, collaborative problem solving
-- **Use cases**: Content creation teams, research groups, business process automation
+- **What it does**: Framework for orchestrating role-playing, autonomous AI
+  agents
+- **Best for**: Multi-agent collaboration, complex task delegation, team-based
+  AI workflows
+- **Features**: Role-based agents, task delegation, collaborative problem
+  solving
+- **Use cases**: Content creation teams, research groups, business process
+  automation
 
 **[AutoGen](https://github.com/microsoft/autogen)** ⭐⭐⭐⭐ 💰
 
-- **What it does**: Microsoft's framework for multi-agent conversation and collaboration
-- **Best for**: Multi-agent conversations, code generation, complex problem solving
-- **Features**: Conversable agents, human-in-the-loop, code execution, group chat
+- **What it does**: Microsoft's framework for multi-agent conversation and
+  collaboration
+- **Best for**: Multi-agent conversations, code generation, complex problem
+  solving
+- **Features**: Conversable agents, human-in-the-loop, code execution, group
+  chat
 - **Developer**: Microsoft Research
 
 **[TaskWeaver](https://github.com/microsoft/TaskWeaver)** ⭐⭐⭐ 💰 🚀
@@ -455,14 +537,17 @@ ollama run codellama:13b-code
 **[DSPy](https://github.com/stanfordnlp/dspy)** ⭐⭐⭐⭐ 💰 🚀
 
 - **What it does**: Programming language model pipelines declaratively
-- **Best for**: Complex reasoning chains, prompt optimization, systematic LM programming
-- **Features**: Automatic prompt optimization, modular components, few-shot learning
+- **Best for**: Complex reasoning chains, prompt optimization, systematic LM
+  programming
+- **Features**: Automatic prompt optimization, modular components, few-shot
+  learning
 - **Developer**: Stanford NLP Group
 
 **[Outlines](https://github.com/outlines-dev/outlines)** ⭐⭐⭐⭐ 💰 🚀
 
 - **What it does**: Structured text generation for LLMs (JSON, regex, grammars)
-- **Best for**: Guaranteed valid outputs, structured data extraction, API responses
+- **Best for**: Guaranteed valid outputs, structured data extraction, API
+  responses
 - **Features**: JSON schema validation, regex constraints, custom grammars
 - **Performance**: Fast, reliable structured generation
 
@@ -676,7 +761,8 @@ ollama run codellama:13b-code
 
 ### Academic & Research Platforms
 
-**[EleutherAI Eval Harness](https://github.com/EleutherAI/lm-evaluation-harness)** ⭐⭐⭐⭐ 💰
+**[EleutherAI Eval Harness](https://github.com/EleutherAI/lm-evaluation-harness)**
+⭐⭐⭐⭐ 💰
 
 - **What it does**: Framework for evaluating language models on various tasks
 - **Best for**: Research evaluation, model comparison, academic benchmarks
@@ -717,7 +803,8 @@ ollama run codellama:13b-code
 - **Features**: Visual instruction tuning, conversation about images
 - **Performance**: Strong vision-language capabilities
 
-**[InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip)** ⭐⭐⭐ 💰
+**[InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip)**
+⭐⭐⭐ 💰
 
 - **What it does**: Vision-language instruction tuning
 - **Best for**: Visual question answering, image captioning
@@ -751,7 +838,8 @@ ollama run codellama:13b-code
 - **Features**: Production-ready examples, best practices
 - **Community**: Community-contributed recipes
 
-**[ChromaDB Recipes](https://github.com/chroma-core/chroma/tree/main/examples)** ⭐⭐⭐ 💰
+**[ChromaDB Recipes](https://github.com/chroma-core/chroma/tree/main/examples)**
+⭐⭐⭐ 💰
 
 - **What it does**: Example applications using ChromaDB
 - **Best for**: Learning ChromaDB, quick starts
@@ -780,7 +868,8 @@ ollama run codellama:13b-code
 
 ## 🤝 Contributing
 
-We welcome contributions from the LLM community! Help us make this the most comprehensive and up-to-date resource for LLM tools.
+We welcome contributions from the LLM community! Help us make this the most
+comprehensive and up-to-date resource for LLM tools.
 
 ### Quick Contribution Guide
 
@@ -884,7 +973,9 @@ Contributors will be:
 
 [![CC0](https://licensebuttons.net/p/zero/1.0/88x31.png)](https://creativecommons.org/publicdomain/zero/1.0/)
 
-This work is licensed under a [Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/) license.
+This work is licensed under a
+[Creative Commons Zero v1.0 Universal](https://creativecommons.org/publicdomain/zero/1.0/)
+license.
 
 ### What This Means
 
@@ -905,24 +996,31 @@ This work is licensed under a [Creative Commons Zero v1.0 Universal](https://cre
 
 ### Why CC0?
 
-We believe that curated knowledge should be freely available to everyone. By placing this work in the public domain:
+We believe that curated knowledge should be freely available to everyone. By
+placing this work in the public domain:
 
-- **🌍 Global Access** - Anyone can use this resource regardless of location or legal system
-- **🚀 Innovation** - Developers can build tools and services using this data without legal concerns
-- **📚 Education** - Students and researchers have unrestricted access to learning materials
-- **🤝 Community** - Open collaboration without legal barriers encourages more contributions
+- **🌍 Global Access** - Anyone can use this resource regardless of location or
+  legal system
+- **🚀 Innovation** - Developers can build tools and services using this data
+  without legal concerns
+- **📚 Education** - Students and researchers have unrestricted access to
+  learning materials
+- **🤝 Community** - Open collaboration without legal barriers encourages more
+  contributions
 
 ### Attribution (Optional)
 
 While not required, if you find this resource valuable, we'd appreciate:
 
 ```markdown
-LLM tools sourced from [Awesome LLM Tools](https://github.com/your-username/awesome-llm-tools)
+LLM tools sourced from
+[Awesome LLM Tools](https://github.com/your-username/awesome-llm-tools)
 ```
 
 ### Disclaimer
 
-This list is provided "as is" without warranty of any kind. While we strive for accuracy:
+This list is provided "as is" without warranty of any kind. While we strive for
+accuracy:
 
 - ✅ Information may become outdated
 - ✅ Pricing and features may change
@@ -935,7 +1033,9 @@ Always verify current information before making decisions based on this list.
 
 **🙏 Thank You**
 
-To everyone who contributes to making this resource better - from individual developers sharing discoveries to maintainers reviewing submissions - thank you for building the future of LLM development together!
+To everyone who contributes to making this resource better - from individual
+developers sharing discoveries to maintainers reviewing submissions - thank you
+for building the future of LLM development together!
 
 **⭐ Star this repository if it helps you build amazing LLM applications!**
 
