@@ -191,7 +191,7 @@ platforms - everything you need to build with LLMs.
   information retrieval
 - **Pricing**: $1-$15/1M tokens, Search API at $5/1K requests
 - **Unique**: Built-in 200B+ page web index with citations baked into every
-  response, Agentic Research API for multi-step investigation
+  response, Agentic Research API for multistep investigation
 
 **[Fireworks AI](https://fireworks.ai/)** ⭐⭐⭐⭐ 💵
 
@@ -201,7 +201,7 @@ platforms - everything you need to build with LLMs.
   latency-sensitive applications
 - **Pricing**: $0.10-$1.68/1M tokens
 - **Unique**: Fine-tuned models served at the same price as base models, 4x
-  throughput improvement via FireAttention, SOC 2 and HIPAA compliant
+  throughput improvement via FireAttention, SOC 2 and HIPAA-compliant
 
 **[Replicate](https://replicate.com/)** ⭐⭐⭐ 💵
 
@@ -398,7 +398,7 @@ ollama run codellama:13b-code
 **[LocalAI](https://localai.io/)** ⭐⭐⭐⭐ 💰
 
 - **What it does**: OpenAI API compatible local server
-- **Best for**: Drop-in OpenAI replacement, multi-model serving
+- **Best for**: Drop-in OpenAI replacement, multimodel serving
 - **Features**: OpenAI API compatibility, multiple backends
 - **Models**: Support for various model formats (GGUF, ONNX, etc.)
 
@@ -480,7 +480,7 @@ ollama run codellama:13b-code
 
 - **What it does**: Build stateful, multi-actor applications with LLMs using
   graph-based workflows
-- **Best for**: Complex agent workflows, multi-step reasoning, human-in-the-loop
+- **Best for**: Complex agent workflows, multistep reasoning, human-in-the-loop
   systems
 - **Features**: State management, branching logic, human approval nodes,
   persistence
@@ -492,8 +492,7 @@ ollama run codellama:13b-code
   agents
 - **Best for**: Multi-agent collaboration, complex task delegation, team-based
   AI workflows
-- **Features**: Role-based agents, task delegation, collaborative problem
-  solving
+- **Features**: Role-based agents, task delegation, collaborative problem-solving
 - **Use cases**: Content creation teams, research groups, business process
   automation
 
@@ -501,8 +500,7 @@ ollama run codellama:13b-code
 
 - **What it does**: Microsoft's framework for multi-agent conversation and
   collaboration
-- **Best for**: Multi-agent conversations, code generation, complex problem
-  solving
+- **Best for**: Multi-agent conversations, code generation, complex problem-solving
 - **Features**: Conversable agents, human-in-the-loop, code execution, group
   chat
 - **Developer**: Microsoft Research
@@ -562,7 +560,7 @@ ollama run codellama:13b-code
 
 - **What it does**: Query language for programming large language models
 - **Best for**: Complex prompting, structured queries, research
-- **Features**: SQL-like syntax, constraints, multi-step reasoning
+- **Features**: SQL-like syntax, constraints, multistep reasoning
 - **Unique**: Declarative approach to LLM programming
 
 **[jsonformer](https://github.com/1rgs/jsonformer)** ⭐⭐⭐ 💰
@@ -854,9 +852,9 @@ ollama run codellama:13b-code
 
 **[MLX](https://github.com/ml-explore/mlx)** ⭐⭐⭐ 💰 🚀
 
-- **What it does**: Apple's ML framework optimized for Apple silicon
+- **What it does**: Apple's ML framework optimized for Apple Silicon
 - **Best for**: Apple silicon deployment, iOS/macOS apps
-- **Features**: Apple silicon optimization, Swift/Python APIs
+- **Features**: Apple Silicon optimization, Swift/Python APIs
 - **Performance**: Optimized for M-series chips
 
 **[MLC LLM](https://github.com/mlc-ai/mlc-llm)** ⭐⭐⭐ 💰
@@ -1014,7 +1012,7 @@ While not required, if you find this resource valuable, we'd appreciate:
 
 ```markdown
 LLM tools sourced from
-[Awesome LLM Tools](https://github.com/your-username/awesome-llm-tools)
+[Awesome LLM Tools](https://github.com/dr-saad-la/awesome-llm-tools)
 ```
 
 ### Disclaimer
