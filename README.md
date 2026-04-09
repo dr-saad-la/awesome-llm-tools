@@ -219,67 +219,229 @@ platforms - everything you need to build with LLMs.
 
 ## 🔓 Open Source Models
 
-### Meta's Llama Family ⭐⭐⭐⭐⭐ 💰
+### Meta Llama
 
-**[Llama 3.1 Series](https://llama.meta.com/)**
+**[Llama 4](https://llama.meta.com/)** ⭐⭐⭐⭐⭐ 💰 🚀
 
-- **Sizes**: 8B, 70B, 405B parameters
-- **License**: Llama 3.1 Community License (commercial friendly)
-- **Best for**: General purpose, fine-tuning base, production deployments
-- **Hardware**: 8B: 16GB VRAM | 70B: 80GB VRAM | 405B: 800GB+ VRAM
+- **Models**: Llama 4 Scout (109B total / 17B active, 16 experts, 10M context),
+  Llama 4 Maverick (400B total / 17B active, 128 experts, 1M context)
+- **Best for**: Multimodal applications, long-context reasoning, production
+  deployments on cloud platforms
+- **License**: Llama Community License (commercial friendly with 700M MAU
+  threshold; not OSI-approved)
+- **Hardware**: Scout: ~109 GB FP8 (1×H100 INT4, or Mac M4 Max 128 GB at Q4);
+  Maverick: ~400 GB FP8 (8×H100/H200 node)
+- **Unique**: Native MoE architecture with early-fusion multimodality (text +
+  image); 12-language support; available on HuggingFace, Ollama, and all
+  major cloud platforms
 
-**[Code Llama](https://github.com/facebookresearch/codellama)**
+**[Llama 3.x Series](https://huggingface.co/collections/meta-llama/llama-31-669fc079a0c406a149a5738f)** ⭐⭐⭐⭐⭐ 💰
 
-- **Sizes**: 7B, 13B, 34B parameters
-- **Best for**: Code generation, completion, explanation
-- **Languages**: Python, JavaScript, Java, C++, TypeScript, Bash
+- **Models**: Llama 3.1 (8B/70B/405B, 128K context), Llama 3.2 (1B/3B edge;
+  11B/90B vision), Llama 3.3 70B Instruct
+- **Best for**: Local deployment, fine-tuning base, production workloads where
+  Llama 4 VRAM requirements are prohibitive
+- **License**: Llama Community License
+- **Hardware**: 8B: ~5 GB quantized (any consumer GPU); 70B: ~35–40 GB
+  quantized
+- **Unique**: Widest ecosystem of derivative models, tools, and deployment
+  guides of any open-weight family
 
-### European Excellence
+> **Note — Code Llama (legacy)**: Based on Llama 2 architecture, last updated
+> January 2024, and effectively superseded by Llama 3.x and specialist coding
+> models. Weights remain on HuggingFace but are no longer recommended for new
+> projects.
 
-**[Mistral AI Models](https://mistral.ai/)** ⭐⭐⭐⭐ 💰
+---
 
-- **Models**: Mistral 7B, Mixtral 8x7B, Mixtral 8x22B
-- **License**: Apache 2.0 (fully open)
-- **Best for**: Production deployments, efficient inference
-- **Unique**: Excellent performance per parameter, sliding window attention
+### Qwen (Alibaba)
 
-### Google's Offerings
+**[Qwen3 / Qwen3.5](https://github.com/QwenLM/Qwen3)** ⭐⭐⭐⭐⭐ 💰 🚀
 
-**[Gemma](https://ai.google.dev/gemma)** ⭐⭐⭐⭐ 💰
+- **Models**: Qwen3 (0.6B–235B-A22B MoE, 128K context); Qwen3.5 (0.8B–397B-A17B
+  MoE, 262K native context extensible to 1M+)
+- **Best for**: Multilingual applications (119–201 languages), reasoning with
+  hybrid thinking/non-thinking mode, cost-efficient inference
+- **License**: Apache 2.0
+- **Hardware**: 0.8B–9B: consumer GPU or mobile; 27B: RTX 4090; 35B-A3B MoE:
+  Mac 32 GB; 397B flagship: multi-GPU cluster
+- **Unique**: 700M+ cumulative HuggingFace downloads; 200,000+ derivative
+  models; broadest specialist ecosystem (Qwen3-Coder-480B, QwQ-32B reasoning,
+  Qwen2.5-VL vision, Qwen3-Omni audio/video/text)
 
-- **Sizes**: Gemma 2B, 7B, 9B, 27B
-- **Best for**: Research, edge deployment, resource-limited environments
-- **License**: Custom Gemma Terms of Use
-- **Unique**: High quality training, good performance per parameter
+---
 
-### Microsoft's Small Giants
+### DeepSeek
 
-**[Phi-3](https://azure.microsoft.com/en-us/products/phi-3)** ⭐⭐⭐⭐ 💰 🚀
+**[DeepSeek V3.2 / R1](https://github.com/deepseek-ai/DeepSeek-V3)** ⭐⭐⭐⭐⭐ 💰 🚀
 
-- **Models**: Phi-3-mini (3.8B), Phi-3-small (7B), Phi-3-medium (14B)
-- **Best for**: Edge deployment, mobile applications, resource constraints
-- **Unique**: Exceptional performance for size, high-quality training data
+- **Models**: DeepSeek-V3.2 (671B total / 37B active MoE); DeepSeek-R1
+  reasoning model; R1 distilled variants (1.5B–70B based on Qwen2.5 and
+  Llama 3)
+- **Best for**: Frontier reasoning and coding tasks, cost-sensitive
+  high-performance inference, agentic workflows
+- **License**: MIT License
+- **Hardware**: Full 671B: 8×H100/H200 (~1.3 TB BF16); R1-Distill-32B: 1×RTX
+  4090 (~20 GB Q4); R1-Distill-70B: ~43 GB Q4
+- **Unique**: V3.2 adds "thinking in tool-use" and large-scale agentic RL
+  across 1,800+ environments; R1-Distill-32B outperforms OpenAI o1-mini on
+  most benchmarks; 82M+ Ollama downloads
 
-### Specialized Models
+> **Note — DeepSeek Coder (legacy)**: The standalone DeepSeek-Coder line was
+> merged into the V3 main line as of V2.5 (September 2024). Use DeepSeek-V3.2
+> or R1 distills for coding tasks.
 
-**[DeepSeek Coder](https://github.com/deepseek-ai/DeepSeek-Coder)** ⭐⭐⭐⭐ 💰
+---
 
-- **Sizes**: 1.3B, 6.7B, 33B parameters
-- **Best for**: Code-focused applications, developer tools
-- **Languages**: 80+ programming languages
-- **License**: DeepSeek License (research friendly)
+### Mistral AI
 
-**[Yi Series](https://github.com/01-ai/Yi)** ⭐⭐⭐ 💰
+**[Mistral Large 3](https://mistral.ai/)** ⭐⭐⭐⭐⭐ 💰 🚀
 
-- **Sizes**: 6B, 9B, 34B parameters
-- **Best for**: Multilingual applications, long context tasks
-- **Unique**: Strong multilingual capabilities, 200K context length
+- **Models**: Mistral Large 3 (675B total / 41B active MoE, 2.5B vision
+  encoder, 256K context)
+- **Best for**: European data sovereignty, frontier-class vision-language tasks,
+  long-context analysis
+- **License**: Apache 2.0
+- **Hardware**: 8×H200 FP8 or 4–8×H100 NVFP4
+- **Unique**: Largest fully open-weight Apache 2.0 MoE available; vision
+  encoder included; GDPR-native EU infrastructure
 
-**[Qwen (Alibaba)](https://github.com/QwenLM/Qwen)** ⭐⭐⭐ 💰
+**[Mistral Small 4](https://huggingface.co/mistralai/Mistral-Small-4)** ⭐⭐⭐⭐ 💰 🚀
 
-- **Sizes**: 0.5B to 72B parameters
-- **Best for**: Chinese language, multimodal applications
-- **Unique**: Excellent Chinese support, vision capabilities
+- **Models**: Mistral Small 4 (119B total / 6.5B active, 128 experts, 256K
+  context)
+- **Best for**: Efficient inference combining reasoning, vision, and coding in
+  a single model
+- **License**: Apache 2.0
+- **Hardware**: 4×H100 minimum; quantized options available
+- **Unique**: Unifies reasoning (Magistral), vision (Pixtral), and coding
+  (Devstral) with adjustable `reasoning_effort` parameter
+
+**[Ministral 3](https://huggingface.co/collections/mistralai/ministral-3b-671ac9b1c979d08d50f83240)** ⭐⭐⭐⭐ 💰
+
+- **Models**: 3B, 8B, 14B dense variants; each with Base/Instruct/Reasoning
+  flavors and vision support
+- **Best for**: Edge and on-device deployment, resource-constrained environments
+- **License**: Apache 2.0
+- **Hardware**: 3B: 6–8 GB; 14B: fits quantized on a single 24 GB GPU
+- **Unique**: Full reasoning and vision capabilities down to 3B scale; includes
+  Devstral Small 2 (24B) for agentic coding at 68% SWE-bench Verified
+
+---
+
+### Google Gemma
+
+**[Gemma 4](https://ai.google.dev/gemma)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **Models**: Gemma 4 E2B, E4B (edge, 128K); Gemma 4 26B MoE (3.8B active,
+  256K); Gemma 4 31B Dense (256K, #3 Arena AI)
+- **Best for**: Edge deployment, research, multimodal applications requiring
+  text, image, video, and audio input
+- **License**: Apache 2.0 (upgraded from prior restrictive custom license)
+- **Hardware**: E2B/E4B: ~2 GB RAM (phones); 31B Dense: 1×80 GB H100 BF16;
+  RTX 3090+ with quantization
+- **Unique**: AIME math score jumped from 20.8% to 89.2% vs Gemma 3; broadest
+  specialized variant ecosystem (PaliGemma 2, MedGemma, ShieldGemma 2,
+  TranslateGemma, TxGemma); 400M+ total downloads
+
+> **Gemma 3** (1B/4B/12B/27B, 128K context, 140+ languages) remains widely
+> deployed and is a solid choice for teams not yet on Gemma 4.
+
+---
+
+### Microsoft Phi
+
+**[Phi-4 Family](https://huggingface.co/collections/microsoft/phi-4)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **Models**: Phi-4 (14B), Phi-4-mini (3.8B, 128K), Phi-4-multimodal (5.6B,
+  text + vision + audio), Phi-4-reasoning / reasoning-plus (14B chain-of-thought),
+  Phi-4-reasoning-vision (15B)
+- **Best for**: Mobile and edge deployment, resource-constrained environments,
+  reasoning at small scale
+- **License**: MIT License
+- **Hardware**: Phi-4-mini: runs on iPhones, any GPU with 6+ GB; Phi-4 14B:
+  ~6–9 GB Q4 on RTX 3090/4090
+- **Unique**: Phi-4-reasoning-plus outperforms DeepSeek-R1-Distill-Llama-70B
+  at 5× smaller size; Phi-4-multimodal uses Mixture-of-LoRAs for simultaneous
+  text, vision, and audio; gold standard for efficient small models
+
+> **Note — Phi-3 (superseded)**: Phi-3 has been fully superseded by the Phi-4
+> family. Weights remain available but new projects should use Phi-4.
+
+---
+
+### New Entrants Worth Tracking
+
+**[NVIDIA Nemotron 3](https://huggingface.co/nvidia)** ⭐⭐⭐⭐ 💰 🚀
+
+- **Models**: Nemotron 3 Nano (31.6B total / 3.6B active, 1M context); Nemotron
+  3 Super (120B total / 12B active)
+- **Best for**: Long-context tasks, deep research workflows, efficient inference
+  on NVIDIA hardware
+- **License**: NVIDIA Open Model License (permissive)
+- **Hardware**: Nano: single consumer GPU; Super: multi-GPU setup
+- **Unique**: Hybrid Mamba-Transformer MoE architecture; Super ranks #1 on
+  DeepResearch Bench; available on HuggingFace and major inference platforms
+
+**[OpenAI gpt-oss](https://huggingface.co/openai)** ⭐⭐⭐⭐ 💰 🚀
+
+- **Models**: gpt-oss 120B, gpt-oss 20B
+- **Best for**: Reasoning tasks, tool use, deployments requiring near o4-mini
+  capability with full weight access
+- **License**: Apache 2.0
+- **Hardware**: 20B fits in 16 GB memory; 120B requires multi-GPU setup
+- **Unique**: OpenAI's first open-weight release since GPT-2; near-parity with
+  o4-mini on reasoning tasks; strong tool-use performance
+
+**[AI2 OLMo 3](https://allenai.org/olmo)** ⭐⭐⭐⭐ 💰
+
+- **Models**: OLMo 3 (1B–32B), OLMo 3 32B Thinking (chain-of-thought)
+- **Best for**: Reproducible research, academic benchmarking, fully auditable
+  training pipelines
+- **License**: Apache 2.0 (weights, training data, code, and recipes all open)
+- **Hardware**: 1B–7B: consumer GPU; 32B: ~20 GB Q4
+- **Unique**: Gold standard for fully open models — the only family where every
+  training artifact is publicly released; 2.5× more training-efficient than
+  Llama 3.1; first fully open model to beat GPT-3.5 Turbo
+
+**[Zhipu GLM-5](https://github.com/THUDM/GLM)** ⭐⭐⭐⭐ 💰 🚀
+
+- **Models**: GLM-5 (744B total / 40B active MoE); GLM-5.1 (April 2026)
+- **Best for**: Frontier coding and reasoning tasks, research into non-NVIDIA
+  training infrastructure
+- **License**: MIT License
+- **Hardware**: Multi-GPU cluster required for full model; distilled variants
+  available for local use
+- **Unique**: Trained entirely on Huawei Ascend chips (no NVIDIA GPUs);
+  GLM-5.1 reached #1 on SWE-Bench Pro; geopolitically significant demonstration
+  of NVIDIA-independent frontier training
+
+**[Falcon 3](https://huggingface.co/tiiuae)** ⭐⭐⭐⭐ 💰
+
+- **Models**: 1B, 3B, 7B, 10B dense variants; includes a Mamba variant
+- **Best for**: Efficient on-device and on-premises deployment, sub-13B
+  performance
+- **License**: Apache 2.0-based (TII Falcon License)
+- **Hardware**: 1B–3B: mobile and edge; 10B: single consumer GPU
+- **Unique**: Falcon3-10B outperformed Llama 3.1 8B and Qwen 2.5 7B at launch;
+  Mamba variant available for non-attention architectures
+
+---
+
+### Discontinued / Legacy Models
+
+> The following models are no longer actively developed. Weights remain
+> available but new projects should migrate to current alternatives.
+
+- **Yi Series** (01.AI) — 01.AI stopped pre-training LLMs in March 2025 and
+  pivoted to business solutions built on DeepSeek. Last release: Yi-1.5
+  (May 2024). Community has migrated to Qwen and DeepSeek.
+- **Code Llama** — Superseded by Llama 3.x and specialist coding models. See
+  note above.
+- **DeepSeek Coder** — Merged into DeepSeek V3 main line as of V2.5. See note
+  above.
+- **Phi-3** — Fully superseded by Phi-4. See note above.
+- **DBRX** (Databricks) — Deprecated April 2025.
 
 ---
 
