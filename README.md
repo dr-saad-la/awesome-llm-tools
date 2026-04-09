@@ -515,10 +515,13 @@ platforms - everything you need to build with LLMs.
 - **Platforms**: macOS, Linux, Windows
 
 ```bash
-# Ollama Usage
+# Install Ollama
 curl -fsSL https://ollama.ai/install.sh | sh
-ollama run llama3.1:8b
-ollama run codellama:13b-code
+
+# Run current models
+ollama run llama4:scout
+ollama run qwen3:8b
+ollama run deepseek-r1:8b
 ```
 
 **[LM Studio](https://lmstudio.ai/)** ⭐⭐⭐⭐ 💰
@@ -644,53 +647,77 @@ ollama run codellama:13b-code
 
 **[LangGraph](https://github.com/langchain-ai/langgraph)** ⭐⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Build stateful, multi-actor applications with LLMs using
-  graph-based workflows
-- **Best for**: Complex agent workflows, multistep reasoning, human-in-the-loop
-  systems
+- **What it does**: Build stateful, multi-actor LLM applications using
+  graph-based workflows with explicit state management
+- **Best for**: Complex agent workflows, multi-step reasoning, human-in-the-loop
+  systems, production-grade agentic pipelines
 - **Features**: State management, branching logic, human approval nodes,
-  persistence
-- **Integration**: LangChain native, part of LangChain ecosystem
+  persistence, streaming, LangGraph Cloud for deployment
+- **Integration**: LangChain native; also works standalone with any LLM
 
-**[CrewAI](https://github.com/joaomdmoura/crewAI)** ⭐⭐⭐⭐ 💰 🚀
+**[CrewAI](https://github.com/crewAIInc/crewAI)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Framework for orchestrating role-playing, autonomous AI
-  agents
-- **Best for**: Multi-agent collaboration, complex task delegation, team-based
-  AI workflows
-- **Features**: Role-based agents, task delegation, collaborative problem-solving
-- **Use cases**: Content creation teams, research groups, business process
-  automation
+- **What it does**: Framework for orchestrating teams of role-playing,
+  autonomous AI agents that collaborate on complex tasks
+- **Best for**: Multi-agent collaboration, complex task delegation, business
+  process automation, content pipelines
+- **Features**: Role-based agents, task delegation, collaborative
+  problem-solving, tool integration, memory
+- **Unique**: Highest-level abstraction for multi-agent work — define agents
+  by role and goal rather than by code logic
 
 **[AutoGen](https://github.com/microsoft/autogen)** ⭐⭐⭐⭐ 💰
 
-- **What it does**: Microsoft's framework for multi-agent conversation and
-  collaboration
-- **Best for**: Multi-agent conversations, code generation, complex problem-solving
-- **Features**: Conversable agents, human-in-the-loop, code execution, group
-  chat
+- **What it does**: Microsoft's framework for building multi-agent
+  conversational AI systems (v0.4 is a full architectural rewrite)
+- **Best for**: Multi-agent conversations, code generation workflows,
+  complex problem-solving requiring agent collaboration
+- **Features**: Asynchronous agents, group chat, code execution sandbox,
+  human-in-the-loop, pluggable LLM backends
 - **Developer**: Microsoft Research
+- **Unique**: v0.4 introduced an event-driven, actor-model architecture —
+  significantly more scalable and production-ready than the original design
 
-**[TaskWeaver](https://github.com/microsoft/TaskWeaver)** ⭐⭐⭐ 💰 🚀
+**[OpenAI Agents SDK](https://github.com/openai/openai-agents-python)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Code-first agent framework for data analytics and processing
-- **Best for**: Data analysis, code generation, analytical workflows
-- **Features**: Code interpreter, plugin system, stateful conversations
-- **Unique**: Code-first approach, data analysis focused
+- **What it does**: Lightweight Python SDK for building production-grade
+  agentic workflows with built-in tracing and tool calling
+- **Best for**: Teams building OpenAI-powered agents who want a minimal,
+  well-documented framework rather than a heavyweight orchestration system
+- **Features**: Agents, handoffs, guardrails, built-in tracing, tool calling,
+  streaming, OpenAI-hosted tools (web search, code interpreter)
+- **Pricing**: Free and open source (MIT); LLM costs via OpenAI API
+- **Unique**: First-party SDK from OpenAI — guarantees compatibility with
+  new OpenAI features (Responses API, MCP integration) on day one
 
-**[AgentGPT](https://github.com/reworkd/AgentGPT)** ⭐⭐⭐ 💰
+**[Smolagents](https://github.com/huggingface/smolagents)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Autonomous AI agent platform that runs in browser
-- **Best for**: Goal-oriented tasks, autonomous execution, research
-- **Features**: Web-based interface, autonomous goal pursuit, task breakdown
-- **Deployment**: Web app, self-hostable
+- **What it does**: Hugging Face's minimal, code-first agent framework that
+  treats Python code as the agent's primary action space
+- **Best for**: Researchers and developers who want a lightweight, transparent
+  agent framework with strong open-model support
+- **Features**: Code agents, tool agents, multi-agent orchestration, HuggingFace
+  Hub integration, works with any OpenAI-compatible LLM
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: Code-first philosophy — agents write and execute Python rather
+  than calling predefined tools, giving them far more flexibility with fewer
+  components
 
-**[SuperAGI](https://github.com/TransformerOptimus/SuperAGI)** ⭐⭐⭐ 💰
+**[TaskWeaver](https://github.com/microsoft/TaskWeaver)** ⭐⭐⭐ 💰
 
-- **What it does**: Open source autonomous AI agent framework
-- **Best for**: Building and deploying autonomous agents, agent management
-- **Features**: Agent management, tool integration, performance monitoring
-- **UI**: Graphical interface for agent management
+- **What it does**: Code-first agent framework from Microsoft Research focused
+  on data analytics and structured processing tasks
+- **Best for**: Data analysis workflows, structured code generation, analytical
+  pipelines
+- **Features**: Code interpreter, plugin system, stateful conversations,
+  structured data handling
+- **Note**: Limited development activity since mid-2024; still functional but
+  less actively maintained than alternatives
+
+> **Note — AgentGPT and SuperAGI (inactive)**: Both projects had significant
+> community interest in 2023 but have seen minimal development activity since
+> mid-2024. New projects should prefer LangGraph, CrewAI, or OpenAI Agents SDK
+> for comparable functionality with active maintenance.
 
 ---
 
@@ -764,35 +791,89 @@ ollama run codellama:13b-code
 
 ## 🎙️ Voice & Audio Tools
 
-### Speech-to-Text & Text-to-Speech
+### Speech-to-Text
 
 **[OpenAI Whisper](https://github.com/openai/whisper)** ⭐⭐⭐⭐⭐ 💰
 
-- **What it does**: Automatic speech recognition system
-- **Best for**: Transcription, multilingual speech recognition, audio processing
-- **Features**: 99 languages, robust performance, multiple model sizes
-- **Performance**: State-of-the-art accuracy
+- **What it does**: Automatic speech recognition system trained on 680K hours
+  of multilingual audio
+- **Best for**: Transcription, multilingual speech recognition, audio
+  preprocessing for LLM pipelines
+- **Features**: 99 languages, multiple model sizes (tiny to large-v3), word-level
+  timestamps, robust to accents and noise
+- **Performance**: State-of-the-art open-source ASR; large-v3 matches or exceeds
+  commercial APIs on most benchmarks
 
-**[Coqui TTS](https://github.com/coqui-ai/TTS)** ⭐⭐⭐⭐ 💰
+**[Whisper.cpp](https://github.com/ggerganov/whisper.cpp)** ⭐⭐⭐⭐⭐ 💰
 
-- **What it does**: Deep learning toolkit for text-to-speech synthesis
-- **Best for**: Voice synthesis, voice cloning, multilingual TTS
-- **Features**: 1000+ languages, voice cloning, real-time synthesis
-- **Community**: Large open source community
+- **What it does**: C/C++ port of Whisper optimized for CPU and Apple Silicon
+- **Best for**: Local transcription without Python, edge deployment, real-time
+  streaming on consumer hardware
+- **Features**: No Python required, Core ML support, WebAssembly build,
+  quantized models, real-time mode
+- **Performance**: Runs large-v3 in real time on M-series Macs; 4–10× faster
+  than the original Python implementation on CPU
 
-**[ElevenLabs](https://elevenlabs.io/)** ⭐⭐⭐⭐ 💵
+### Text-to-Speech
 
-- **What it does**: AI voice generation and cloning platform
-- **Best for**: High-quality voice synthesis, voice cloning, content creation
-- **Features**: Realistic voices, voice cloning, API access
-- **Quality**: Premium voice quality
+**[ElevenLabs](https://elevenlabs.io/)** ⭐⭐⭐⭐⭐ 💵 🚀
+
+- **What it does**: AI voice generation, cloning, and dubbing platform
+- **Best for**: High-quality voice synthesis, voice cloning from short samples,
+  multilingual dubbing, production content
+- **Features**: Voice cloning, 30+ languages, emotion control, sound effects,
+  API access, streaming
+- **Pricing**: Free tier (10K chars/month); paid from $5/month
+- **Unique**: Best-in-class voice quality and naturalness; real-time voice
+  cloning from as little as one minute of audio
+
+**[Kokoro TTS](https://github.com/hexgrad/kokoro)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Lightweight, high-quality open-source TTS model (82M
+  parameters)
+- **Best for**: Local, privacy-first voice synthesis; embedding TTS in
+  applications without API costs
+- **Features**: 8 voices, American and British English, fast inference,
+  runs on CPU, Apache 2.0 license
+- **Unique**: Exceptional quality for its size — outperforms many larger models;
+  one of the most downloaded TTS models on HuggingFace; no API key or internet
+  required
+
+**[F5-TTS](https://github.com/SWivid/F5-TTS)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Zero-shot voice cloning TTS using flow matching
+- **Best for**: Cloning any voice from a short reference clip, research into
+  voice synthesis
+- **Features**: Zero-shot cloning, 10+ languages, fast inference, MIT license
+- **Unique**: No fine-tuning required — clone any voice from a 3–10 second
+  reference audio clip; significantly faster than diffusion-based alternatives
+
+**[OpenAI TTS API](https://platform.openai.com/docs/guides/text-to-speech)** ⭐⭐⭐⭐ 💵
+
+- **What it does**: Managed text-to-speech API with six built-in voices
+- **Best for**: Production applications needing reliable, low-latency TTS
+  without managing models
+- **Features**: Six voices, streaming output, MP3/Opus/AAC/FLAC formats,
+  real-time mode
+- **Pricing**: $15/1M characters (tts-1); $30/1M characters (tts-1-hd)
+- **Unique**: Simplest production TTS integration for teams already using the
+  OpenAI API; real-time streaming enables low-latency voice applications
 
 **[Tortoise TTS](https://github.com/neonbjb/tortoise-tts)** ⭐⭐⭐ 💰
 
-- **What it does**: Multi-voice text-to-speech system
-- **Best for**: Voice cloning, custom voices, research
-- **Features**: Voice cloning from samples, emotional control
-- **Note**: Slower but high quality
+- **What it does**: High-quality multi-voice TTS with voice cloning from samples
+- **Best for**: Voice cloning research, custom voice generation where speed is
+  not a constraint
+- **Features**: Voice cloning from audio samples, emotional control, multiple
+  speakers
+- **Note**: Slow inference (minutes per sentence on consumer hardware); largely
+  superseded by F5-TTS and Kokoro for most use cases, but still valuable for
+  research
+
+> **Note — Coqui TTS (discontinued)**: The Coqui AI company shut down in
+> January 2024 and the repository is archived. The project is no longer
+> maintained. Kokoro TTS and F5-TTS are the recommended open-source
+> replacements.
 
 ---
 
@@ -800,33 +881,81 @@ ollama run codellama:13b-code
 
 ### IDE Extensions & Code Assistants
 
+**[GitHub Copilot](https://github.com/features/copilot)** ⭐⭐⭐⭐⭐ 💵 🏢
+
+- **What it does**: AI pair programmer integrated directly into VS Code,
+  JetBrains, Vim, and other editors
+- **Best for**: Inline code completion, multi-file edits, code explanation,
+  PR summaries — the broadest IDE coverage of any AI coding tool
+- **Features**: Inline completion, Copilot Chat, multi-file edits (Copilot
+  Workspace), CLI assistant, PR review
+- **Pricing**: $10/month individual; $19/month Business; free for verified
+  students and open-source maintainers
+- **Unique**: Largest installed base of any AI coding tool; deeply integrated
+  into the GitHub workflow including pull request review and issue triage
+
+**[Cursor](https://cursor.com/)** ⭐⭐⭐⭐⭐ 💵 🚀
+
+- **What it does**: AI-first code editor built on VS Code with deep codebase
+  understanding
+- **Best for**: AI-assisted coding, refactoring large codebases, multi-file
+  generation, pair programming
+- **Features**: Codebase-aware chat, multi-file edits, tab completion, custom
+  model selection (Claude, GPT, Gemini), background agents
+- **Pricing**: Free tier; $20/month Pro
+- **Unique**: The editor is built around AI rather than bolted on — codebase
+  indexing lets it answer questions and make edits across entire repositories,
+  not just the current file
+
+**[Claude Code](https://claude.ai/code)** ⭐⭐⭐⭐⭐ 💵 🚀
+
+- **What it does**: Agentic coding tool that runs in the terminal and operates
+  on your local codebase autonomously
+- **Best for**: Autonomous coding tasks, refactoring, debugging, writing tests,
+  understanding unfamiliar codebases
+- **Features**: Full filesystem access, shell command execution, git integration,
+  multi-file edits, background tasks
+- **Pricing**: Usage billed via Anthropic API; included in Claude Max plan
+- **Unique**: Operates as a genuine agent rather than a chat assistant — can
+  plan and execute multi-step coding tasks end-to-end with minimal guidance
+
 **[Continue](https://github.com/continuedev/continue)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Open source autopilot for VS Code and JetBrains
-- **Best for**: Code completion, refactoring, explanation
-- **Features**: Multiple LLM support, customizable, self-hosted
-- **Integration**: VS Code, JetBrains IDEs
+- **What it does**: Open-source AI code assistant for VS Code and JetBrains
+  that connects to any LLM
+- **Best for**: Teams wanting full control over which model powers their
+  coding assistant, self-hosted or local LLM setups
+- **Features**: Tab completion, inline edit, codebase chat, custom models
+  (Ollama, Anthropic, OpenAI, any OpenAI-compatible endpoint)
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: The only fully open-source coding assistant with feature parity
+  to commercial tools; works with local models via Ollama for completely
+  private coding workflows
 
-**[Cursor](https://cursor.sh/)** ⭐⭐⭐⭐ 💵 🚀
+**[Windsurf](https://windsurf.com/)** ⭐⭐⭐⭐ 🔄 🚀
 
-- **What it does**: AI-first code editor built on VS Code
-- **Best for**: AI-assisted coding, pair programming, code generation
-- **Features**: GPT-4 integration, codebase chat, AI commands
-- **Performance**: Fast, smooth AI integration
+- **What it does**: AI-powered IDE (formerly Codeium) with an agentic
+  "Flow" mode for autonomous multi-step coding
+- **Best for**: Developers wanting an agent-first coding environment with
+  strong free tier
+- **Features**: Inline completion, Cascade agentic mode, 70+ language support,
+  multi-file edits, terminal integration
+- **Pricing**: Free tier; $15/month Pro
+- **Unique**: Cascade mode reasons across the entire codebase and executes
+  multi-step tasks autonomously — closer in behavior to Claude Code than a
+  traditional code completion tool
 
-**[Codeium](https://codeium.com/)** ⭐⭐⭐⭐ 🔄
+**[Tabnine](https://www.tabnine.com/)** ⭐⭐⭐ 💵 🏢
 
-- **What it does**: Free AI code completion and chat
-- **Best for**: Code completion, chat assistance, multiple IDEs
-- **Features**: 70+ programming languages, IDE extensions, free tier
-- **Pricing**: Generous free tier, enterprise options
-
-**[Tabnine](https://www.tabnine.com/)** ⭐⭐⭐ 💵
-
-- **What it does**: AI code completion assistant
-- **Best for**: Code completion, team collaboration, enterprise
-- **Features**: Local models, team training, compliance features
-- **Focus**: Privacy-first, on-premises options
+- **What it does**: AI code completion assistant with a focus on privacy and
+  enterprise compliance
+- **Best for**: Enterprise teams with strict data governance requirements,
+  on-premises AI coding deployments
+- **Features**: Local model option, zero data retention mode, team-specific
+  model training, SOC 2 compliance
+- **Pricing**: $12/month per user; enterprise pricing on request
+- **Unique**: The only major AI coding tool that can run fully on-premises
+  with no data leaving the customer environment
 
 ---
 
@@ -930,61 +1059,165 @@ ollama run codellama:13b-code
 ### Academic & Research Platforms
 
 **[EleutherAI Eval Harness](https://github.com/EleutherAI/lm-evaluation-harness)**
-⭐⭐⭐⭐ 💰
+⭐⭐⭐⭐⭐ 💰
 
-- **What it does**: Framework for evaluating language models on various tasks
-- **Best for**: Research evaluation, model comparison, academic benchmarks
-- **Features**: 200+ tasks, standardized evaluation, research-grade metrics
-- **Community**: EleutherAI research community
+- **What it does**: The de facto standard framework for evaluating language
+  models across hundreds of academic benchmarks
+- **Best for**: Research evaluation, model comparison, academic benchmarks,
+  reproducing published results
+- **Features**: 400+ tasks, standardized evaluation, research-grade metrics,
+  multi-GPU support, HuggingFace Hub integration
+- **Community**: EleutherAI research community; used by nearly every major
+  open-weight model release for reported benchmark numbers
 
-**[Alpaca Eval](https://github.com/tatsu-lab/alpaca_eval)** ⭐⭐⭐ 💰
+**[HELM](https://crfm.stanford.edu/helm/)** ⭐⭐⭐⭐ 💰
 
-- **What it does**: Automatic evaluator for instruction-following models
-- **Best for**: Instruction tuning evaluation, model comparison
-- **Features**: Automated evaluation, leaderboards, research benchmarks
-- **Developer**: Stanford Alpaca team
+- **What it does**: Holistic Evaluation of Language Models — Stanford's
+  comprehensive benchmark covering accuracy, robustness, fairness, and
+  efficiency
+- **Best for**: Multi-dimensional model evaluation beyond single-metric
+  leaderboards, fairness and bias research
+- **Features**: 40+ scenarios, multiple metrics per task, calibration and
+  robustness measurement, public leaderboard
+- **Developer**: Stanford CRFM
+- **Unique**: The only major benchmark that measures calibration, robustness,
+  and fairness alongside accuracy — provides a fuller picture than accuracy-only
+  leaderboards
+
+**[GPQA Diamond](https://github.com/idavidrein/gpqa)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Graduate-level science questions benchmark designed to
+  be difficult even for domain experts without internet access
+- **Best for**: Evaluating frontier model reasoning on genuinely hard questions
+  that cannot be solved by pattern matching or web knowledge
+- **Features**: 448 expert-validated questions across biology, chemistry, and
+  physics; designed so non-experts score near random chance
+- **Unique**: The benchmark most cited for frontier model comparisons in 2025–26
+  (Claude Sonnet 4.6 scores 91.3%); deliberately resistant to contamination
+
+**[LiveBench](https://livebench.ai/)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Continuously updated benchmark using questions sourced from
+  recent events, papers, and competitions to prevent contamination
+- **Best for**: Evaluating models on genuinely unseen data, tracking model
+  capability over time without contamination concerns
+- **Features**: Monthly updates, math, coding, reasoning, and language tasks,
+  public leaderboard
+- **Unique**: Solves the contamination problem that plagues static benchmarks
+  by sourcing questions from events that postdate training cutoffs
 
 **[BIG-bench](https://github.com/google/BIG-bench)** ⭐⭐⭐⭐ 💰
 
-- **What it does**: Beyond the Imitation Game collaborative benchmark
-- **Best for**: Comprehensive model evaluation, research
-- **Features**: 200+ tasks, diverse evaluation, research collaboration
-- **Developer**: Google Research
+- **What it does**: Beyond the Imitation Game — a collaborative benchmark with
+  200+ diverse tasks contributed by researchers worldwide
+- **Best for**: Broad capability evaluation, research into emergent behaviors,
+  comprehensive model audits
+- **Features**: 200+ tasks, diverse evaluation, human baseline comparisons
+- **Developer**: Google Research and community contributors
 
-**[MMLU](https://github.com/hendrycks/test)** ⭐⭐⭐⭐ 💰
+**[MMLU / MMLU-Pro](https://github.com/hendrycks/test)** ⭐⭐⭐⭐ 💰
 
-- **What it does**: Massive Multitask Language Understanding benchmark
-- **Best for**: Academic evaluation, knowledge assessment
-- **Features**: 57 academic subjects, standardized testing
-- **Usage**: Standard benchmark in research papers
+- **What it does**: Massive Multitask Language Understanding — 57-subject
+  academic knowledge benchmark; MMLU-Pro is the harder, updated version
+- **Best for**: Academic knowledge evaluation, comparing models on standardized
+  subject-matter tests
+- **Features**: 57 academic subjects, multiple-choice format, standardized
+  methodology
+- **Note**: The original MMLU is now largely saturated by frontier models
+  (scores above 90%); **MMLU-Pro** (harder, 10-choice questions) is the
+  version cited in current research papers and is the recommended successor
+
+**[Alpaca Eval](https://github.com/tatsu-lab/alpaca_eval)** ⭐⭐⭐ 💰
+
+- **What it does**: Automated evaluation of instruction-following quality using
+  a strong LLM as the judge
+- **Best for**: Quickly comparing instruction-tuned models on response quality
+  without human annotation
+- **Features**: LLM-as-judge evaluation, leaderboard, length-controlled variant
+  to reduce verbosity bias
+- **Developer**: Stanford Alpaca team
 
 ---
 
 ## 🎨 Multimodal & Specialized Models
 
-### Vision-Language Models
+### Vision-Language APIs
 
-**[LLaVA](https://github.com/haotian-liu/LLaVA)** ⭐⭐⭐⭐ 💰
+**[GPT-4o Vision](https://platform.openai.com/docs/guides/vision)** ⭐⭐⭐⭐⭐ 💵
 
-- **What it does**: Large Language and Vision Assistant
-- **Best for**: Vision-language tasks, image understanding, research
-- **Features**: Visual instruction tuning, conversation about images
-- **Performance**: Strong vision-language capabilities
+- **What it does**: Native vision understanding built into GPT-4o and
+  GPT-5.4, supporting images and video frames
+- **Best for**: Production vision-language applications, document understanding,
+  image analysis integrated with text reasoning
+- **Features**: Image and PDF input, multi-image reasoning, structured output
+  extraction from images, integrated with all GPT-4o capabilities
+- **Pricing**: Billed as standard GPT-4o tokens; images ~$0.002–0.013 each
+  depending on size
+- **Unique**: Vision is native to the model rather than a separate adapter —
+  images and text are reasoned about jointly in a single inference call
 
-**[InstructBLIP](https://github.com/salesforce/LAVIS/tree/main/projects/instructblip)**
-⭐⭐⭐ 💰
+**[Claude Vision](https://docs.anthropic.com/en/docs/vision)** ⭐⭐⭐⭐⭐ 💵
 
-- **What it does**: Vision-language instruction tuning
-- **Best for**: Visual question answering, image captioning
-- **Features**: Instruction following for vision tasks
-- **Developer**: Salesforce Research
+- **What it does**: Native vision understanding across all Claude Sonnet and
+  Opus models
+- **Best for**: Document analysis, chart and diagram understanding,
+  technical image Q&A, complex multi-image reasoning
+- **Features**: Image and PDF input, multi-image comparison, high-resolution
+  support, integrated with Claude's long-context and agentic capabilities
+- **Pricing**: Images billed as tokens; approximately 1,000–2,000 tokens per
+  image depending on resolution
+- **Unique**: Exceptional at understanding dense documents, charts, and
+  technical diagrams — consistently outperforms alternatives on document
+  understanding benchmarks
+
+### Open-Weight Vision-Language Models
+
+**[Qwen2.5-VL](https://github.com/QwenLM/Qwen2.5-VL)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: State-of-the-art open-weight vision-language model family
+  from Alibaba
+- **Models**: 3B, 7B, 32B, 72B; all Apache 2.0
+- **Best for**: Document parsing, chart understanding, video frame analysis,
+  GUI grounding (clicking and navigating UIs from screenshots)
+- **Unique**: Best open-weight vision-language performance across most benchmarks;
+  the 72B model matches or exceeds GPT-4o on document understanding tasks;
+  native video understanding up to 20 minutes
+
+**[PaliGemma 2](https://ai.google.dev/gemma/docs/paligemma)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Google's vision-language model family optimized for
+  transfer learning and fine-tuning
+- **Models**: 3B, 10B, 28B; Apache 2.0
+- **Best for**: Fine-tuning on custom vision tasks, captioning, VQA, object
+  detection, research
+- **Unique**: Designed explicitly as a fine-tuning base rather than a
+  general assistant — achieves state-of-the-art results on specialized tasks
+  with very little task-specific data
+
+**[LLaVA](https://github.com/haotian-liu/LLaVA)** ⭐⭐⭐ 💰
+
+- **What it does**: Research framework that pioneered visual instruction tuning
+  for vision-language models
+- **Best for**: Academic research, understanding vision-language model design,
+  building custom VLM training pipelines
+- **Features**: Visual instruction tuning, multiple backbone options, research
+  reproducibility
+- **Note**: Largely superseded for production use by Qwen2.5-VL and PaliGemma 2,
+  but remains a foundational research reference
+
+### Foundational Vision Models
 
 **[OpenAI CLIP](https://github.com/openai/CLIP)** ⭐⭐⭐⭐⭐ 💰
 
-- **What it does**: Connecting text and images
-- **Best for**: Image-text understanding, zero-shot classification
-- **Features**: Multi-modal embeddings, zero-shot capabilities
-- **Impact**: Foundation for many vision-language applications
+- **What it does**: Connects text and images through contrastive pretraining,
+  enabling zero-shot image classification and image-text retrieval
+- **Best for**: Image-text search, zero-shot classification, building multimodal
+  embedding pipelines
+- **Features**: Multi-modal embeddings, zero-shot classification, open-source
+  weights (MIT)
+- **Unique**: Still the most widely used foundation for image-text embedding
+  tasks despite being a 2021 model; underpins most image retrieval and
+  classification systems built with LLMs
 
 ---
 
