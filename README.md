@@ -700,11 +700,15 @@ ollama run codellama:13b-code
 
 **[DSPy](https://github.com/stanfordnlp/dspy)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Programming language model pipelines declaratively
-- **Best for**: Complex reasoning chains, prompt optimization, systematic LM
-  programming
-- **Features**: Automatic prompt optimization, modular components, few-shot
-  learning
+- **What it does**: Framework for algorithmically optimizing LLM prompts and
+  pipelines
+- **Best for**: Replacing hand-written prompts with automatically optimized
+  ones, complex multi-step reasoning pipelines
+- **Features**: Automatic prompt optimization, few-shot example selection,
+  modular pipeline composition, multiple optimizers (MIPROv2, BootstrapRS)
+- **Pricing**: Free and open source
+- **Unique**: Eliminates manual prompt engineering — defines the task
+  declaratively and optimizes prompts automatically against a metric
 - **Developer**: Stanford NLP Group
 
 **[Outlines](https://github.com/outlines-dev/outlines)** ⭐⭐⭐⭐ 💰 🚀
@@ -1220,18 +1224,6 @@ ollama run codellama:13b-code
 - **Pricing**: Free and open source; cloud version available
 - **Unique**: Combines prompt playground, versioning, and evaluation in one
   open source platform; designed for the full team, not just engineers
-
-**[DSPy](https://github.com/stanfordnlp/dspy)** ⭐⭐⭐⭐ 💰 🚀
-
-- **What it does**: Framework for algorithmically optimizing LLM prompts and
-  pipelines
-- **Best for**: Replacing hand-written prompts with automatically optimized
-  ones, complex multi-step reasoning pipelines
-- **Features**: Automatic prompt optimization, few-shot example selection,
-  modular pipeline composition, multiple optimizers (MIPROv2, BootstrapRS)
-- **Pricing**: Free and open source
-- **Unique**: Eliminates manual prompt engineering — defines the task
-  declaratively and optimizes prompts automatically against a metric
 
 ---
 
