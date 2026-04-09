@@ -1181,7 +1181,7 @@ ollama run codellama:13b-code
 
 ---
 
-## 🎨 Prompt Engineering
+## ✍️ Prompt Engineering
 
 ### Testing & Optimization
 
