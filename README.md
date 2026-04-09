@@ -51,7 +51,7 @@ platforms - everything you need to build with LLMs.
 - [Learning Resources](#-learning-resources)
 - [Contributing](#-contributing)
 
-## 🗂️ Legend
+## 🗂 Legend
 
 - ⭐⭐⭐⭐⭐ Must-have, industry standard
 - ⭐⭐⭐⭐ Excellent choice, highly recommended
@@ -446,7 +446,7 @@ platforms - everything you need to build with LLMs.
 
 ---
 
-## 🛠️ Development Frameworks
+## 🛠 Development Frameworks
 
 ### High-Level Application Frameworks
 
@@ -585,7 +585,7 @@ ollama run deepseek-r1:8b
 
 ---
 
-## 🗂️ Vector Databases & RAG
+## 🗂 Vector Databases & RAG
 
 ### Vector Databases
 
@@ -789,7 +789,7 @@ ollama run deepseek-r1:8b
 
 ---
 
-## 🎙️ Voice & Audio Tools
+## 🎙 Voice & Audio Tools
 
 ### Speech-to-Text
 
@@ -1269,7 +1269,7 @@ ollama run deepseek-r1:8b
 
 ---
 
-## 🎛️ Fine-tuning Platforms
+## 🎛 Fine-tuning Platforms
 
 ### Training Frameworks
 
@@ -1418,7 +1418,7 @@ ollama run deepseek-r1:8b
 
 ---
 
-## ✍️ Prompt Engineering
+## ✍ Prompt Engineering
 
 ### Testing & Optimization
 
@@ -1600,7 +1600,7 @@ ollama run deepseek-r1:8b
 
 ---
 
-## 🏗️ Recommended Stacks
+## 🏗 Recommended Stacks
 
 > Opinionated starting points for common use cases. Swap components as your
 > requirements evolve.
