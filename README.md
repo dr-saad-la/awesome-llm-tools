@@ -4,6 +4,7 @@
 
 ---
 
+<!--suppress HtmlDeprecatedAttribute -->
 <div align="center">
 
 [![Awesome](https://img.shields.io/badge/Awesome-List-ff69b4?style=for-the-badge&logo=awesomelists&logoColor=white)](https://awesome.re)
@@ -1033,43 +1034,506 @@ ollama run codellama:13b-code
 
 ## 🎛️ Fine-tuning Platforms
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+### Training Frameworks
+
+**[Unsloth](https://github.com/unslothai/unsloth)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Accelerated fine-tuning library for LLMs with hand-written
+  CUDA kernels
+- **Best for**: Fast LoRA and QLoRA fine-tuning on consumer and cloud GPUs,
+  reducing VRAM usage
+- **Features**: 2–5× faster training, 70% less VRAM, supports Llama 4, Qwen3,
+  Mistral, Phi-4, Gemma 4
+- **Pricing**: Free and open source; Unsloth Pro for managed runs
+- **Unique**: No approximations — exact same outputs as standard training but
+  significantly faster; Colab notebooks for every major model family
+
+**[Axolotl](https://github.com/OpenAccess-AI-Collective/axolotl)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Flexible fine-tuning framework driven by YAML configuration
+- **Best for**: Reproducible fine-tuning pipelines, teams wanting
+  config-as-code training workflows
+- **Features**: LoRA, QLoRA, full fine-tune, FSDP, DeepSpeed, multi-GPU,
+  Flash Attention 2
+- **Pricing**: Free and open source
+- **Unique**: Single YAML file defines the entire training run; first-class
+  support for custom chat templates and dataset formats
+
+**[LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Unified fine-tuning framework with web UI and CLI
+- **Best for**: Rapid experimentation, teams wanting a visual interface for
+  training and evaluation
+- **Features**: 100+ model support, LoRA/QLoRA/full FT, built-in evaluation,
+  web UI (LlamaBoard), dataset management
+- **Pricing**: Free and open source
+- **Unique**: LlamaBoard GUI makes fine-tuning accessible without writing code;
+  broadest model compatibility of any open-source framework
+
+**[Hugging Face AutoTrain](https://huggingface.co/autotrain)** ⭐⭐⭐⭐ 🔄
+
+- **What it does**: No-code fine-tuning platform for LLMs and other ML models
+- **Best for**: Teams without ML infrastructure expertise, quick domain
+  adaptation of open-weight models
+- **Features**: Text classification, causal LM, chat fine-tuning, automatic
+  hyperparameter search
+- **Pricing**: Free self-hosted; paid cloud compute via HuggingFace Spaces
+- **Unique**: Fully managed training with no infrastructure setup; integrates
+  directly with HuggingFace Hub for dataset and model storage
+
+**[OpenAI Fine-tuning](https://platform.openai.com/docs/guides/fine-tuning)** ⭐⭐⭐⭐ 💵
+
+- **What it does**: Managed fine-tuning service for GPT-4o and GPT-4o-mini
+- **Best for**: Production teams wanting fine-tuned OpenAI models without
+  managing GPU infrastructure
+- **Features**: JSONL dataset upload, automatic training, model evaluation,
+  cost tracking
+- **Pricing**: $25/1M training tokens; fine-tuned model inference at standard
+  rates
+- **Unique**: Simplest path to a production fine-tuned model; no infrastructure
+  to manage; integrates directly with the OpenAI API
+
+**[Together AI Fine-tuning](https://www.together.ai/fine-tuning)** ⭐⭐⭐⭐ 💵
+
+- **What it does**: Managed fine-tuning for open-source models at scale
+- **Best for**: Teams fine-tuning Llama, Qwen, Mistral, or DeepSeek models
+  with production serving included
+- **Features**: Full fine-tune and LoRA, custom datasets, automatic evaluation,
+  instant deployment after training
+- **Pricing**: Per-GPU-hour; fine-tuned models served at same price as base
+  models
+- **Unique**: Fine-tuned model is immediately available via API after training
+  completes, no separate deployment step
+
+**[Modal](https://modal.com/)** ⭐⭐⭐⭐ 🔄
+
+- **What it does**: Serverless GPU platform for running fine-tuning and
+  inference workloads in Python
+- **Best for**: Engineers who want full code control over training without
+  managing cloud infrastructure
+- **Features**: On-demand H100/A100 access, Python-native API, persistent
+  volumes, fast cold starts
+- **Pricing**: Pay-per-second GPU billing; free tier included
+- **Unique**: Runs any Python training script on cloud GPUs with one decorator;
+  no YAML, no clusters, no DevOps
 
 ---
 
 ## 📈 Evaluation & Monitoring
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+### Production Observability
+
+**[LangSmith](https://smith.langchain.com/)** ⭐⭐⭐⭐⭐ 🔄
+
+- **What it does**: Observability and evaluation platform for LLM applications
+- **Best for**: Teams using LangChain or LangGraph who need full trace
+  visibility and dataset-driven evaluation
+- **Features**: Full trace logging, prompt versioning, dataset management,
+  automated evaluators, A/B testing
+- **Pricing**: Free tier (5K traces/month); paid from $39/month
+- **Unique**: Native LangChain integration gives zero-config tracing for any
+  LangChain application; human annotation interface for building eval datasets
+
+**[Langfuse](https://langfuse.com/)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open source LLM observability and evaluation platform
+- **Best for**: Teams wanting full self-hosted observability with no
+  vendor lock-in
+- **Features**: Tracing, prompt management, evaluation, cost tracking,
+  user feedback, dataset curation
+- **Pricing**: Free and open source (self-hosted); cloud from $59/month
+- **Unique**: Full-featured open source alternative to LangSmith; works with
+  any LLM provider via OpenTelemetry and SDK integrations
+
+**[Weights & Biases Weave](https://wandb.ai/site/weave)** ⭐⭐⭐⭐ 🔄
+
+- **What it does**: LLM tracing and evaluation layer built on top of W&B
+- **Best for**: Teams already using W&B for ML training who want unified
+  observability across training and inference
+- **Features**: Trace logging, evaluations, dataset versioning, cost tracking,
+  integration with W&B experiment tracking
+- **Pricing**: Free tier; paid via W&B plans from $50/month
+- **Unique**: Unified platform for both model training metrics and production
+  LLM application observability; strong dataset versioning
+
+**[Arize Phoenix](https://github.com/Arize-ai/phoenix)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open source AI observability with built-in evals and
+  tracing
+- **Best for**: Teams wanting local or self-hosted observability with strong
+  evaluation tooling
+- **Features**: OpenTelemetry-native tracing, LLM evals, RAG evaluation,
+  embedding visualization, dataset management
+- **Pricing**: Free and open source
+- **Unique**: Runs entirely locally with no data leaving your environment;
+  strong RAG-specific evaluation metrics out of the box
+
+**[PromptLayer](https://promptlayer.com/)** ⭐⭐⭐ 🔄
+
+- **What it does**: Prompt management and request logging platform
+- **Best for**: Teams wanting simple request logging and prompt version
+  control without full observability infrastructure
+- **Features**: Request logging, prompt templates, A/B testing, cost tracking,
+  visual diff for prompt versions
+- **Pricing**: Free tier; paid from $25/month
+- **Unique**: Minimal setup — drop-in wrapper around the OpenAI client;
+  good for teams starting with observability
 
 ---
 
 ## 🎨 Prompt Engineering
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+### Testing & Optimization
+
+**[Promptfoo](https://github.com/promptfoo/promptfoo)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open source tool for testing and evaluating LLM prompts
+  and models
+- **Best for**: Systematic prompt testing, model comparison, CI/CD integration
+  for LLM quality
+- **Features**: YAML-based test definitions, automated evals, red teaming,
+  multi-model comparison, CI/CD integration
+- **Pricing**: Free and open source; cloud version available
+- **Unique**: Treats prompt evaluation like unit tests — define expected
+  outputs, run assertions, catch regressions before they reach production
+
+**[Humanloop](https://humanloop.com/)** ⭐⭐⭐⭐ 🔄 🏢
+
+- **What it does**: Prompt management and evaluation platform for enterprise
+  teams
+- **Best for**: Large teams collaborating on prompts, enterprise prompt
+  lifecycle management
+- **Features**: Prompt versioning, A/B testing, human feedback collection,
+  automated evals, fine-tuning integration
+- **Pricing**: Free tier; paid from $149/month
+- **Unique**: Full prompt lifecycle management from development to production
+  with team collaboration and approval workflows
+
+**[Agenta](https://github.com/Agenta-AI/agenta)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open source LLM application development platform with
+  prompt management and evaluation
+- **Best for**: Teams wanting self-hosted prompt engineering with evaluation
+  in a single platform
+- **Features**: Prompt playground, A/B testing, custom evaluators, tracing,
+  human annotation
+- **Pricing**: Free and open source; cloud version available
+- **Unique**: Combines prompt playground, versioning, and evaluation in one
+  open source platform; designed for the full team, not just engineers
+
+**[DSPy](https://github.com/stanfordnlp/dspy)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Framework for algorithmically optimizing LLM prompts and
+  pipelines
+- **Best for**: Replacing hand-written prompts with automatically optimized
+  ones, complex multi-step reasoning pipelines
+- **Features**: Automatic prompt optimization, few-shot example selection,
+  modular pipeline composition, multiple optimizers (MIPROv2, BootstrapRS)
+- **Pricing**: Free and open source
+- **Unique**: Eliminates manual prompt engineering — defines the task
+  declaratively and optimizes prompts automatically against a metric
 
 ---
 
 ## 🔧 Supporting Tools
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+### Data Processing & Document Parsing
+
+**[Unstructured](https://github.com/Unstructured-IO/unstructured)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Document parsing library that extracts clean text from
+  any file format for LLM ingestion
+- **Best for**: RAG pipelines requiring robust document parsing across diverse
+  file types
+- **Features**: PDF, Word, Excel, HTML, email, images (OCR), 20+ file formats,
+  element-level chunking
+- **Pricing**: Free and open source; managed API available
+- **Unique**: De facto standard for document preprocessing in RAG pipelines;
+  maintains document structure (titles, tables, lists) rather than dumping
+  raw text
+
+**[Docling](https://github.com/DS4SD/docling)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: IBM's document parsing library with advanced layout
+  understanding
+- **Best for**: Complex PDFs with tables, figures, and multi-column layouts
+  that simpler parsers struggle with
+- **Features**: PDF layout analysis, table extraction, figure detection,
+  Markdown and JSON output, DoclingDocument format
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: Handles complex academic and enterprise PDFs that other parsers
+  corrupt; native integration with LlamaIndex and LangChain
+
+**[LlamaParse](https://llamaindex.ai/llamaparse)** ⭐⭐⭐⭐ 🔄
+
+- **What it does**: Managed document parsing API optimized for RAG
+- **Best for**: Teams needing high-quality PDF parsing without running
+  infrastructure
+- **Features**: Advanced PDF parsing, table extraction, image extraction,
+  Markdown output, page-level metadata
+- **Pricing**: Free tier (1K pages/day); paid from $3/1K pages
+- **Unique**: Purpose-built for RAG — outputs are structured for optimal
+  chunking and retrieval; handles complex layouts better than open source
+  alternatives for most document types
+
+### Unified API & Cost Management
+
+**[LiteLLM](https://github.com/BerriAI/litellm)** ⭐⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Unified Python SDK and proxy that calls 100+ LLM APIs
+  using the OpenAI format
+- **Best for**: Applications needing to switch between providers, load
+  balancing across APIs, cost tracking
+- **Features**: 100+ providers, load balancing, fallbacks, spend tracking,
+  virtual API keys, OpenAI-compatible proxy
+- **Pricing**: Free and open source; LiteLLM Pro for enterprise features
+- **Unique**: Single interface for every LLM provider — change one string to
+  swap from OpenAI to Anthropic to Bedrock; built-in cost tracking across all
+  providers
+
+**[tiktoken](https://github.com/openai/tiktoken)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Fast tokenizer for OpenAI models written in Rust
+- **Best for**: Accurately counting tokens before sending requests to avoid
+  truncation or overspend
+- **Features**: BPE tokenization, cl100k_base and o200k_base encodings,
+  Python bindings, very fast
+- **Pricing**: Free and open source (MIT)
+- **Unique**: The reference tokenizer for all OpenAI models; 3–6× faster than
+  pure Python alternatives
+
+**[Hugging Face Tokenizers](https://github.com/huggingface/tokenizers)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Fast tokenizer library for any Hugging Face model
+- **Best for**: Tokenizing text for open-weight models, building custom
+  tokenization pipelines
+- **Features**: Rust-backed, BPE/WordPiece/Unigram, padding, truncation,
+  offset mapping
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: Used by every Hugging Face Transformers model; supports
+  tokenizer training from scratch
+
+### Context & Memory Utilities
+
+**[LangChain Text Splitters](https://python.langchain.com/docs/concepts/text_splitters/)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Collection of text chunking strategies for RAG pipelines
+- **Best for**: Splitting documents into optimal chunks before embedding
+  and retrieval
+- **Features**: Recursive, semantic, token-aware, code-aware, and
+  markdown-aware splitters
+- **Pricing**: Free and open source
+- **Unique**: Most comprehensive collection of chunking strategies in a single
+  library; code splitter understands language syntax for better splits
 
 ---
 
 ## 💲 Cost Comparison
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+> Pricing as of April 2026. All rates are per 1M tokens (input / output)
+> unless noted. Verify current pricing directly with each provider before
+> making decisions.
+
+### Frontier Models
+
+| Provider | Model | Input | Output | Context |
+| --- | --- | --- | --- | --- |
+| OpenAI | GPT-5.4 | $5.00 | $20.00 | 1M |
+| OpenAI | GPT-5.4 Mini | $0.40 | $1.60 | 1M |
+| Anthropic | Claude Opus 4.6 | $15.00 | $75.00 | 1M |
+| Anthropic | Claude Sonnet 4.6 | $3.00 | $15.00 | 1M |
+| Google | Gemini 3.1 Pro | $3.50 | $10.50 | 1M |
+| Google | Gemini 2.5 Flash | $0.15 | $0.60 | 1M |
+| xAI | Grok 4 | $3.00 | $15.00 | 2M |
+| xAI | Grok 4.1 Fast | $0.20 | $0.50 | 2M |
+| Mistral | Mistral Large 3 API | $2.00 | $6.00 | 256K |
+| DeepSeek | DeepSeek V3.2 | $0.07 | $0.28 | 64K |
+
+### Budget & Efficient Models
+
+| Provider | Model | Input | Output | Notes |
+| --- | --- | --- | --- | --- |
+| Anthropic | Claude Haiku 4.5 | $0.25 | $1.25 | Fastest Claude |
+| OpenAI | GPT-5.4 Nano | $0.05 | $0.20 | Smallest GPT |
+| Google | Gemini 2.5 Flash-Lite | $0.05 | $0.15 | Lowest cost tier |
+| Groq | Llama 3.3 70B | $0.05 | $0.10 | 840+ tok/sec |
+| Cerebras | Llama 3.3 70B | $0.10 | $0.10 | 2300+ tok/sec |
+| DeepSeek | R1 (cached) | $0.04 | $0.16 | 90% cache discount |
+| Mistral | Mistral Small 4 API | $0.10 | $0.30 | Unified reasoning+vision |
+| Together AI | Llama 4 Scout | $0.10 | $0.30 | 10M context |
+
+### Cost-Saving Strategies
+
+- **Prompt caching**: Anthropic (90% discount on cached prefixes), OpenAI, Google all offer
+  caching — structure prompts so the static system prompt is always a prefix
+- **Batch processing**: All major providers offer 50% discounts for
+  asynchronous batch jobs with 24-hour SLA
+- **Model tiering**: Route simple classification or extraction tasks to
+  Flash/Haiku/Nano; reserve frontier models for complex reasoning
+- **Context management**: Trim conversation history aggressively — costs
+  scale linearly with context length
 
 ---
 
 ## 🏗️ Recommended Stacks
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+> Opinionated starting points for common use cases. Swap components as your
+> requirements evolve.
+
+### Starter RAG Application
+
+Best for: developers building their first document Q&A or knowledge base.
+
+| Layer | Tool | Why |
+| --- | --- | --- |
+| LLM | Claude Sonnet 4.6 or Gemini 2.5 Flash | Balance of quality and cost |
+| Framework | LlamaIndex | Purpose-built for RAG |
+| Vector DB | Chroma (dev) → Qdrant (prod) | Easy local start, fast production |
+| Parsing | Unstructured | Handles mixed document types |
+| Serving | FastAPI | Lightweight, async-ready |
+
+### Production Agentic System
+
+Best for: multi-step autonomous workflows with tool use and human-in-the-loop.
+
+| Layer | Tool | Why |
+| --- | --- | --- |
+| LLM | Claude Sonnet 4.6 | Best agentic performance |
+| Orchestration | LangGraph | Stateful graph-based agent control |
+| Memory | Mem0 | Long-term user and session memory |
+| Tools | LiteLLM proxy | Provider fallback and cost tracking |
+| Observability | Langfuse | Full trace visibility, self-hostable |
+| Vector DB | Qdrant | Fast filtering for tool retrieval |
+
+### Local / Privacy-First Stack
+
+Best for: teams that cannot send data to external APIs.
+
+| Layer | Tool | Why |
+| --- | --- | --- |
+| LLM | Ollama + Llama 4 Scout or Qwen3-32B | Easy local serving |
+| Framework | LangChain | Broad local model support |
+| Vector DB | Chroma | Runs fully in-process |
+| Parsing | Docling | Local, no API calls |
+| UI | AnythingLLM | Full-stack local platform |
+
+### High-Performance Inference (Cloud)
+
+Best for: latency-critical production applications at scale.
+
+| Layer | Tool | Why |
+| --- | --- | --- |
+| LLM | Groq or Cerebras | 840–2300+ tokens/sec |
+| Serving | vLLM (self-hosted) | 24× throughput for owned models |
+| Gateway | LiteLLM | Load balance across providers |
+| Caching | Redis + LiteLLM cache | Avoid redundant inference calls |
+| Monitoring | Arize Phoenix | Low-overhead production tracing |
+
+### Research & Evaluation
+
+Best for: researchers benchmarking models or building eval-driven pipelines.
+
+| Layer | Tool | Why |
+| --- | --- | --- |
+| Models | AI2 OLMo 3 + DeepSeek R1 | Fully open; reproducible results |
+| Prompting | DSPy | Automated prompt optimization |
+| Evaluation | Promptfoo + EleutherAI Eval Harness | CI testing + standard benchmarks |
+| Tracking | Weights & Biases Weave | Unified training and inference metrics |
+| Fine-tuning | Unsloth + Axolotl | Fast, reproducible training runs |
 
 ---
 
 ## 📚 Learning Resources
 
-> Coming soon. Contributions welcome — see [CONTRIBUTING.md](CONTRIBUTING.md).
+### Courses & Tutorials
+
+**[fast.ai Practical Deep Learning](https://course.fast.ai/)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Practical deep learning course with hands-on LLM modules
+- **Best for**: Developers wanting a code-first path from basics to LLM
+  fine-tuning
+- **Unique**: Top-down teaching approach — run models first, understand
+  theory after; completely free
+
+**[DeepLearning.AI Short Courses](https://www.deeplearning.ai/short-courses/)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Focused 1–2 hour courses on specific LLM topics
+  (RAG, agents, fine-tuning, evals)
+- **Best for**: Practitioners who want targeted skill upgrades without
+  committing to a full course
+- **Unique**: Built with tool providers (LangChain, Anthropic, OpenAI) —
+  uses current APIs and best practices
+
+**[Hugging Face NLP Course](https://huggingface.co/learn/nlp-course/)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: End-to-end course on transformers, fine-tuning, and
+  the HuggingFace ecosystem
+- **Best for**: Developers wanting to understand transformer internals and
+  work confidently with open-weight models
+- **Unique**: The definitive resource for the HuggingFace ecosystem; always
+  kept up to date; completely free
+
+**[Andrej Karpathy — Neural Networks: Zero to Hero](https://youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: YouTube series building GPT from scratch in pure Python
+- **Best for**: Anyone who wants deep intuition for how language models work
+  at the mathematical level
+- **Unique**: Best intuition-building resource available; builds every
+  component from scratch — no black boxes
+
+### Essential Reading
+
+**[Attention Is All You Need](https://arxiv.org/abs/1706.03762)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Original transformer architecture paper (Vaswani et al., 2017)
+- **Best for**: Understanding the architecture that underpins every modern LLM
+- **Unique**: Required reading; every LLM traces its architecture back to
+  this paper
+
+**[The Illustrated Transformer](https://jalammar.github.io/illustrated-transformer/)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Visual, intuitive walkthrough of the transformer
+  architecture
+- **Best for**: Developers who learn best from diagrams and step-by-step
+  visual explanations
+- **Unique**: The most-referenced explanation of transformers for
+  practitioners; no math required to follow along
+
+**[Chip Huyen — AI Engineering](https://www.oreilly.com/library/view/ai-engineering/9781098166298/)** ⭐⭐⭐⭐⭐ 💵
+
+- **What it does**: Comprehensive book on building production AI applications
+  with LLMs
+- **Best for**: Engineers and architects designing production LLM systems
+- **Unique**: Covers the full stack from model selection to deployment,
+  evaluation, and monitoring — the definitive production LLM engineering
+  reference
+
+### Communities & News
+
+**[Hugging Face Forums](https://discuss.huggingface.co/)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Community forum for open-weight models, datasets, and
+  the HuggingFace ecosystem
+- **Best for**: Getting help with model loading, fine-tuning, and deployment
+  issues; following open-source model releases
+- **Unique**: Largest open-source AI community; model authors often respond
+  directly to questions
+
+**[r/LocalLLaMA](https://www.reddit.com/r/LocalLLaMA/)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Reddit community focused on running LLMs locally
+- **Best for**: Staying current on quantization, hardware recommendations,
+  and new open-weight releases
+- **Unique**: Fastest community for local deployment news; model benchmarks
+  and hardware comparisons appear here before anywhere else
+
+**[The Batch (DeepLearning.AI)](https://www.deeplearning.ai/the-batch/)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Weekly AI newsletter curated by Andrew Ng
+- **Best for**: Staying informed on AI research and industry developments
+  without drowning in noise
+- **Unique**: High signal-to-noise ratio; covers both research papers and
+  industry news with context
 
 ## 🤝 Contributing
 
