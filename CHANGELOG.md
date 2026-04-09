@@ -7,6 +7,24 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ## [Unreleased]
 
+## [0.4.1] - 2026-04-09
+
+### Fixed
+
+- Removed U+FE0F variation selector from six section headings that caused
+  TOC anchor links to break on GitHub while working locally
+- Resolved duplicate 💻 emoji shared between Local Deployment Tools and
+  Code-Focused LLM Tools — Local Deployment now uses 🖥
+
+### Changed
+
+- Integration & Utility Tools section fully replaced: removed three thin
+  example-repo entries (Pinecone Datasets, Weaviate Recipes, ChromaDB Recipes)
+  and replaced with six substantive tools across three subsections —
+  type-safe libraries (Pydantic AI, Mirascope), intelligent routing
+  (Semantic Router, Marvin), and official SDKs (OpenAI Python SDK,
+  Anthropic Python SDK)
+
 ## [0.4.0] - 2026-04-09
 
 ### Added

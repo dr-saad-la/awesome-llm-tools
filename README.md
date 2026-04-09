@@ -503,7 +503,7 @@ platforms - everything you need to build with LLMs.
 
 ---
 
-## 💻 Local Deployment Tools
+## 🖥 Local Deployment Tools
 
 ### Desktop Applications
 
@@ -1223,29 +1223,81 @@ ollama run deepseek-r1:8b
 
 ## 🔗 Integration & Utility Tools
 
-### Connectors & Utilities
+### Type-Safe & Structured LLM Libraries
 
-**[Pinecone Datasets](https://github.com/pinecone-io/datasets)** ⭐⭐⭐ 💰
+**[Pydantic AI](https://github.com/pydantic/pydantic-ai)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Ready-to-use datasets for vector databases
-- **Best for**: Quick RAG setup, testing, benchmarking
-- **Features**: Pre-processed datasets, embeddings included
-- **Integration**: Pinecone ecosystem
+- **What it does**: Type-safe agent framework built on Pydantic for building
+  production AI applications with full validation and IDE support
+- **Best for**: Teams that want Pydantic-style type safety applied to LLM
+  inputs, outputs, and agent state
+- **Features**: Structured outputs, dependency injection, multi-model support,
+  streaming, built-in testing utilities
+- **Pricing**: Free and open source (MIT)
+- **Unique**: Brings the same validation model that made Pydantic the standard
+  for Python APIs to LLM applications — integrates with FastAPI naturally
 
-**[Weaviate Recipes](https://github.com/weaviate/recipes)** ⭐⭐⭐ 💰
+**[Mirascope](https://github.com/Mirascope/mirascope)** ⭐⭐⭐⭐ 💰 🚀
 
-- **What it does**: Code examples and tutorials for Weaviate
-- **Best for**: Learning Weaviate, implementation examples
-- **Features**: Production-ready examples, best practices
-- **Community**: Community-contributed recipes
+- **What it does**: Clean, modular library for interacting with LLMs using
+  Python-native patterns rather than chain-based abstractions
+- **Best for**: Developers who find LangChain too heavy and want a minimal,
+  composable interface close to the raw API
+- **Features**: Provider-agnostic, Pydantic integration, async support, prompt
+  management, multi-modal support
+- **Pricing**: Free and open source (MIT)
+- **Unique**: Function-based design — LLM calls look like regular Python
+  functions, making them easy to test, compose, and reason about
 
-**[ChromaDB Recipes](https://github.com/chroma-core/chroma/tree/main/examples)**
-⭐⭐⭐ 💰
+### Intelligent Routing
 
-- **What it does**: Example applications using ChromaDB
-- **Best for**: Learning ChromaDB, quick starts
-- **Features**: Various use case examples, integration patterns
-- **Documentation**: Well-documented examples
+**[Semantic Router](https://github.com/aurelio-labs/semantic-router)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Semantic decision layer that routes LLM inputs to the
+  correct handler using embedding-based similarity rather than keywords
+- **Best for**: Multi-intent applications, routing between specialized models
+  or prompts, reducing unnecessary LLM calls
+- **Features**: Fast local inference, dynamic routes, multiple encoder support,
+  hybrid routing (semantic + keyword)
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: Routing decisions happen in milliseconds without an LLM call —
+  dramatically reduces latency and cost for high-traffic applications
+
+**[Marvin](https://github.com/PrefectHQ/marvin)** ⭐⭐⭐⭐ 💰
+
+- **What it does**: Lightweight AI engineering toolkit that adds LLM
+  capabilities to existing Python applications with minimal boilerplate
+- **Best for**: Adding AI features (classification, extraction, generation)
+  to existing Python codebases without restructuring around a framework
+- **Features**: AI functions, classifiers, entity extractors, decorator-style
+  API, speaks plain Python with no pipelines or chains to manage
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: Designed to disappear into your codebase — AI capabilities look
+  like regular Python functions rather than framework-specific constructs
+
+### Official SDKs
+
+**[OpenAI Python SDK](https://github.com/openai/openai-python)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Official Python client library for the OpenAI API
+- **Best for**: Any project directly integrating OpenAI models — the reference
+  implementation for the full OpenAI API surface
+- **Features**: Sync and async clients, streaming, typed responses, automatic
+  retries, tool calling, Responses API
+- **Pricing**: Free and open source (Apache 2.0)
+- **Unique**: First-party library guaranteed to support new OpenAI features on
+  day one; the most widely installed AI library on PyPI
+
+**[Anthropic Python SDK](https://github.com/anthropic/anthropic-sdk-python)** ⭐⭐⭐⭐⭐ 💰
+
+- **What it does**: Official Python client library for the Anthropic API
+- **Best for**: Any project directly integrating Claude models — includes full
+  support for tool use, vision, prompt caching, and streaming
+- **Features**: Sync and async clients, streaming, typed responses, prompt
+  caching, computer use, batch API
+- **Pricing**: Free and open source (MIT)
+- **Unique**: First-party library with same-day support for new Claude features
+  including extended thinking and MCP integration
 
 ---
 
