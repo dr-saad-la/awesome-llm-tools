@@ -1468,6 +1468,18 @@ ollama run deepseek-r1:8b
 - **Unique**: Minimal setup — drop-in wrapper around the OpenAI client;
   good for teams starting with observability
 
+**[agenttrace](https://github.com/luoyuctl/agenttrace)** ⭐⭐⭐ 💰
+
+- **What it does**: Local TUI and report generator for AI coding agent
+  session history
+- **Best for**: Developers inspecting local Claude Code, Codex CLI,
+  Gemini CLI, Aider, Cursor, OpenCode, and OpenClaw session logs
+- **Features**: Cost and token review, latency diagnosis, tool failure
+  detection, health scoring, JSON and HTML reports
+- **Pricing**: Free and open source
+- **Unique**: Reads existing local agent logs without requiring a hosted
+  backend or uploading prompts and code
+
 ---
 
 ## ✍ Prompt Engineering
