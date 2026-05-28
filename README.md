@@ -1468,6 +1468,30 @@ ollama run deepseek-r1:8b
 - **Unique**: Minimal setup — drop-in wrapper around the OpenAI client;
   good for teams starting with observability
 
+**[traceAI (Future AGI)](https://github.com/future-agi/traceAI)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open-source OpenTelemetry-native tracing for LLM and
+  agent applications
+- **Best for**: Teams that want vendor-neutral tracing with broad framework
+  coverage
+- **Features**: 50+ framework integrations, span-level tracing for LLM calls
+  and tool calls, OTel-compatible export to any backend
+- **Pricing**: Free and open source
+- **Unique**: OpenTelemetry-native by design, so traces flow into existing
+  observability stacks without lock-in
+
+**[ai-evaluation (Future AGI)](https://github.com/future-agi/ai-evaluation)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open-source LLM evaluation framework with built-in
+  guardrails
+- **Best for**: Teams that need both pre-production evals and runtime
+  guardrails in one library
+- **Features**: 50+ eval metrics, LLM-as-Judge, guardrail scanners for
+  jailbreak, PII, and prompt injection
+- **Pricing**: Free and open source
+- **Unique**: Combines eval metrics and runtime guardrails so the same
+  checks run in CI and in production
+
 ---
 
 ## ✍ Prompt Engineering
