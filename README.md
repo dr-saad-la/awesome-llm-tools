@@ -1045,6 +1045,21 @@ ollama run deepseek-r1:8b
 - **Features**: Request logging, cost analysis, custom properties
 - **Integration**: Simple proxy setup, multiple providers
 
+**[AI Model Gateway](https://github.com/SSC-STUDIO/Ai-Model-Gateway)** ⭐⭐⭐ 💰 🚀
+
+- **What it does**: Self-hosted LLM operations gateway for routing, provider
+  fallback, telemetry, benchmarking, config publishing, diagnostics, updates,
+  and rollback
+- **Best for**: Teams that want local control over OpenAI-compatible and
+  Anthropic-compatible gateway traffic, provider keys, routing policy, and
+  operational evidence
+- **Features**: Provider fallback, health checks, request telemetry, Admin UI,
+  config diff/publish/rollback, release archive install path, and
+  manifest-verified updates
+- **Pricing**: Free and open source
+- **Unique**: Combines gateway traffic handling with a local operations control
+  plane instead of acting as a hosted model marketplace
+
 **[Braintrust](https://www.braintrust.dev/)** ⭐⭐⭐ 🔄
 
 - **What it does**: Enterprise-grade evaluation and observability for AI
