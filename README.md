@@ -1052,6 +1052,14 @@ ollama run deepseek-r1:8b
 - **Features**: Evaluation frameworks, dataset management, A/B testing
 - **Focus**: Enterprise and research use cases
 
+**[CoderPlan](https://coderplan.ai)** ⭐⭐⭐ 💰
+
+- **What it does**: Unified LLM API gateway with OpenAI-compatible protocol
+- **Best for**: Developers using Claude Code, Codex CLI, or Gemini CLI who need cost-effective multi-model access
+- **Features**: Pay-per-use (~70% below official rates), Claude/OpenAI/Gemini/DeepSeek/Grok, Alipay/WeChat payments
+- **Focus**: Developer-first API relay for AI coding workflows
+
+
 ---
 
 ## 🔬 Research & Evaluation Tools
