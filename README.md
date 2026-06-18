@@ -1468,6 +1468,19 @@ ollama run deepseek-r1:8b
 - **Unique**: Minimal setup — drop-in wrapper around the OpenAI client;
   good for teams starting with observability
 
+**[Future AGI](https://github.com/future-agi/future-agi)** ⭐⭐⭐⭐ 💰 🚀
+
+- **What it does**: Open source platform to simulate, evaluate, trace,
+  guardrail, route, and optimize LLM and AI agent apps in one feedback loop,
+  so agents don't just get monitored, they self-improve
+- **Best for**: Teams wanting self-hosted observability with built-in
+  evaluation, guardrails, and agent simulation
+- **Features**: OpenTelemetry-native tracing across 50+ frameworks, 70+ eval
+  metrics, LLM-as-judge, real-time guardrails, persona/scenario simulation
+- **Pricing**: Free and open source (Apache-2.0, self-hostable)
+- **Unique**: Combines tracing, 70+ eval metrics, and real-time guardrails for
+  prompt injection, jailbreak, PII, and toxicity in one platform
+
 ---
 
 ## ✍ Prompt Engineering
