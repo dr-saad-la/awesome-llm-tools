@@ -787,6 +787,20 @@ ollama run deepseek-r1:8b
 - **Features**: Conversation summarization, semantic search, memory extraction
 - **Integration**: LangChain, custom applications
 
+**[Tree Ring Memory](https://github.com/TerminallyLazy/Tree-Ring-Memory)** ⭐⭐⭐ 💰 🚀
+
+- **What it does**: Framework-agnostic memory lifecycle layer for AI agents
+  with local SQLite/FTS recall, explicit forgetting, audit, consolidation,
+  and terminal workflows
+- **Best for**: Developers building local-first agent workflows that need
+  inspectable memory, recall, redaction, and evidence-linked lessons
+- **Features**: Rust CLI and TUI, SQLite/FTS storage, deterministic
+  consolidation, sensitive-memory audits, JSONL import/export, DOX/Revolve
+  adapters
+- **Pricing**: Free and open source under MIT
+- **Unique**: Uses a tree-ring model so fresh context stays detailed while
+  older lessons compress into rings, scars, seeds, and heartwood
+
 ---
 
 ## 🎙 Voice & Audio Tools
