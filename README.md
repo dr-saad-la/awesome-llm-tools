@@ -1590,6 +1590,18 @@ ollama run deepseek-r1:8b
 - **Unique**: Used by every Hugging Face Transformers model; supports
   tokenizer training from scratch
 
+**[autobatcher](https://github.com/doublewordai/autobatcher)** ⭐⭐⭐ 💰
+
+- **What it does**: Drop-in AsyncOpenAI replacement that transparently routes
+  requests through the Batch API for large cost savings
+- **Best for**: High-volume, latency-tolerant workloads such as offline
+  evaluations, data labeling, and bulk generation
+- **Features**: Automatic request batching, polling, and result assembly;
+  Python and TypeScript packages; OpenAI-compatible interface
+- **Pricing**: Free and open source (MIT)
+- **Unique**: No code changes beyond swapping the client — keeps the async
+  OpenAI API surface while running requests through the cheaper Batch API
+
 ### Context & Memory Utilities
 
 **[LangChain Text Splitters](https://python.langchain.com/docs/concepts/text_splitters/)** ⭐⭐⭐⭐ 💰
