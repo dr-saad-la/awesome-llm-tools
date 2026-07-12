@@ -1045,6 +1045,14 @@ ollama run deepseek-r1:8b
 - **Features**: Request logging, cost analysis, custom properties
 - **Integration**: Simple proxy setup, multiple providers
 
+
+**[DaoXE](https://daoxe.com)** ⭐⭐ 💵
+
+- **What it does**: Multi-model multi-protocol AI API gateway for developers
+- **Best for**: One integration for Chat Completions, Responses, Anthropic Messages, and image-compatible endpoints
+- **Features**: Unified catalog, multi-provider models, OpenAI SDK migration path, public examples
+- **Notes**: Not OpenAI-only / not Claude-only; not available in mainland China; examples at https://github.com/seven7763/DaoXE-AI
+
 **[Braintrust](https://www.braintrust.dev/)** ⭐⭐⭐ 🔄
 
 - **What it does**: Enterprise-grade evaluation and observability for AI
