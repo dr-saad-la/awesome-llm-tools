@@ -1590,6 +1590,20 @@ ollama run deepseek-r1:8b
 - **Unique**: Used by every Hugging Face Transformers model; supports
   tokenizer training from scratch
 
+**[llm-tokencheck](https://github.com/ilan-lachkar/llm-tokencheck)** ⭐⭐ 🔄
+
+- **What it does**: CLI that estimates token count and USD cost for a file
+  or text across Anthropic, OpenAI, and Google models before you send the
+  API request
+- **Best for**: Developers who want a quick multi-provider cost check before
+  a large request, without writing custom pricing lookup logic
+- **Features**: Per-model cost comparison table, batch folder processing and
+  CSV export (Pro)
+- **Pricing**: Free CLI (`npm i -g llm-tokencheck`); optional $9 one-time Pro
+  license for batch folder processing + CSV export
+- **Unique**: Compares cost across three providers in one command instead of
+  a single-provider tokenizer
+
 ### Context & Memory Utilities
 
 **[LangChain Text Splitters](https://python.langchain.com/docs/concepts/text_splitters/)** ⭐⭐⭐⭐ 💰
