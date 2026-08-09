@@ -1568,6 +1568,18 @@ ollama run deepseek-r1:8b
   swap from OpenAI to Anthropic to Bedrock; built-in cost tracking across all
   providers
 
+**[RunAPI MCP](https://github.com/runapi-ai/mcp)** ⭐⭐⭐ 💰
+
+- **What it does**: MCP server for model discovery, pricing lookup, media task
+  creation, and balance checks
+- **Best for**: Agent workflows that need RunAPI model and task operations
+  through MCP clients
+- **Features**: Model search, pricing data, balance lookup, and media
+  generation task creation
+- **Pricing**: Free and open source MCP server; RunAPI API usage is paid
+- **Unique**: Exposes RunAPI model operations through a Model Context Protocol
+  interface
+
 **[tiktoken](https://github.com/openai/tiktoken)** ⭐⭐⭐⭐⭐ 💰
 
 - **What it does**: Fast tokenizer for OpenAI models written in Rust
