@@ -1223,6 +1223,19 @@ ollama run deepseek-r1:8b
 
 ## 🔗 Integration & Utility Tools
 
+**[SandBase CLI](https://github.com/sandbaseai/cli)** ⭐⭐⭐ 💰 🚀
+
+- **What it does**: Agent-first command-line interface and MCP bridge for
+  accessing 2,000+ AI models and APIs through one account
+- **Best for**: Developers and AI agents that need model discovery, multimodal
+  generation, sandbox execution, and workflow automation from the terminal
+- **Features**: Six MCP tools, 17+ supported clients, structured JSON output,
+  OAuth authentication, and local credential storage with `0600` permissions
+- **Pricing**: Free and open source (Apache-2.0); hosted API usage requires
+  SandBase credits
+- **Unique**: Combines a human-friendly CLI with an agent-native MCP interface
+  over the same model and API catalog
+
 ### Type-Safe & Structured LLM Libraries
 
 **[Pydantic AI](https://github.com/pydantic/pydantic-ai)** ⭐⭐⭐⭐ 💰 🚀
