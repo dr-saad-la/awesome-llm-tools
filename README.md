@@ -1038,6 +1038,20 @@ ollama run deepseek-r1:8b
 - **Features**: Load balancing, caching, rate limiting, cost tracking
 - **Enterprise**: Production-grade reliability features
 
+**[XiuRouter](https://router.xiu.ai/)** ⭐⭐ 💵 🚀
+
+- **What it does**: Hosted usage-based multi-model API with native OpenAI
+  Responses and Chat Completions, Anthropic Messages, and Gemini
+  GenerateContent endpoints
+- **Best for**: Developers and AI agents that need one API, scoped keys, and
+  multiple native model protocols
+- **Features**: Integrations for 14 developer and agent tools, plus
+  request-level token, cost, and status records
+- **Pricing**: Usage-based prepaid service with no free plan; selected models
+  and service groups may save up to 90%+ versus reference pricing
+- **Unique**: Preserves the four native request and response shapes instead of
+  translating every provider into one schema
+
 **[HeliconeAI](https://github.com/Helicone/helicone)** ⭐⭐⭐ 💰
 
 - **What it does**: Open source observability platform for generative AI
