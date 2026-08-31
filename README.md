@@ -1590,6 +1590,19 @@ ollama run deepseek-r1:8b
 - **Unique**: Used by every Hugging Face Transformers model; supports
   tokenizer training from scratch
 
+**[APICostCalc](https://apicostcalc.com/)** ⭐⭐⭐ 🔄
+
+- **What it does**: Free browser-based calculator for estimating and
+  comparing LLM API costs across providers before committing to a model
+- **Best for**: Developers estimating monthly spend or comparing per-token
+  pricing across OpenAI, Anthropic, Google, and other providers before
+  building
+- **Features**: Multi-provider price comparison, token/cost estimation by
+  prompt size, no signup required
+- **Pricing**: Free
+- **Unique**: No-signup, no-install web calculator focused purely on
+  side-by-side cost estimation rather than routing or proxying requests
+
 ### Context & Memory Utilities
 
 **[LangChain Text Splitters](https://python.langchain.com/docs/concepts/text_splitters/)** ⭐⭐⭐⭐ 💰
