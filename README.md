@@ -957,6 +957,21 @@ ollama run deepseek-r1:8b
 - **Unique**: The only major AI coding tool that can run fully on-premises
   with no data leaving the customer environment
 
+**[Sillage](https://github.com/MarlBurroW/sillage)** ⭐⭐⭐ 💰 🚀
+
+- **What it does**: Self-hosted, mobile-first web UI that drives the native
+  Claude Code and Codex CLIs running on your own machine (the official agent
+  harnesses, without a terminal)
+- **Best for**: Vibe-coding from a phone or browser, remote and mobile access
+  to local CLI coding agents, self-hosted teams
+- **Features**: Sessions that outlive the client, full-text search over every
+  conversation, IDE panel (file explorer, editor, diffs, terminal), a board
+  the agents read through its own MCP server, installable PWA with push
+- **Pricing**: Free and open source (MIT)
+- **Deployment**: Single Docker container, self-hosted
+- **Unique**: Replaces the terminal rather than the agent, exposing Claude Code
+  and Codex through one mobile-first, self-hosted web surface
+
 ---
 
 ## 🌐 Self-hosted & Local Platforms
