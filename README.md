@@ -1590,6 +1590,14 @@ ollama run deepseek-r1:8b
 - **Unique**: Used by every Hugging Face Transformers model; supports
   tokenizer training from scratch
 
+**[AIHOT LLM API Price Comparison](https://aihot.news/leaderboard/prices)** ⭐⭐⭐ 💰
+
+- **What it does**: Compares model API prices published by providers
+- **Best for**: Developers estimating inference costs before choosing a model
+- **Features**: Input, output and cached-input prices per million tokens,
+  provider price sources and estimates for a stated mix of usage
+- **Pricing**: Free to browse without an account
+
 ### Context & Memory Utilities
 
 **[LangChain Text Splitters](https://python.langchain.com/docs/concepts/text_splitters/)** ⭐⭐⭐⭐ 💰
