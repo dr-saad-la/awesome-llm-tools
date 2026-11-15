@@ -1856,3 +1856,7 @@ directly with each provider before making decisions.
 ### Star Growth
 
 [![Star History Chart](https://api.star-history.com/svg?repos=dr-saad-la/awesome-llm-tools&type=Date)](https://star-history.com/#dr-saad-la/awesome-llm-tools&Date)
+
+## MCP Servers & Directories
+
+- [No Stairs Please MCP](https://nostairsplease.com/mcp) — Search verified live music venues and booking contacts across all 50 US states ([nostairsplease.com](https://nostairsplease.com/)).
